@@ -32,23 +32,23 @@ Se for setup limpo, seguir direto.
 
 Fazer em ordem, uma por vez. Escutar a resposta antes de seguir.
 
-**Sobre a agência:**
-1. "Como se chama a agência? (confirmar se é Rocha Digital Studio ou tem outro nome pra marca)"
-2. "Quais serviços vocês oferecem? (lista rápida — pode ser informal)"
+**Sobre o negócio:**
+1. "Como se chama o negócio? (nome da empresa ou marca)"
+2. "Quais serviços ou produtos oferecem? (lista rápida — pode ser informal)"
 3. "Quantas pessoas na equipe hoje? Se tiver sócio, colaborador ou freelancer fixo, me fala quem faz o quê"
-4. "Quantos clientes ativos vocês têm agora? Me passa os nomes se tiver"
+4. "Quantos clientes ativos têm agora? Me passa os nomes se tiver"
 5. "Qual o perfil de cliente ideal? (tipo de negócio, porte, região, dor que resolve)"
 
 **Sobre voz:**
-6. "Me cola um exemplo de como você escreve pra cliente — uma mensagem de WhatsApp, email de proposta, legenda do Insta. Qualquer coisa real e recente"
+6. "Me cola um exemplo de como vocês escrevem pra cliente — uma mensagem de WhatsApp, email, legenda do Insta. Qualquer coisa real e recente"
 7. "O que te dá ranço quando vê texto de marketing? (ex: 'alavancar', 'soluções inovadoras', emoji em todo parágrafo)"
 
 **Sobre foco:**
-8. "Qual é o maior gargalo da agência hoje? O que tá segurando o crescimento?"
+8. "Qual é o maior gargalo do negócio hoje? O que tá segurando o crescimento?"
 9. "Se eu pudesse tirar UMA tarefa que você repete toda semana das suas costas, qual seria?"
 
 **Sobre identidade visual:**
-10. "A agência tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
+10. "Tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
 11. "Tem logo? Se sim, joga o arquivo em `identidade/logo.png` (ou `.svg`) e me confirma"
 
 ---
