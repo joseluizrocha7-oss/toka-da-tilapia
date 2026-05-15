@@ -1,0 +1,32 @@
+# Dados sensíveis
+.env
+*.env.*
+!.env.example
+
+# Dependências Node
+node_modules/
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+
+# Outputs temporários
+*.tmp
+*.log
+
+# Arquivos grandes de mídia que não precisam de versionamento
+*.mp4
+*.mov
+*.zip
+*.rar
+
+# Manter pastas vazias no git
+!clientes/.gitkeep
+!briefings/.gitkeep
+!propostas/.gitkeep
+!dados/.gitkeep
