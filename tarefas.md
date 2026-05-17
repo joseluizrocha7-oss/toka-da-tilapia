@@ -1,4 +1,4 @@
-# Pipeline — Rocha Digital Studio
+# Pipeline
 
 > Atualizar com /pipeline. Histórico de leads e status de clientes ativos.
 

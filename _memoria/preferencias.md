@@ -1,22 +1,29 @@
 # Preferências
 
-> Como a Rocha Digital Studio se comunica. Tom, estilo, vícios a evitar.
-> Edite sempre que o padrão de voz evoluir.
+> Como a comunicação desse projeto soa. Tom, estilo, vícios a evitar.
 
 ## Tom de voz
 
-> A preencher após /instalar com base em exemplos reais de escrita da agência.
-> Ex: direto, sem enrolação, fala de igual pra igual com o cliente, usa dados pra embasar sugestões.
+Motivador sem ser agressivo. Acolhedor sem ser piegas. Premium sem ser frio.
+O texto fala com alguém real que quer resultado — não com um personagem de propaganda.
+Direto, humano, com senso de possibilidade.
 
 ## O que evitar
 
-> A preencher após /instalar.
-> Ex: jargões de guru ("alavancar", "sinergia"), promessas vagas, formalidade desnecessária.
+- Clichês de marketing fitness: "alavancar resultados", "transformação incrível", "mude sua vida agora"
+- Emoji em excesso — no máximo um por bloco, e só quando fizer sentido
+- Linguagem corporativa genérica: "soluções inovadoras", "metodologia exclusiva"
+- Promessas milagrosas ou exageradas
+- Tom de urgência artificial (falso countdown, "últimas vagas")
 
 ## Estilo geral
 
-> A preencher após /instalar.
+- Frases curtas e limpas
+- Verbos no imperativo com leveza, não com pressão
+- Benefício concreto antes do apelo emocional
+- Linguagem próxima mas não informal demais — sem gírias forçadas
 
 ## Preferências adicionais
 
-> Registrar aqui qualquer correção de estilo que o usuário fizer durante o uso.
+- Público sem familiaridade com termos técnicos de marketing digital
+- Emerson não tem voz de marca definida — construir do zero com base nos valores acima

@@ -1,17 +1,18 @@
-# Rocha Digital Studio — TheRockzOS
+# TheRockzOS — Personal Emerson
 
-> Sistema operacional da agência. Aqui ficam todos os clientes, propostas,
-> conteúdo e entregas. O TheRockzOS é um fork personalizado do MazyOS,
-> adaptado pro fluxo de agência digital.
+> Workspace dedicado ao projeto Personal Emerson.
+> Funil de vendas digital para o personal trainer Emerson:
+> landing page + Meta Ads + Asaas + email automático.
 
 ## O que é esse workspace
 
-Operação completa da Rocha Digital Studio. Gestão de clientes, produção de
-conteúdo, campanhas pagas, SEO, IA e automação — tudo em um lugar.
+Operação do funil de vendas do Personal Emerson. Landing page vendendo
+assinaturas do app MFIT Personal (Q R$497 / S R$697 / A R$997),
+tráfego pago via Meta Ads e checkout via Asaas.
 
 **Estrutura de pastas:**
 - `_memoria/` — quem somos, como falamos, foco atual
-- `identidade/` — marca da Rocha Digital Studio (aplicada nas peças)
+- `identidade/` — marca da agência (aplicada nas peças)
 - `clientes/` — uma subpasta por cliente, autossuficiente
 - `briefings/` — briefings de leads antes de virar cliente
 - `propostas/` — propostas comerciais em andamento
