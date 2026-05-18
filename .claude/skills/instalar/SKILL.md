@@ -14,6 +14,25 @@ Trata como conversa de descoberta — pergunta uma coisa por vez, escuta de verd
 O objetivo é o sistema sair daqui conhecendo esse negócio profundamente o suficiente
 para dar direções úteis desde a primeira sessão.
 
+## Fase 0 — Ativar proteções
+
+Antes de qualquer coisa, executar:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Isso ativa o hook de pre-commit que bloqueia commit acidental de dados do cliente
+no repositório template. Confirmar com:
+
+```bash
+git config core.hooksPath
+```
+
+Se retornar `.githooks`, está ativo. Seguir.
+
+---
+
 ## Pré-checagem
 
 Verificar se algum arquivo de memória já está preenchido (não é placeholder):
@@ -97,7 +116,30 @@ Se forneceu cores/fontes (perguntas 13-14), preencher os campos. Se não:
 
 ---
 
-## Fase 4 — Próximos passos
+## Fase 4 — Criar repositório privado do cliente
+
+Este passo é obrigatório. Os dados do cliente não devem ficar no repositório template.
+
+Orientar o usuário:
+
+> "Agora preciso que você crie um repositório PRIVADO para esse cliente no GitHub.
+> É rápido — vai em github.com/new, nome sugerido: `[nome-do-cliente-em-kebab-case]`, marque 'Private'."
+
+Quando o usuário confirmar que criou, executar:
+
+```bash
+git remote set-url origin <URL-fornecida-pelo-usuário>
+git push -u origin master
+```
+
+Confirmar que o push funcionou antes de seguir.
+
+> "Perfeito. Os dados do [nome do cliente] agora estão no repositório privado dele.
+> O template do TheRockzOS continua limpo e seguro para o próximo cliente."
+
+---
+
+## Fase 5 — Próximos passos
 
 > "Pronto. O TheRockzOS já conhece o negócio.
 >

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# TheRockzOS — Proteção contra commit de dados de cliente no repositório template
+
+EMPRESA="_memoria/empresa.md"
+
+# Sem arquivo de memória = template limpo, libera
+[ ! -f "$EMPRESA" ] && exit 0
+
+# Verifica se o campo Nome está preenchido (não é placeholder vazio)
+NOME=$(grep -E '^\*\*Nome:\*\*\s*\S' "$EMPRESA" | sed 's/\*\*Nome:\*\*\s*//' | tr -d '\r')
+
+# Sem nome preenchido = ainda é template, libera
+[ -z "$NOME" ] && exit 0
+
+# Tem dados de cliente — verificar se há arquivos de memória no stage
+STAGED=$(git diff --cached --name-only | grep -E '^(_memoria/|identidade/design-guide\.md)')
+
+# Nenhum arquivo sensível no stage, libera
+[ -z "$STAGED" ] && exit 0
+
+# Bloqueia
+echo ""
+echo "╔══════════════════════════════════════════════════════════╗"
+echo "║         BLOQUEADO — DADOS DE CLIENTE DETECTADOS         ║"
+echo "╚══════════════════════════════════════════════════════════╝"
+echo ""
+echo "  Cliente : $NOME"
+echo "  Arquivos: $STAGED"
+echo ""
+echo "  Este workspace tem dados reais de cliente e você está"
+echo "  tentando commitar no repositório do TheRockzOS template."
+echo "  Isso misturaria dados privados com o template público."
+echo ""
+echo "  ─── O que fazer ───────────────────────────────────────"
+echo "  1. Crie um repositório PRIVADO para '$NOME' no GitHub"
+echo "  2. git remote set-url origin <URL-do-repo-do-cliente>"
+echo "  3. git push -u origin master"
+echo "  ────────────────────────────────────────────────────────"
+echo ""
+echo "  Para ignorar esse aviso (use com cuidado):"
+echo "  git commit --no-verify"
+echo ""
+exit 1
