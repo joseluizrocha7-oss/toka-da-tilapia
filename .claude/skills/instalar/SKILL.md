@@ -73,9 +73,13 @@ Fazer em ordem, uma por vez. Escutar a resposta antes de seguir.
 12. "Qual a prioridade dos próximos 30-60 dias? (ex: lançar site, fechar 5 clientes novos, aparecer no Google)"
 
 ### Sobre identidade visual e sites
-13. "Tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
+13. "Tem identidade visual definida? Me passa: cor principal, cor de destaque, fonte dos títulos e fonte do corpo. (Se não tiver, inventamos agora — um bom padrão já ajuda)"
 14. "Tem logo? Se sim, joga o arquivo em `identidade/logo.png` (ou `.svg`) e confirma"
 15. "Tem site, landing page ou página para criar/manter? Quantos? (ex: 1 site + 2 LPs)"
+
+### Sobre stack e ferramentas
+16. "Já usa alguma ferramenta de marketing ou automação? (ex: Google Ads, Meta Ads, RD Station, Google Sheets, WhatsApp Business)"
+17. "Onde o site fica hospedado hoje, ou onde quer hospedar? (ex: Cloudflare Pages, Vercel, sem site ainda)"
 
 ---
 
@@ -99,8 +103,17 @@ Preencher com base nas perguntas 11-12:
 - Desafio atual e prioridade dos próximos 30-60 dias
 
 ### `identidade/design-guide.md`
-Se forneceu cores/fontes (perguntas 13-14), preencher os campos. Se não:
-> "Deixei o `identidade/design-guide.md` em branco. Quando definir a identidade visual, edita lá — as skills de carrossel e proposta leem esse arquivo antes de criar qualquer visual."
+Preencher sempre — mesmo que o cliente não tenha identidade definida:
+- Se forneceu cores/fontes: preencher os campos com os dados reais
+- Se não tem identidade definida: propor um padrão funcional (cor neutra + Inter/Roboto) e registrar com nota "a definir com o cliente"
+
+Nunca deixar em branco. Skills visuais sem identidade geram peças genéricas e sem aprovação.
+
+### `_memoria/stack.md`
+Preencher com base nas perguntas 16-17:
+- Ferramentas ativas de anúncios, CRM, automação
+- Plataforma de hospedagem escolhida
+- Qualquer integração mencionada
 
 ### `sites/`
 Se informou sites ou LPs (pergunta 15), criar as subpastas:

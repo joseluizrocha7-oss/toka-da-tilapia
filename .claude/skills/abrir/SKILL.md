@@ -17,6 +17,7 @@ Curto e direto. O objetivo é carregar contexto e devolver uma síntese de uma f
    - `_memoria/mercado.md`
    - `_memoria/preferencias.md`
    - `_memoria/estrategia.md`
+   - `_memoria/stack.md`
    - `identidade/design-guide.md` (só pra saber se está preenchido ou em branco)
 
 2. Se algum dos quatro primeiros estiver em branco (placeholder), responder:

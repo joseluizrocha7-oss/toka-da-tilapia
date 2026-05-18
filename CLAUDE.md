@@ -36,7 +36,8 @@ e estiverem preenchidos):
 2. `_memoria/mercado.md` — concorrência, posicionamento, oportunidades
 3. `_memoria/preferencias.md` — tom de voz, estilo, o que evitar
 4. `_memoria/estrategia.md` — foco atual, metas, prazos
-5. `identidade/design-guide.md` — referência visual para peças geradas
+5. `_memoria/stack.md` — ferramentas e integrações ativas
+6. `identidade/design-guide.md` — referência visual para peças geradas
 
 Usar essas informações como base para qualquer resposta ou decisão. Ao
 sugerir conteúdo, campanhas ou estratégia, considerar o mercado e o foco
@@ -153,7 +154,7 @@ Quando o usuário pedir skill nova:
 `/anuncio-google` · `/relatorio-ads`
 
 **Estratégia:**
-`/diagnostico`
+`/diagnostico` · `/reuniao`
 
 **Produção:**
 `/proposta` · `/analisar-dados` · `/email-profissional`
