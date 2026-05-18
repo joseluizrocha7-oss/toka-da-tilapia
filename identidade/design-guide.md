@@ -1,78 +1,65 @@
-# Identidade visual — Personal Emerson
+# Identidade visual
 
-> Referência de estilo para landing page, carrosséis e materiais do projeto.
-> Baseada na paleta do MFIT Personal + estética fitness clean.
+> Como a marca da agência aparece em tudo que o TheRockzOS gera.
+> As skills de carrossel, proposta e post leem esse arquivo antes de criar qualquer visual.
+> Edite quando a marca evoluir ou quando rodar /instalar pela primeira vez.
 
 ---
 
 ## Cores
 
-- **Fundo principal:** #FFFFFF (branco)
+- **Fundo principal:**
 
-- **Cor de destaque / CTA:** #0253B1 (azul primário do MFIT Personal)
+- **Cor de destaque / CTA:**
 
-- **Texto principal:** #1A1A1A (quase preto — não usar preto puro)
+- **Texto principal:**
 
-- **Fundo alternativo / seções:** #F4F8FF (azul muito claro, quase branco)
+- **Fundo alternativo / cards:**
 
-- **Acento secundário:** #00BFFF (azul claro/cyan para detalhes e ícones)
-
-- **Cor proibida:** gradientes coloridos, fundo preto em blocos grandes
+- **Cor proibida:**
 
 ---
 
 ## Tipografia
 
-- **Títulos e destaques:** Inter Bold ou Montserrat Bold
+- **Títulos e destaques:**
 
-- **Corpo, subtítulos e botões:** Inter Regular / Medium
+- **Corpo, subtítulos e botões:**
 
-- **Peso do título:** 700-800
+- **Peso do título:**
 
 ---
 
 ## Estilo geral
 
-Clean e direto. Paleta azul e branca com respiro. Nada de ornamentação desnecessária.
-Sensação de profissionalismo e saúde — não de academia "pesada". Próximo ao visual de apps de saúde modernos.
+> Descrever a personalidade visual da agência em 2-3 frases.
+> Ex: "Clean e direto. Paleta sóbria com um acento de cor. Nada de ornamentação desnecessária."
 
 ---
 
 ## Elementos-chave
 
-- Bordas: sem borda ou borda fina (1px) em cinza claro
-- Border-radius dos cards: 12-16px
-- Botões: arredondados (border-radius 8px), fundo azul primário, texto branco
-- Sombras: suaves (box-shadow com 10-20% opacidade)
+- Bordas:
+- Border-radius dos cards:
+- Botões:
+- Sombras:
 
 ---
 
 ## O que NUNCA fazer
 
-- Sem clip-art ou ícones genéricos de academia
-- Sem gradiente colorido (ok usar gradiente de azul claro pra branco)
-- Sem emojis decorativos em materiais da LP
-- Sem fontes cursivas ou manuscritas no corpo do texto
+> Ex: sem clip-art, sem gradiente colorido, sem emojis decorativos em materiais formais.
 
 ---
 
 ## Logo
 
-- **Arquivo:** não definido — Emerson não tem logo como personal trainer
-- **Provisório:** usar o nome "Emerson Personal" em tipografia bold como identidade de texto
-- **Quando tiver logo:** colocar em `identidade/logo.png` ou `identidade/logo.svg`
-
----
-
-## Referências visuais
-
-- App MFIT Personal (mfitpersonal.com.br) — paleta e estilo base
-- Instagram do Emerson: fotografia de produto clean, fundos escuros ou naturais
-- Estética: health tech + personal brand
+- **Arquivo:** *(ex: identidade/logo.png ou identidade/logo.svg)*
+- **Versão pra fundo escuro:** *(se tiver — ex: identidade/logo-branco.png)*
+- **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
+- **Tamanho sugerido:** largura entre 120-200px nos HTMLs
 
 ---
 
 ## Observações adicionais
 
-O Emerson tem negócio de shakes (Be Fit Nutrition, Hype Drink) com visual próprio (rosa, verde, laranja).
-Manter separado — a LP do personal usa paleta azul/branco do MFIT.

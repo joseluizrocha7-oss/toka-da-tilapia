@@ -15,7 +15,7 @@ Gera proposta comercial em HTML, estilizada com a identidade da agência, pronta
 
 - **Identidade visual:** `identidade/design-guide.md`
 - **Contexto da agência:** `_memoria/empresa.md`
-- **Tom de voz:** `_memoria/referencias.md`
+- **Tom de voz:** `_memoria/preferencias.md`
 - **Briefing do lead (se existir):** `briefings/<Nome>.md`
 - **Output:** `propostas/<Nome-do-cliente>-<YYYY-MM-DD>.html`
 
@@ -42,7 +42,7 @@ Se já existe briefing em `briefings/<Nome>.md`, usar como base. Caso contrário
 **Seções padrão:**
 
 1. **Capa** — logo da agência, nome do lead, data
-2. **Quem somos** — 2-3 linhas sobre a Rocha Digital Studio (puxar de `empresa.md`)
+2. **Quem somos** — 2-3 linhas sobre a agência (puxar de `empresa.md`)
 3. **O problema/oportunidade** — resumo do que foi levantado no briefing
 4. **Nossa proposta** — serviços, escopo e entregáveis com detalhamento
 5. **Como funciona** — processo de trabalho, frequência, ponto de contato

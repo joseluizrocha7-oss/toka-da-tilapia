@@ -1,47 +1,62 @@
-# TheRockzOS — Personal Emerson
+# TheRockzOS
 
-> Workspace dedicado ao projeto Personal Emerson.
-> Funil de vendas digital para o personal trainer Emerson:
-> landing page + Meta Ads + Asaas + email automático.
+> Sistema de inteligência por cliente. Cada pasta é um cliente — com memória,
+> histórico e contexto acumulado. Quanto mais informação registrada aqui,
+> mais preciso o diagnóstico, a estratégia e as entregas da IA.
 
 ## O que é esse workspace
 
-Operação do funil de vendas do Personal Emerson. Landing page vendendo
-assinaturas do app MFIT Personal (Q R$497 / S R$697 / A R$997),
-tráfego pago via Meta Ads e checkout via Asaas.
+Uma instância do TheRockzOS dedicada a um único negócio. Todas as decisões,
+conteúdos, campanhas, reuniões e resultados ficam registrados aqui e se tornam
+base de conhecimento para Claude, Gemini e Codex entenderem esse negócio
+profundamente — e darem direções cada vez mais precisas.
 
 **Estrutura de pastas:**
-- `_memoria/` — quem somos, como falamos, foco atual
-- `identidade/` — marca da agência (aplicada nas peças)
-- `clientes/` — uma subpasta por cliente, autossuficiente
-- `briefings/` — briefings de leads antes de virar cliente
-- `propostas/` — propostas comerciais em andamento
-- `marketing/` — conteúdo institucional da agência
-- `saidas/` — documentos pontuais, análises, relatórios internos
-- `dados/` — arquivos a analisar (exports, planilhas, relatórios)
-- `scripts/` — automações e ferramentas internas
-- `templates/` — modelos reutilizáveis (perfis, skills, ferramentas)
-- `tarefas.md` — pipeline da agência
+- `_memoria/` — quem é o cliente, como fala, em que mercado atua, foco atual
+- `identidade/` — marca do cliente (aplicada em todas as peças geradas)
+- `conteudo/` — posts, carrosséis e textos produzidos
+- `ads/` — campanhas pagas e exports de performance
+- `seo/` — pesquisa de palavras-chave, estratégia e resultados
+- `relatorios/` — relatórios mensais de performance
+- `reunioes/` — notas de reuniões e decisões importantes
+- `saidas/` — diagnósticos, análises e documentos pontuais
+- `dados/` — arquivos brutos a analisar (CSV, XLSX, PDF)
+- `scripts/` — automações específicas desse cliente
+- `tarefas.md` — entregas em andamento e próximas ações
 
 ---
 
-## Contexto do negócio
+## Contexto do cliente
 
 No início de toda conversa, ler os seguintes arquivos (quando existirem
 e estiverem preenchidos):
 
-1. `_memoria/empresa.md` — quem é a agência, serviços, clientes, equipe
-2. `_memoria/preferencias.md` — tom de voz, estilo de escrita, o que evitar
-3. `_memoria/estrategia.md` — foco atual, prioridades, prazos
+1. `_memoria/empresa.md` — o negócio: o que faz, público, diferenciais
+2. `_memoria/mercado.md` — concorrência, posicionamento, oportunidades
+3. `_memoria/preferencias.md` — tom de voz, estilo, o que evitar
+4. `_memoria/estrategia.md` — foco atual, metas, prazos
+5. `identidade/design-guide.md` — referência visual para peças geradas
 
-Usar essas informações como base pra qualquer resposta ou decisão. Ao
-sugerir prioridades, formatos ou abordagens, considerar o foco atual
-descrito em `estrategia.md`.
-
-Pra qualquer tarefa visual (carrossel, proposta, slide), consultar
-`identidade/design-guide.md` como referência de estilo.
+Usar essas informações como base para qualquer resposta ou decisão. Ao
+sugerir conteúdo, campanhas ou estratégia, considerar o mercado e o foco
+atual descritos nos arquivos de memória.
 
 Não listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
+
+---
+
+## Memória acumulada
+
+O histórico registrado nesse workspace é inteligência sobre o negócio.
+Antes de sugerir qualquer estratégia, considerar:
+
+- `relatorios/` — o que funcionou e o que não funcionou em campanhas anteriores
+- `reunioes/` — decisões tomadas e direções combinadas com o cliente
+- `seo/` — quais palavras e temas já foram trabalhados
+- `ads/` — quais criativos e públicos já foram testados
+- `conteudo/` — quais formatos e temas já foram produzidos
+
+Quanto mais registros existirem, mais embasada é a sugestão.
 
 ---
 
@@ -51,8 +66,7 @@ Antes de executar qualquer tarefa, verificar se existe skill relevante
 em `.claude/skills/`. Se encontrar, seguir as instruções da skill. Se
 não encontrar, executar a tarefa normalmente.
 
-Ao concluir uma tarefa que não tinha skill mas parece repetível,
-perguntar:
+Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar:
 
 > "Isso pode virar uma skill pra próxima vez. Quer que eu crie?"
 
@@ -63,11 +77,12 @@ padrão de repetição for claro.
 
 ## Regras do sistema
 
-- Cliente novo → criar pasta `clientes/<Nome>/` com `/novo-projeto` ou `/briefing-cliente`
-- Proposta nova → `propostas/<cliente>-<data>.html` via `/proposta`
-- Casos de sucesso → `clientes/<Nome>/caso.md` (reuso em pitches futuros)
-- Pipeline atualizado → `tarefas.md` (roda `/pipeline` pra atualizar)
-- Conteúdo de cliente → dentro de `clientes/<Nome>/conteudo/`
+- Conteúdo novo → salvar em `conteudo/` com data no nome
+- Campanha nova → criar pasta em `ads/<campanha>/`
+- Reunião → registrar em `reunioes/<YYYY-MM-DD>.md` com decisões e próximos passos
+- Relatório mensal → `relatorios/<YYYY-MM>.md`
+- Análise ou diagnóstico → `saidas/<tema>-<data>.md`
+- Atualizar `tarefas.md` sempre que uma entrega mudar de status
 
 ---
 
@@ -81,8 +96,9 @@ que...", "evita..."), perguntar:
 
 Se sim, identificar onde faz mais sentido salvar:
 
-- **Sobre a agência** (clientes, serviços, mercado) → `_memoria/empresa.md`
-- **Sobre preferências e estilo** → `_memoria/preferencias.md`
+- **Sobre o negócio** (produto, público, mercado) → `_memoria/empresa.md`
+- **Sobre o mercado** (concorrentes, posicionamento) → `_memoria/mercado.md`
+- **Sobre tom e estilo** → `_memoria/preferencias.md`
 - **Sobre prioridades e foco** → `_memoria/estrategia.md`
 - **Regra de comportamento nessa pasta** → próprio `CLAUDE.md`
 
@@ -92,17 +108,17 @@ Salvar com uma linha nova clara, sem reformatar o arquivo inteiro.
 
 ## Manter contexto atualizado
 
-Ao terminar uma tarefa que mudou algo relevante (cliente novo, skill
-nova, mudança de foco), perguntar:
+Ao terminar uma tarefa que mudou algo relevante (novo serviço, mudança de
+foco, resultado de campanha), perguntar:
 
 > "Isso mudou algo no contexto. Quer que eu atualize a memória?"
 
 Se sim:
 
-- **Cliente, serviço, ferramenta, equipe** → `_memoria/empresa.md`
-- **Mudança de prioridade ou foco** → `_memoria/estrategia.md`
+- **Negócio, produto, público** → `_memoria/empresa.md`
+- **Concorrência, oportunidade** → `_memoria/mercado.md`
+- **Mudança de prioridade** → `_memoria/estrategia.md`
 - **Tom ou estilo** → `_memoria/preferencias.md`
-- **Pasta, regra, skill criada** → `CLAUDE.md`
 - **Visual (cores, fontes, logo)** → `identidade/design-guide.md`
 
 Mostrar o que vai mudar antes de salvar. Dica: rode `/atualizar` pra varredura completa.
@@ -113,8 +129,8 @@ Mostrar o que vai mudar antes de salvar. Dica: rode `/atualizar` pra varredura c
 
 Quando o usuário pedir skill nova:
 
-1. Verificar se existe template relevante em `templates/skills/`
-2. Perguntar se é específica desse projeto ou global:
+1. Verificar se existe template relevante em `templates/`
+2. Perguntar se é específica desse cliente ou global:
    - Específica → `.claude/skills/nome-da-skill/SKILL.md`
    - Universal → `~/.claude/skills/nome-da-skill/SKILL.md`
 3. Ler `_memoria/empresa.md` e `_memoria/preferencias.md` pra calibrar
@@ -125,7 +141,7 @@ Quando o usuário pedir skill nova:
 ## Skills disponíveis
 
 **Núcleo:**
-`/abrir` · `/salvar` · `/atualizar` · `/novo-projeto` · `/mapear-rotinas` · `/instalar`
+`/abrir` · `/salvar` · `/atualizar` · `/instalar` · `/mapear-rotinas`
 
 **Conteúdo e SEO:**
 `/carrossel` · `/publicar-tema` · `/seo` · `/responder-avaliacoes` · `/aprovar-post`
@@ -133,8 +149,8 @@ Quando o usuário pedir skill nova:
 **Anúncios pagos:**
 `/anuncio-google` · `/relatorio-ads`
 
-**Agência (exclusivas TheRockzOS):**
-`/proposta` · `/briefing-cliente` · `/pipeline`
+**Estratégia:**
+`/diagnostico`
 
 **Produção:**
-`/analisar-dados` · `/email-profissional`
+`/proposta` · `/analisar-dados` · `/email-profissional`

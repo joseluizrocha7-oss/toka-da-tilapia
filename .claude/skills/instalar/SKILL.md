@@ -1,25 +1,26 @@
 ---
 name: instalar
 description: >
-  Instala o TheRockzOS na operação da agência. Entrevista sobre equipe, serviços, clientes,
-  tom de voz, foco atual e identidade visual, e preenche _memoria/empresa.md, _memoria/preferencias.md,
-  _memoria/estrategia.md, identidade/design-guide.md e adapta o CLAUDE.md conforme a realidade da agência.
-  Use quando o usuário acabou de clonar o repositório e quer fazer o setup inicial, ou pedir "/instalar".
+  Instala o TheRockzOS para um cliente específico. Faz uma entrevista de onboarding
+  para levantar o negócio, o mercado, o tom de voz, a identidade visual e o foco atual,
+  e preenche todos os arquivos de memória. Use quando o usuário acabou de clonar o
+  repositório para um novo cliente, ou pedir "/instalar".
 ---
 
-# /instalar — Instalação inicial do TheRockzOS
+# /instalar — Onboarding do cliente
 
-Esse é o primeiro comando depois de clonar o repositório. Trata como conversa de descoberta — pergunta uma coisa por vez, escuta de verdade. O objetivo é o sistema sair daqui sabendo quem é a agência, como ela fala, e onde tá o atrito do dia a dia.
+Esse é o primeiro comando depois de clonar o TheRockzOS para um cliente novo.
+Trata como conversa de descoberta — pergunta uma coisa por vez, escuta de verdade.
+O objetivo é o sistema sair daqui conhecendo esse negócio profundamente o suficiente
+para dar direções úteis desde a primeira sessão.
 
 ## Pré-checagem
 
-### 1. Arquivos de contexto
-
 Verificar se algum arquivo de memória já está preenchido (não é placeholder):
 - `_memoria/empresa.md`
+- `_memoria/mercado.md`
 - `_memoria/preferencias.md`
 - `_memoria/estrategia.md`
-- `identidade/design-guide.md`
 
 Se algum já tiver conteúdo real, perguntar:
 > "Já tem algum contexto preenchido aqui. Quer que eu sobrescreva (recomeçar do zero) ou complemente o que falta?"
@@ -28,28 +29,33 @@ Se for setup limpo, seguir direto.
 
 ---
 
-## Fase 1 — Entrevista da agência
+## Fase 1 — Entrevista de onboarding
 
 Fazer em ordem, uma por vez. Escutar a resposta antes de seguir.
 
-**Sobre o negócio:**
+### Sobre o negócio
 1. "Como se chama o negócio? (nome da empresa ou marca)"
-2. "Quais serviços ou produtos oferecem? (lista rápida — pode ser informal)"
-3. "Quantas pessoas na equipe hoje? Se tiver sócio, colaborador ou freelancer fixo, me fala quem faz o quê"
-4. "Quantos clientes ativos têm agora? Me passa os nomes se tiver"
-5. "Qual o perfil de cliente ideal? (tipo de negócio, porte, região, dor que resolve)"
+2. "O que o negócio faz? (em uma frase — do jeito que o dono explicaria pro vizinho)"
+3. "Quais são os produtos ou serviços principais?"
+4. "Quem é o cliente ideal? (perfil real — quem compra, quem decide, qual dor resolve)"
+5. "Onde o negócio atua? (local, regional, nacional, online)"
 
-**Sobre voz:**
-6. "Me cola um exemplo de como vocês escrevem pra cliente — uma mensagem de WhatsApp, email, legenda do Insta. Qualquer coisa real e recente"
-7. "O que te dá ranço quando vê texto de marketing? (ex: 'alavancar', 'soluções inovadoras', emoji em todo parágrafo)"
+### Sobre o mercado
+6. "Quem são os concorrentes diretos? (os que disputam o mesmo cliente)"
+7. "O que diferencia esse negócio dos concorrentes? (na visão do dono)"
+8. "Tem alguma oportunidade óbvia que ainda não foi explorada?"
 
-**Sobre foco:**
-8. "Qual é o maior gargalo do negócio hoje? O que tá segurando o crescimento?"
-9. "Se eu pudesse tirar UMA tarefa que você repete toda semana das suas costas, qual seria?"
+### Sobre voz e comunicação
+9. "Me cola um exemplo de como o negócio escreve — uma legenda, mensagem de WhatsApp, email. Qualquer coisa real e recente"
+10. "O que te dá ranço quando vê em comunicação de outras marcas do setor? (ex: linguagem muito formal, emoji em excesso, promessas vagas)"
 
-**Sobre identidade visual:**
-10. "Tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
-11. "Tem logo? Se sim, joga o arquivo em `identidade/logo.png` (ou `.svg`) e me confirma"
+### Sobre foco atual
+11. "Qual é o maior desafio do negócio hoje? O que tá segurando o crescimento?"
+12. "Qual a prioridade dos próximos 30-60 dias? (ex: lançar site, fechar 5 clientes novos, aparecer no Google)"
+
+### Sobre identidade visual
+13. "Tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
+14. "Tem logo? Se sim, joga o arquivo em `identidade/logo.png` (ou `.svg`) e confirma"
 
 ---
 
@@ -57,69 +63,56 @@ Fazer em ordem, uma por vez. Escutar a resposta antes de seguir.
 
 ### `_memoria/empresa.md`
 Preencher com base nas perguntas 1-5:
-- Nome, serviços, equipe, clientes ativos, perfil de cliente ideal
+- Nome, o que faz, produtos/serviços, público ideal, localização/atuação
+
+### `_memoria/mercado.md`
+Preencher com base nas perguntas 6-8:
+- Segmento, concorrentes diretos, diferencial competitivo, oportunidades
 
 ### `_memoria/preferencias.md`
-Preencher com base nas perguntas 6-7:
+Preencher com base nas perguntas 9-10:
 - Tom de voz derivado do exemplo real (2-3 frases descrevendo o estilo)
-- O que evitar (lista direta da resposta 7)
-- Estilo geral: síntese do que combina e do que destoa
+- O que evitar (lista direta da resposta 10)
 
 ### `_memoria/estrategia.md`
-Preencher com base nas perguntas 8-9:
-- Gargalo atual
-- Tarefa a automatizar (candidata ao `/mapear-rotinas`)
-- Próximas prioridades (derivadas do gargalo)
+Preencher com base nas perguntas 11-12:
+- Desafio atual e prioridade dos próximos 30-60 dias
 
 ### `identidade/design-guide.md`
-Se forneceu cores/fontes (perguntas 10-11), preencher os campos. Se não:
+Se forneceu cores/fontes (perguntas 13-14), preencher os campos. Se não:
 > "Deixei o `identidade/design-guide.md` em branco. Quando definir a identidade visual, edita lá — as skills de carrossel e proposta leem esse arquivo antes de criar qualquer visual."
 
-### `CLAUDE.md`
-Adaptar com o nome da agência e clientes ativos. Não reformatar — só atualizar os campos relevantes.
-
 ---
 
-## Fase 3 — Criar pastas dos clientes ativos
-
-Se o usuário informou clientes ativos na pergunta 4, criar a pasta de cada um:
-
-```bash
-mkdir clientes/<Nome-do-cliente>
-```
-
-Com `briefing.md` básico (nome, serviços contratados, contato) e `tarefas.md` inicial.
-
----
-
-## Fase 4 — Resumo
+## Fase 3 — Resumo
 
 ```
-✓ Agência configurada: _memoria/empresa.md
+✓ Negócio configurado: _memoria/empresa.md
+✓ Mercado mapeado: _memoria/mercado.md
 ✓ Tom de voz: _memoria/preferencias.md
 ✓ Foco atual: _memoria/estrategia.md
 ✓ Marca: identidade/design-guide.md  [preenchida | em branco — preencher depois]
-✓ CLAUDE.md atualizado
-✓ Clientes: [N pastas criadas em clientes/]
+✓ Contexto otimizado: .claudeignore e .geminiignore já configurados
 ```
 
 ---
 
-## Fase 5 — Próximos passos
+## Fase 4 — Próximos passos
 
-> "Pronto. O TheRockzOS já conhece a agência.
+> "Pronto. O TheRockzOS já conhece o negócio.
 >
 > No começo de cada sessão de trabalho, roda `/abrir` — eu carrego tudo que combinamos aqui antes da primeira frase.
 >
-> Você mencionou que repete '<resposta da pergunta 9>' toda semana. Quando quiser transformar isso em automação, roda `/mapear-rotinas`.
+> Quanto mais você registrar aqui — reuniões, relatórios, resultados de campanha — mais contexto eu tenho pra dar direções melhores.
 >
-> Quando fechar um cliente novo, roda `/briefing-cliente` — ele cria a pasta estruturada e levanta tudo que você precisa saber do cliente antes de começar."
+> Baseado no que você me contou, a primeira prioridade parece ser [síntese da resposta 12]. Quer começar por aí?"
 
 ---
 
 ## Regras
 
 - Não inventar dados — se a resposta for vaga, registrar do jeito que veio
-- Setup deve durar 5-10 minutos. Se o usuário estiver enrolando numa pergunta, registra o que tem e segue
+- Setup deve durar 10-15 minutos. Se o usuário estiver enrolando, registra o que tem e segue
 - Não fazer perguntas extras além das listadas sem motivo claro
 - Nunca escrever "este campo será preenchido pelo /instalar" nos arquivos finais
+- Ao final, sugerir a próxima ação com base no que foi levantado (não deixar vazio)

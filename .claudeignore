@@ -1,0 +1,33 @@
+# Dados brutos — analisados sob demanda pela skill /analisar-dados
+dados/
+
+# Saídas geradas — relatórios, diagnósticos, documentos pontuais
+saidas/
+
+# Conteúdo produzido — posts e carrosséis (pesados, sem valor como contexto base)
+conteudo/
+
+# Exports de ads — lidos apenas pela skill /relatorio-ads
+ads/
+
+# Relatórios mensais — lidos sob demanda
+relatorios/
+
+# Binários e mídia
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.mp4
+*.mov
+
+# Planilhas e PDFs — lidos sob demanda
+*.csv
+*.xlsx
+*.xls
+*.pdf
+
+# Scripts internos
+scripts/

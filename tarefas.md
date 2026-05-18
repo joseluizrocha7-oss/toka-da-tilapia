@@ -1,43 +1,36 @@
-# Pipeline
+# Tarefas
 
-> Atualizar com /pipeline. Histórico de leads e status de clientes ativos.
-
----
-
-## 🎯 Leads (contato feito, ainda sem proposta)
-
-| Lead | Negócio | Serviços de interesse | Próxima ação | Data |
-|------|---------|----------------------|--------------|------|
-| — | — | — | — | — |
+> Entregas em andamento e próximas ações para esse cliente.
+> Atualizar sempre que uma entrega mudar de status.
 
 ---
 
-## 📄 Proposta enviada
+## Em andamento
 
-| Lead | Proposta | Valor | Data envio | Follow-up |
-|------|----------|-------|------------|-----------|
-| — | — | — | — | — |
-
----
-
-## 🤝 Negociação
-
-| Lead | Objeção / Ponto em aberto | Próxima ação | Data |
-|------|--------------------------|--------------|------|
+| Entrega | Responsável | Prazo | Status |
+|---------|-------------|-------|--------|
 | — | — | — | — |
 
 ---
 
-## ✅ Fechados (últimos 90 dias)
+## Próximas entregas
 
-| Cliente | Serviços | Valor mensal | Início |
-|---------|----------|--------------|--------|
-| — | — | — | — |
-
----
-
-## ❌ Perdidos (últimos 90 dias)
-
-| Lead | Motivo da perda | Data |
-|-----|-----------------|------|
+| Entrega | Prioridade | Prazo |
+|---------|------------|-------|
 | — | — | — |
+
+---
+
+## Aguardando cliente
+
+| Item | O que precisa | Desde |
+|------|---------------|-------|
+| — | — | — |
+
+---
+
+## Concluídas (últimos 30 dias)
+
+| Entrega | Concluída em |
+|---------|-------------|
+| — | — |

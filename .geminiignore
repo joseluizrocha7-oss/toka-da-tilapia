@@ -1,0 +1,33 @@
+# Dados brutos — analisados sob demanda
+dados/
+
+# Saídas geradas
+saidas/
+
+# Conteúdo produzido
+conteudo/
+
+# Exports de ads
+ads/
+
+# Relatórios mensais
+relatorios/
+
+# Binários e mídia
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.mp4
+*.mov
+
+# Planilhas e PDFs
+*.csv
+*.xlsx
+*.xls
+*.pdf
+
+# Scripts internos
+scripts/
