@@ -1,4 +1,4 @@
-# Catálogo de skills — TheRockzOS
+# Catálogo de skills — BaseOS
 
 > Referência completa das skills disponíveis. A skill /mapear-rotinas lê esse arquivo
 > antes de criar uma nova skill, pra ver se já existe cobertura.
@@ -12,7 +12,7 @@
 | `/abrir` | Carrega o contexto da agência e abre a sessão | Início de cada sessão de trabalho |
 | `/salvar` | Faz commit + push no GitHub | Quando quiser salvar o trabalho |
 | `/atualizar` | Varre o workspace e atualiza os arquivos de contexto | Quando algo mudou e o contexto ficou desatualizado |
-| `/instalar` | Setup inicial do TheRockzOS — entrevista e configura todos os arquivos | Primeira vez no repositório |
+| `/instalar` | Setup inicial do BaseOS — entrevista e configura todos os arquivos | Primeira vez no repositório |
 | `/mapear-rotinas` | Mapeia tarefas repetitivas e cria skills personalizadas | Quando quiser automatizar algo que repete toda semana |
 
 ---

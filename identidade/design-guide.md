@@ -1,6 +1,6 @@
 # Identidade visual
 
-> Como a marca da agência aparece em tudo que o TheRockzOS gera.
+> Como a marca da agência aparece em tudo que o BaseOS gera.
 > As skills de carrossel, proposta e post leem esse arquivo antes de criar qualquer visual.
 > Edite quando a marca evoluir ou quando rodar /instalar pela primeira vez.
 

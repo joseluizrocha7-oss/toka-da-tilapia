@@ -1,4 +1,4 @@
-# TheRockzOS
+# BaseOS
 
 > Sistema de inteligência por cliente. Cada pasta é um cliente — com memória,
 > histórico e contexto acumulado. Quanto mais informação registrada aqui,
@@ -6,7 +6,7 @@
 
 ## O que é esse workspace
 
-Uma instância do TheRockzOS dedicada a um único negócio. Todas as decisões,
+Uma instância do BaseOS dedicada a um único negócio. Todas as decisões,
 conteúdos, campanhas, reuniões e resultados ficam registrados aqui e se tornam
 base de conhecimento para Claude, Gemini e Codex entenderem esse negócio
 profundamente — e darem direções cada vez mais precisas.
@@ -14,6 +14,7 @@ profundamente — e darem direções cada vez mais precisas.
 **Estrutura de pastas:**
 - `_memoria/` — quem é o cliente, como fala, em que mercado atua, foco atual
 - `identidade/` — marca do cliente (aplicada em todas as peças geradas)
+- `sites/` — sites e landing pages (cada subpasta é um deploy no Cloudflare Pages)
 - `conteudo/` — posts, carrosséis e textos produzidos
 - `ads/` — campanhas pagas e exports de performance
 - `seo/` — pesquisa de palavras-chave, estratégia e resultados
@@ -77,6 +78,8 @@ padrão de repetição for claro.
 
 ## Regras do sistema
 
+- Site ou LP nova → criar em `sites/<nome>/` (ex: `sites/principal/`, `sites/lp-produto/`)
+- Deploy no Cloudflare Pages → cada projeto aponta para sua subpasta em `sites/`
 - Conteúdo novo → salvar em `conteudo/` com data no nome
 - Campanha nova → criar pasta em `ads/<campanha>/`
 - Reunião → registrar em `reunioes/<YYYY-MM-DD>.md` com decisões e próximos passos

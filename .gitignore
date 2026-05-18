@@ -26,6 +26,7 @@ desktop.ini
 *.rar
 
 # Manter pastas vazias no git
+!sites/.gitkeep
 !dados/.gitkeep
 !conteudo/.gitkeep
 !ads/.gitkeep

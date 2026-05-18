@@ -25,7 +25,7 @@ Fazer 3 perguntas, uma por vez:
 
 Ler `templates/skills/catalogo.md` pra ver se alguma tarefa já é coberta por uma skill existente. Se sim:
 
-> "A tarefa X já é resolvida pela skill `/<nome>` que vem no TheRockzOS. Quer usar ela?"
+> "A tarefa X já é resolvida pela skill `/<nome>` que vem no BaseOS. Quer usar ela?"
 
 ### Passo 3 — Proposta de skills
 

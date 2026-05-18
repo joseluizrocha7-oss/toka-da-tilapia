@@ -1,7 +1,7 @@
 ---
 name: instalar
 description: >
-  Instala o TheRockzOS para um cliente específico. Faz uma entrevista de onboarding
+  Instala o BaseOS para um cliente específico. Faz uma entrevista de onboarding
   para levantar o negócio, o mercado, o tom de voz, a identidade visual e o foco atual,
   e preenche todos os arquivos de memória. Use quando o usuário acabou de clonar o
   repositório para um novo cliente, ou pedir "/instalar".
@@ -9,7 +9,7 @@ description: >
 
 # /instalar — Onboarding do cliente
 
-Esse é o primeiro comando depois de clonar o TheRockzOS para um cliente novo.
+Esse é o primeiro comando depois de clonar o BaseOS para um cliente novo.
 Trata como conversa de descoberta — pergunta uma coisa por vez, escuta de verdade.
 O objetivo é o sistema sair daqui conhecendo esse negócio profundamente o suficiente
 para dar direções úteis desde a primeira sessão.
@@ -72,9 +72,10 @@ Fazer em ordem, uma por vez. Escutar a resposta antes de seguir.
 11. "Qual é o maior desafio do negócio hoje? O que tá segurando o crescimento?"
 12. "Qual a prioridade dos próximos 30-60 dias? (ex: lançar site, fechar 5 clientes novos, aparecer no Google)"
 
-### Sobre identidade visual
+### Sobre identidade visual e sites
 13. "Tem identidade visual definida? Se sim, me passa as cores principais e a fonte"
 14. "Tem logo? Se sim, joga o arquivo em `identidade/logo.png` (ou `.svg`) e confirma"
+15. "Tem site, landing page ou página para criar/manter? Quantos? (ex: 1 site + 2 LPs)"
 
 ---
 
@@ -100,6 +101,17 @@ Preencher com base nas perguntas 11-12:
 ### `identidade/design-guide.md`
 Se forneceu cores/fontes (perguntas 13-14), preencher os campos. Se não:
 > "Deixei o `identidade/design-guide.md` em branco. Quando definir a identidade visual, edita lá — as skills de carrossel e proposta leem esse arquivo antes de criar qualquer visual."
+
+### `sites/`
+Se informou sites ou LPs (pergunta 15), criar as subpastas:
+```
+sites/principal/      ← site institucional (se houver)
+sites/lp-<nome>/      ← uma subpasta por landing page
+```
+Explicar:
+> "Cada subpasta em `sites/` é um projeto independente no Cloudflare Pages.
+> Configure cada um apontando para a subpasta correspondente — só aquela pasta vai pro deploy,
+> o restante do repositório fica protegido."
 
 ---
 
@@ -135,13 +147,13 @@ git push -u origin master
 Confirmar que o push funcionou antes de seguir.
 
 > "Perfeito. Os dados do [nome do cliente] agora estão no repositório privado dele.
-> O template do TheRockzOS continua limpo e seguro para o próximo cliente."
+> O template do BaseOS continua limpo e seguro para o próximo cliente."
 
 ---
 
 ## Fase 5 — Próximos passos
 
-> "Pronto. O TheRockzOS já conhece o negócio.
+> "Pronto. O BaseOS já conhece o negócio.
 >
 > No começo de cada sessão de trabalho, roda `/abrir` — eu carrego tudo que combinamos aqui antes da primeira frase.
 >

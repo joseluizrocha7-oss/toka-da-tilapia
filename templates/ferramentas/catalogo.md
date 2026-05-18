@@ -1,4 +1,4 @@
-# Catálogo de Ferramentas — TheRockzOS
+# Catálogo de Ferramentas — BaseOS
 
 Referência de APIs, CLIs e conectores disponíveis nas skills do Claude Code.
 Consulte antes de criar skills novas pra saber o que já está disponível.
