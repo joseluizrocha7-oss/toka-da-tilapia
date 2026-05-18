@@ -12,7 +12,7 @@ description: >
 
 ## Dependências
 
-- **Contexto:** `_memoria/empresa.md` ou `clientes/<Nome>/briefing.md`
+- **Contexto:** `_memoria/empresa.md`
 - **Tom:** `_memoria/preferencias.md`
 
 ---
@@ -66,7 +66,7 @@ Identificar e reportar:
 | ... | ... | ... |
 ```
 
-Salvar em `clientes/<Nome>/saidas/analise-<nome>-<data>.md` ou `saidas/analise-<nome>-<data>.md`.
+Salvar em `saidas/analise-<nome>-<data>.md`.
 
 Perguntar se quer exportar em HTML pra compartilhar.
 

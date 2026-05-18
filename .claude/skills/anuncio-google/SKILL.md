@@ -14,10 +14,10 @@ Sai do briefing direto pro CSV — sem montar grupo por grupo na mão na interfa
 
 ## Dependências
 
-- **Contexto:** `_memoria/empresa.md` (agência) ou `clientes/<Nome>/briefing.md` (cliente)
+- **Contexto:** `_memoria/empresa.md`
 - **Tom de voz:** `_memoria/preferencias.md`
-- **Pesquisa SEO (se existir):** `clientes/<Nome>/seo/01-pesquisa-demanda.md`, `06-google-ads.md`
-- **Outputs vão em:** `clientes/<Nome>/campanhas/google-ads-<YYYY-MM-DD>/`
+- **Pesquisa SEO (se existir):** `seo/01-pesquisa-demanda.md`, `seo/06-google-ads.md`
+- **Outputs vão em:** `ads/google-ads-<YYYY-MM-DD>/`
 
 ---
 
@@ -77,7 +77,7 @@ Arquivo `configuracoes.md` com: estratégia de lance, orçamento, segmentação 
 ### Passo 7 — Gerar os CSVs
 
 ```
-clientes/<Nome>/campanhas/google-ads-<YYYY-MM-DD>/
+ads/google-ads-<YYYY-MM-DD>/
   campanhas.csv
   grupos.csv
   keywords.csv
@@ -92,7 +92,7 @@ clientes/<Nome>/campanhas/google-ads-<YYYY-MM-DD>/
 ### Passo 8 — Resumo
 
 ```
-✓ Campanha pronta: clientes/<Nome>/campanhas/google-ads-<data>/
+✓ Campanha pronta: ads/google-ads-<data>/
 - <N> campanhas, <N> grupos, <N> keywords, <N> RSAs
 ```
 

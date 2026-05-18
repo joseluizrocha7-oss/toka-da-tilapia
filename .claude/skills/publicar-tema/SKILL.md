@@ -15,7 +15,7 @@ Pega um tema → entrega artigo no blog + carrossel + 3 legendas (Insta, FB, Lin
 
 ## Dependências
 
-- **Estratégia de conteúdo:** `clientes/<Nome>/seo/05-estrategia-conteudo.md` (cliente) ou `marketing/seo/05-estrategia-conteudo.md` (agência)
+- **Estratégia de conteúdo:** `seo/05-estrategia-conteudo.md` (se existir — gerado pelo `/seo`)
 - **Skill carrossel:** `.claude/skills/carrossel/SKILL.md`
 - **Tom de voz:** `_memoria/preferencias.md`
 - **Contexto:** `_memoria/empresa.md`, `identidade/design-guide.md`

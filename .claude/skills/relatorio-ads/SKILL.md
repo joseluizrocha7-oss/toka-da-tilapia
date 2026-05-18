@@ -15,10 +15,10 @@ Transforma exports brutos em relatório executivo que o cliente entende sem prec
 
 ## Dependências
 
-- **Contexto:** `_memoria/empresa.md` ou `clientes/<Nome>/briefing.md`
+- **Contexto:** `_memoria/empresa.md`
 - **Tom:** `_memoria/preferencias.md`
 - **Inputs:** CSVs do Google Ads e/ou Meta Ads Manager. Print também aceito
-- **Histórico:** `clientes/<Nome>/campanhas/relatorios/` (criar se não existir)
+- **Histórico:** `relatorios/` (criar se não existir)
 
 ---
 
@@ -91,7 +91,7 @@ Buscar relatório anterior em `relatorios/`. Se existir, calcular variação. Se
 
 ### Passo 7 — Salvar
 
-`clientes/<Nome>/campanhas/relatorios/<YYYY-MM-DD>-relatorio.md`
+`relatorios/<YYYY-MM-DD>-relatorio.md`
 
 ### Passo 8 — Entrega
 

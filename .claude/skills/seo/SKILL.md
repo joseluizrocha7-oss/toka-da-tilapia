@@ -13,10 +13,10 @@ description: >
 
 ## Dependências
 
-- **Contexto:** `_memoria/empresa.md` (agência) ou `clientes/<Nome>/briefing.md` (cliente)
+- **Contexto:** `_memoria/empresa.md`
 - **Tom de voz:** `_memoria/preferencias.md`
 - **Ferramentas:** WebSearch, WebFetch (nativos)
-- **Outputs vão em:** `clientes/<Nome>/seo/` (cliente) ou `marketing/seo/` (agência)
+- **Outputs vão em:** `seo/`
 
 ---
 
@@ -58,7 +58,7 @@ description: >
 
 ### Passo 4 — ON-PAGE: Otimizar o site
 
-1. Mapear estrutura do site (se `site/` ou `clientes/<Nome>/site/` existir)
+1. Mapear estrutura do site (se `sites/` existir)
 2. Pra cada página: keyword mapeada, title/description otimizados, H1/H2/H3, schema markup JSON-LD, checklist técnico
 
 **Output:** `04-otimizacao-on-page.md`

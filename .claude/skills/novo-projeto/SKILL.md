@@ -1,30 +1,31 @@
 ---
 name: novo-projeto
 description: >
-  Cria uma pasta de projeto nova com CLAUDE.md dedicado, depois de uma entrevista curta sobre
-  o projeto (cliente, objetivo, entregas previstas). Use quando o usuário disser "novo projeto",
-  "novo cliente", "/novo-projeto", "começar projeto pra X" ou pedir pra estruturar um trabalho novo.
-  Para clientes, prefira /briefing-cliente que é mais completo.
+  Cria uma subpasta de projeto com CLAUDE.md dedicado, depois de uma entrevista curta sobre
+  o projeto (objetivo, entregas previstas). Use quando o usuário disser "novo projeto",
+  "nova iniciativa", "/novo-projeto", "começar projeto X" ou pedir pra estruturar um trabalho novo
+  dentro do projeto atual.
 ---
 
-# /novo-projeto — Pasta de projeto novo com contexto dedicado
+# /novo-projeto — Subpasta de projeto com contexto dedicado
 
 ## Workflow
 
-### Passo 1 — Entrevista (4 perguntas)
+### Passo 1 — Entrevista (3 perguntas)
 
-1. "Qual o nome do projeto ou cliente?"
-2. "É um cliente novo, projeto interno ou iniciativa da agência?"
-3. "Qual o objetivo principal? (uma frase)"
-4. "Que tipo de entrega vai ter? (ex: social, ads, site, SEO, IA, proposta — pode ser mais de uma)"
+1. "Qual o nome do projeto ou iniciativa?"
+2. "Qual o objetivo principal? (uma frase)"
+3. "Que tipo de entrega vai ter? (ex: site, campanha, conteúdo, automação — pode ser mais de uma)"
 
 ### Passo 2 — Decidir local
 
-Baseado na resposta 2:
+Baseado no tipo de entrega:
 
-- **Cliente novo:** criar em `clientes/<Nome>/`
-- **Projeto interno:** criar em `marketing/<nome>/` ou `scripts/<nome>/` conforme o tipo
-- **Iniciativa da agência:** perguntar onde o usuário prefere
+- **Site ou LP:** criar em `sites/<nome>/`
+- **Campanha de anúncios:** criar em `ads/<nome>/`
+- **Projeto de conteúdo:** criar em `conteudo/<nome>/`
+- **Automação ou script:** criar em `scripts/<nome>/`
+- **Outro:** perguntar onde o usuário prefere
 
 ### Passo 3 — Estrutura básica
 
@@ -43,11 +44,7 @@ Criar a pasta com:
 
 ## Sobre
 
-[Objetivo da resposta 3]
-
-## Tipo
-
-[Cliente novo / Projeto interno / Iniciativa da agência]
+[Objetivo da resposta 2]
 
 ## Entregas previstas
 
@@ -56,12 +53,12 @@ Criar a pasta com:
 
 ## Onde salvar o que
 
-- Briefings e contexto: nessa pasta na raiz
+- Contexto e decisões: nessa pasta na raiz
 - Entregas: cada subpasta criada
 
 ## Contexto que herda da raiz
 
-Tom de voz, marca e contexto da agência definidos em `_memoria/` e `identidade/` da raiz. Não duplicar aqui.
+Tom de voz, marca e contexto do cliente definidos em `_memoria/` e `identidade/` da raiz. Não duplicar aqui.
 
 ## Específico desse projeto
 

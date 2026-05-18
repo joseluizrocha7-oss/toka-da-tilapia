@@ -13,7 +13,7 @@ description: >
 ## Dependências
 
 - **Tom de voz:** `_memoria/preferencias.md`
-- **Contexto:** `_memoria/empresa.md` (agência) ou `clientes/<Nome>/briefing.md` (cliente)
+- **Contexto:** `_memoria/empresa.md`
 
 ---
 
@@ -60,7 +60,7 @@ Seguir o padrão acima. Nunca copiar resposta idêntica pra reviews diferentes.
 
 ### Passo 4 — Salvar o histórico (se pedir)
 
-Salvar em `clientes/<Nome>/avaliacoes-google/YYYY-MM-DD-respostas.md`. Só criar se o usuário pedir.
+Salvar em `saidas/avaliacoes-google/YYYY-MM-DD-respostas.md`. Só criar se o usuário pedir.
 
 ---
 

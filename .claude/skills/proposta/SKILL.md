@@ -16,8 +16,8 @@ Gera proposta comercial em HTML, estilizada com a identidade da agência, pronta
 - **Identidade visual:** `identidade/design-guide.md`
 - **Contexto da agência:** `_memoria/empresa.md`
 - **Tom de voz:** `_memoria/preferencias.md`
-- **Briefing do lead (se existir):** `briefings/<Nome>.md`
-- **Output:** `propostas/<Nome-do-cliente>-<YYYY-MM-DD>.html`
+- **Contexto do negócio (se instalado):** `_memoria/empresa.md`
+- **Output:** `saidas/proposta-<Nome-do-cliente>-<YYYY-MM-DD>.html`
 
 ---
 
@@ -25,7 +25,7 @@ Gera proposta comercial em HTML, estilizada com a identidade da agência, pronta
 
 ### Passo 1 — Briefing da proposta
 
-Se já existe briefing em `briefings/<Nome>.md`, usar como base. Caso contrário, perguntar:
+Se `_memoria/empresa.md` já está preenchido (instância já instalada), usar como base. Caso contrário, perguntar:
 
 1. "Qual o nome do lead/empresa?"
 2. "O que o negócio faz? (uma frase)"
@@ -77,17 +77,13 @@ Estrutura de arquivo HTML responsivo, sem dependências externas além do Google
 ### Passo 5 — Salvar e confirmar
 
 ```
-propostas/<Nome-do-cliente>-<YYYY-MM-DD>.html
+saidas/proposta-<Nome-do-cliente>-<YYYY-MM-DD>.html
 ```
 
 Mostrar pro usuário:
 > "Proposta salva. Pra gerar PDF: abrir no Chrome → Ctrl+P → Salvar como PDF (sem margens, fundo colorido ativado)."
 
 ---
-
-### Passo 6 — Registrar no briefings/ (se lead novo)
-
-Se ainda não existe pasta do lead, criar `briefings/<Nome>.md` com os dados coletados na entrevista (pra referência futura, mesmo que ele não feche).
 
 ---
 
@@ -96,5 +92,4 @@ Se ainda não existe pasta do lead, criar `briefings/<Nome>.md` com os dados col
 - Nunca inventar serviços que não foram mencionados na entrevista
 - Valor claro e explícito — proposta com "a consultar" não fecha
 - Não usar PDF de terceiros ou template online — gerar HTML próprio sempre
-- Se o lead já é cliente (existe `clientes/<Nome>/`), salvar também em `clientes/<Nome>/propostas/`
 - Sempre mostrar o HTML renderizado antes de considerar concluído
