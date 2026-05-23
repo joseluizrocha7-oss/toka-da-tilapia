@@ -6,6 +6,23 @@
     <title>Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba</title>
     <meta name="description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes. Faça seu pedido online ou visite-nos!">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tokadatilapia.com.br/">
+    <meta property="og:title" content="Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba">
+    <meta property="og:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
+    <meta property="og:image" content="assets/hero_tilapia.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tokadatilapia.com.br/">
+    <meta property="twitter:title" content="Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba">
+    <meta property="twitter:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
+    <meta property="twitter:image" content="assets/hero_tilapia.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +122,6 @@
             font-family: var(--font-title);
             font-weight: 800;
             font-size: 24px;
-            color: var(--text-light);
             transition: var(--transition);
         }
 
@@ -114,6 +130,15 @@
             width: 32px;
             height: 32px;
             transition: var(--transition);
+        }
+
+        .logo-text {
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .logo-highlight {
+            color: var(--accent);
         }
 
         .logo:hover {
@@ -379,11 +404,14 @@
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
+                position: relative;
             }
             .hero-left {
                 justify-content: center;
                 padding-left: 24px !important;
-                background: linear-gradient(135deg, rgba(26, 61, 42, 0.5) 0%, rgba(18, 22, 19, 0.75) 100%);
+                background: linear-gradient(135deg, rgba(26, 61, 42, 0.72) 0%, rgba(18, 22, 19, 0.85) 100%);
+                z-index: 5;
+                position: relative;
             }
             .hero-text {
                 max-width: 600px;
@@ -393,19 +421,28 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                z-index: 6;
             }
             .hero-cta {
                 justify-content: center;
             }
             .hero-image-side {
-                height: 400px;
-            }
-            .hero-image-side::before {
-                width: 100%;
-                height: 150px;
-                background: linear-gradient(to bottom, #121613, transparent);
+                position: absolute;
                 top: 0;
                 left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0.14; /* transparent hero background image on mobile */
+                pointer-events: none;
+            }
+            .hero-image-side img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .hero-image-side::before {
+                display: none;
             }
             .hero-slider-indicator {
                 justify-content: center;
@@ -1130,7 +1167,7 @@
             }
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 38px;
             }
 
             .hero p {
@@ -1142,7 +1179,72 @@
             }
 
             .nav-menu {
-                display: none; /* simple toggle can be added, but for now we hide list items on tablet/mobile */
+                display: none; /* hide list items on tablet/mobile */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+            .logo {
+                font-size: 19px;
+                gap: 8px;
+            }
+            .logo svg {
+                width: 24px;
+                height: 24px;
+            }
+            .btn-header {
+                padding: 8px 18px;
+                font-size: 13px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 28px;
+            }
+            .section-header h2,
+            .info-details h2,
+            .convert-cta h2 {
+                font-size: 28px;
+            }
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 17px;
+            }
+            .btn-header {
+                padding: 6px 14px;
+                font-size: 12px;
+            }
+            .hero h1 {
+                font-size: 25px;
+            }
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+            .hero-cta .btn-primary,
+            .hero-cta .btn-outline {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 24px;
+                font-size: 14px;
             }
         }
     </style>
@@ -1164,7 +1266,7 @@
                     <svg viewBox="0 0 24 24">
                         <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z"/>
                     </svg>
-                    Toka da <span>Tilápia</span>
+                    <span class="logo-text">Toka da <span class="logo-highlight">Tilápia</span></span>
                 </a>
                 <ul class="nav-menu">
                     <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
