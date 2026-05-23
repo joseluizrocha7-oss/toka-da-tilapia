@@ -1559,101 +1559,283 @@
             let width = canvas.width = heroLeft.offsetWidth;
             let height = canvas.height = heroLeft.offsetHeight;
 
-            const particles = [];
-            const particleCount = 45;
-            const mouse = { x: null, y: null, radius: 130 };
+            let mouse = { x: null, y: null, radius: 180, active: false };
 
+            // Handle Resize
             window.addEventListener('resize', () => {
                 width = canvas.width = heroLeft.offsetWidth;
                 height = canvas.height = heroLeft.offsetHeight;
+                initGrid();
             });
 
             heroLeft.addEventListener('mousemove', (e) => {
                 const rect = heroLeft.getBoundingClientRect();
                 mouse.x = e.clientX - rect.left;
                 mouse.y = e.clientY - rect.top;
+                mouse.active = true;
             });
 
             heroLeft.addEventListener('mouseleave', () => {
                 mouse.x = null;
                 mouse.y = null;
+                mouse.active = false;
             });
+
+            // Grid Points (Warping Spacetime Grid)
+            let gridPoints = [];
+            const gridSpacing = 45;
+
+            function initGrid() {
+                gridPoints = [];
+                const cols = Math.ceil(width / gridSpacing) + 1;
+                const rows = Math.ceil(height / gridSpacing) + 1;
+
+                for (let c = 0; c < cols; c++) {
+                    for (let r = 0; r < rows; r++) {
+                        gridPoints.push({
+                            x: c * gridSpacing,
+                            y: r * gridSpacing,
+                            ox: c * gridSpacing, // original x
+                            oy: r * gridSpacing  // original y
+                        });
+                    }
+                }
+            }
+
+            // Floating Elements (Plankton/Bubbles/Nodes)
+            const particles = [];
+            const particleCount = 28;
 
             class Particle {
                 constructor() {
+                    this.reset();
+                    this.y = Math.random() * height; // initial random y
+                }
+
+                reset() {
                     this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.size = Math.random() * 4 + 1.2;
-                    this.vx = (Math.random() * 0.4) - 0.2;
-                    this.vy = -(Math.random() * 0.4 + 0.15); // slow float up
+                    this.y = height + 20; // start below screen
+                    this.size = Math.random() * 3.5 + 1.2;
+                    this.speedX = (Math.random() * 0.4) - 0.2;
+                    this.speedY = -(Math.random() * 0.4 + 0.15); // slow float up
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.wobbleSpeed = Math.random() * 0.015 + 0.005;
                     
+                    // Colors based on identity
                     const r = Math.random();
                     if (r < 0.35) {
-                        this.color = 'rgba(242, 143, 15, 0.35)'; // gold
+                        this.color = 'rgba(242, 143, 15, 0.4)'; // Gold
+                        this.glowColor = 'rgba(242, 143, 15, 0.12)';
+                        this.hasRing = true;
                     } else if (r < 0.7) {
-                        this.color = 'rgba(61, 122, 88, 0.35)'; // green musgo
+                        this.color = 'rgba(61, 122, 88, 0.4)'; // Moss Green
+                        this.glowColor = 'rgba(61, 122, 88, 0.12)';
+                        this.hasRing = false;
                     } else {
-                        this.color = 'rgba(250, 246, 238, 0.25)'; // white/cream
+                        this.color = 'rgba(250, 246, 238, 0.3)'; // Cream
+                        this.glowColor = 'rgba(250, 246, 238, 0.08)';
+                        this.hasRing = Math.random() > 0.6;
                     }
+
+                    this.vx = 0;
+                    this.vy = 0;
                 }
 
                 update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
+                    this.angle += this.wobbleSpeed;
 
-                    // wrap top to bottom
-                    if (this.y < -10) {
-                        this.y = height + 10;
-                        this.x = Math.random() * width;
-                    }
-                    if (this.x < -10 || this.x > width + 10) {
-                        this.x = Math.random() * width;
-                    }
+                    // Mouse interaction (Repulsion / Antigravity physics)
+                    if (mouse.active) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    // mouse push-away
-                    if (mouse.x !== null && mouse.y !== null) {
-                        let dx = mouse.x - this.x;
-                        let dy = mouse.y - this.y;
-                        let distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < mouse.radius) {
-                            let force = (mouse.radius - distance) / mouse.radius;
-                            let directionX = dx / distance;
-                            let directionY = dy / distance;
-                            
-                            this.x -= directionX * force * 4.5;
-                            this.y -= directionY * force * 4.5;
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            // Push away
+                            const pushX = (dx / dist) * force * -5;
+                            const pushY = (dy / dist) * force * -5;
+
+                            this.vx += pushX;
+                            this.vy += pushY;
                         }
                     }
+
+                    // Damping (Friction) and movement
+                    this.vx *= 0.88;
+                    this.vy *= 0.88;
+
+                    this.x += this.vx + this.speedX + Math.sin(this.angle) * 0.15;
+                    this.y += this.vy + this.speedY;
+
+                    // Wrap top to bottom
+                    if (this.y < -30) {
+                        this.reset();
+                    }
+                    if (this.x < -30) this.x = width + 30;
+                    if (this.x > width + 30) this.x = -30;
                 }
 
                 draw() {
+                    // Draw outer glow aura
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size * 3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = this.glowColor;
+                    ctx.fill();
+
+                    // Draw center dot
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fillStyle = this.color;
                     ctx.fill();
+
+                    // Draw concentric ring if it has one
+                    if (this.hasRing) {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size * 5 + Math.sin(this.angle) * 3, 0, Math.PI * 2);
+                        ctx.strokeStyle = this.color.replace('0.4', '0.08').replace('0.3', '0.06');
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
                 }
             }
 
+            // Code/Restaurant-themed floaty scripts (just like Antigravity.google code slices!)
+            const snippets = [
+                "const tilapia = new Fish({ crocante: true });",
+                "import { sabor } from 'toka-da-tilapia';",
+                "toka.cook({ freshness: '100%', frito: 'na hora' });",
+                "git commit -m 'feat: porção sequinha dourada'",
+                "while (hungry) { eat(porção); }",
+                "const molho = 'receita_secreta';",
+                "toka.deploy({ canal: 'whatsapp_direto' });",
+                "await cliente.satisfazer();",
+                "crocancia: 'lendaria'",
+                "sabor: 'inesquecível'",
+                "git push origin sabor",
+                "toka.servir({ destino: 'eden_sorocaba' });",
+                "const ceviche = freshTilapia.marinar('limão');",
+                "if (sabado) { rushAlmoço = true; }"
+            ];
+
+            const textParticles = [];
+            const textCount = 10;
+
+            class TextSnippet {
+                constructor() {
+                    this.reset();
+                    this.y = Math.random() * height; // initial random y
+                }
+
+                reset() {
+                    this.x = Math.random() * (width - 150);
+                    this.y = height + 30;
+                    this.text = snippets[Math.floor(Math.random() * snippets.length)];
+                    this.speedX = (Math.random() * 0.2) - 0.1;
+                    this.speedY = -(Math.random() * 0.25 + 0.1); // float up very slowly
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.wobbleSpeed = Math.random() * 0.01 + 0.003;
+                    
+                    const r = Math.random();
+                    if (r < 0.3) {
+                        this.color = 'rgba(242, 143, 15, 0.25)'; // Gold
+                    } else {
+                        this.color = 'rgba(250, 246, 238, 0.2)'; // Cream
+                    }
+                    this.vx = 0;
+                    this.vy = 0;
+                }
+
+                update() {
+                    this.angle += this.wobbleSpeed;
+
+                    if (mouse.active) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            // Push away
+                            const pushX = (dx / dist) * force * -4;
+                            const pushY = (dy / dist) * force * -4;
+
+                            this.vx += pushX;
+                            this.vy += pushY;
+                        }
+                    }
+
+                    this.vx *= 0.9;
+                    this.vy *= 0.9;
+
+                    this.x += this.vx + this.speedX + Math.sin(this.angle) * 0.1;
+                    this.y += this.vy + this.speedY;
+
+                    if (this.y < -30) {
+                        this.reset();
+                    }
+                    if (this.x < -150) this.x = width + 50;
+                    if (this.x > width + 50) this.x = -150;
+                }
+
+                draw() {
+                    ctx.font = '500 10.5px Courier New, monospace';
+                    ctx.fillStyle = this.color;
+                    ctx.fillText(this.text, this.x, this.y);
+                }
+            }
+
+            // Populate arrays
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
             }
+            for (let i = 0; i < textCount; i++) {
+                textParticles.push(new TextSnippet());
+            }
+
+            initGrid();
 
             function animate() {
                 ctx.clearRect(0, 0, width, height);
-                
+
+                // 1. DRAW WARPING GRID
+                ctx.fillStyle = 'rgba(250, 246, 238, 0.06)';
+                for (let i = 0; i < gridPoints.length; i++) {
+                    const gp = gridPoints[i];
+
+                    let displayX = gp.ox;
+                    let displayY = gp.oy;
+
+                    // Warp based on mouse position
+                    if (mouse.active) {
+                        const dx = mouse.x - gp.ox;
+                        const dy = mouse.y - gp.oy;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            // Push grid points away
+                            displayX = gp.ox - (dx / dist) * force * 18;
+                            displayY = gp.oy - (dy / dist) * force * 18;
+                        }
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(displayX, displayY, 1, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // 2. DRAW CONSTELLATION LINES (CONNECTIONS)
                 for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
-                    
                     for (let j = i + 1; j < particles.length; j++) {
                         const dx = particles[i].x - particles[j].x;
                         const dy = particles[i].y - particles[j].y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (dist < 110) {
+
+                        if (dist < 120) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(250, 246, 238, ${0.08 * (1 - dist/110)})`;
+                            const alpha = 0.1 * (1 - dist / 120);
+                            ctx.strokeStyle = `rgba(250, 246, 238, ${alpha})`;
                             ctx.lineWidth = 0.6;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
@@ -1661,6 +1843,31 @@
                         }
                     }
                 }
+
+                // 3. UPDATE AND DRAW DOT PARTICLES
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+
+                // 4. UPDATE AND DRAW TEXT SNIPPETS ("SCRIPTS")
+                for (let i = 0; i < textParticles.length; i++) {
+                    textParticles[i].update();
+                    textParticles[i].draw();
+                }
+
+                // 5. DRAW MOUSE INTERACTION AURA
+                if (mouse.active) {
+                    ctx.beginPath();
+                    ctx.arc(mouse.x, mouse.y, mouse.radius * 0.45, 0, Math.PI * 2);
+                    let grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius * 0.45);
+                    grad.addColorStop(0, 'rgba(242, 143, 15, 0.04)');
+                    grad.addColorStop(0.7, 'rgba(61, 122, 88, 0.01)');
+                    grad.addColorStop(1, 'rgba(250, 246, 238, 0)');
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                }
+
                 requestAnimationFrame(animate);
             }
 

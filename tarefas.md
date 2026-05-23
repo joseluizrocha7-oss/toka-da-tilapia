@@ -19,7 +19,6 @@
 |---------|------------|-------|
 | Configuração de Automação do Google Meu Negócio (Avaliações) | Alta | 1 semana pós-fechamento |
 | Planejamento e automação de posts (Instagram) | Média | 10 dias pós-fechamento |
-| Desenvolvimento da Landing Page Institucional (`sites/principal`) | Alta | 2 a 3 semanas pós-fechamento |
 | Investigação de migração para API oficial da Meta (WhatsApp) | Baixa | 1 mês pós-fechamento |
 
 ---
@@ -37,3 +36,4 @@
 | Entrega | Concluída em |
 |---------|-------------|
 | Setup inicial de segurança (Hooks) e Onboarding (Memórias do BaseOS) | 23/05/2026 |
+| Desenvolvimento da Landing Page Institucional V1 (Efeito Antigravity e Vitrine Gastronômica) | 23/05/2026 |
