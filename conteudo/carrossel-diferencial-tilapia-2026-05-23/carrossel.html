@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrossel 02 — Por que nossa tilápia é diferente? | Toka da Tilápia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:  #FAF6EE;
+      --orange: #F28F0F;
+      --brown:  #2B2118;
+      --green:  #2A593E;
+      --dark:   #121613;
+      --muted:  #8B7355;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #111;
+      padding: 40px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      overflow-x: auto;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.55);
+    }
+
+    /* ─── UTILITÁRIOS GLOBAIS ─── */
+    .tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .bar {
+      width: 52px;
+      height: 2px;
+      background: var(--orange);
+      display: block;
+      flex-shrink: 0;
+    }
+    .handle {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.10em;
+    }
+
+    /* ════════════════════════════════════════
+       SLIDE 1 — CAPA (split: texto esq, foto dir)
+    ════════════════════════════════════════ */
+    #s1 {
+      flex-direction: row;
+      background: var(--dark);
+    }
+
+    #s1 .text-col {
+      width: 52%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 52px 80px 80px;
+      gap: 26px;
+      background: linear-gradient(135deg, rgba(42,89,62,0.35) 0%, rgba(18,22,19,0.55) 100%);
+      position: relative;
+    }
+
+    #s1 .brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250,246,238,0.55);
+      position: absolute;
+      top: 48px;
+      left: 80px;
+    }
+
+    #s1 h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 76px;
+      font-weight: 900;
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+    }
+    #s1 h1 em { font-style: italic; color: var(--orange); }
+
+    #s1 .sub {
+      font-size: 26px;
+      font-weight: 300;
+      color: rgba(250,246,238,0.68);
+      line-height: 1.55;
+      border-left: 3px solid var(--orange);
+      padding-left: 20px;
+    }
+
+    #s1 .swipe {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-top: 8px;
+    }
+
+    #s1 .handle {
+      position: absolute;
+      bottom: 48px;
+      left: 80px;
+      color: rgba(250,246,238,0.35);
+    }
+
+    #s1 .photo-col {
+      width: 48%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    #s1 .photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    #s1 .photo-col::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 160px; height: 100%;
+      background: linear-gradient(to right, var(--dark), transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* ════════════════════════════════════════
+       SLIDES 2–4 — CONTEÚDO (bg foto)
+    ════════════════════════════════════════ */
+    .s-mid {
+      justify-content: space-between;
+      padding: 160px 80px 80px;
+    }
+
+    .s-mid .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+
+    .s-mid .ov {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .s-mid .num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 320px;
+      font-weight: 900;
+      font-style: italic;
+      opacity: 0.06;
+      position: absolute;
+      bottom: 60px;
+      right: -10px;
+      line-height: 1;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .s-mid .page-num {
+      position: absolute;
+      top: 48px; right: 80px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      z-index: 3;
+    }
+
+    .s-mid .brand {
+      position: absolute;
+      top: 48px; left: 80px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      z-index: 3;
+    }
+
+    .s-mid .top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      gap: 32px;
+      padding-bottom: 40px;
+    }
+
+    .s-mid h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+    .s-mid h2 em { font-style: italic; color: var(--orange); }
+
+    .s-mid .body {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 860px;
+      border-left: 3px solid var(--orange);
+      padding-left: 28px;
+    }
+
+    .s-mid .bottom {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    /* Slide 2 — fundo verde */
+    #s2 { background: var(--green); }
+    #s2 .ov { background: rgba(26,61,42,0.74); }
+    #s2 .num { color: rgba(250,246,238,1); }
+    #s2 .page-num { color: rgba(250,246,238,0.45); }
+    #s2 h2 { color: var(--cream); }
+    #s2 .body { color: rgba(250,246,238,0.84); }
+    #s2 .handle { color: rgba(250,246,238,0.40); }
+
+    /* Slide 3 — fundo creme */
+    #s3 { background: var(--cream); }
+    #s3 .ov { background: rgba(250,246,238,0.80); }
+    #s3 .num { color: rgba(43,33,24,1); }
+    #s3 .page-num { color: rgba(43,33,24,0.35); }
+    #s3 h2 { color: var(--brown); }
+    #s3 .body { color: var(--muted); }
+    #s3 .handle { color: rgba(43,33,24,0.35); }
+
+    /* Slide 4 — fundo escuro */
+    #s4 { background: var(--dark); }
+    #s4 .ov { background: rgba(18,22,19,0.78); }
+    #s4 .num { color: rgba(250,246,238,1); }
+    #s4 .page-num { color: rgba(250,246,238,0.45); }
+    #s4 h2 { color: var(--cream); }
+    #s4 .body { color: rgba(250,246,238,0.84); }
+    #s4 .handle { color: rgba(250,246,238,0.40); }
+
+    /* ════════════════════════════════════════
+       SLIDE 5 — PONTE (verde musgo)
+    ════════════════════════════════════════ */
+    #s5 {
+      background: var(--green);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px;
+    }
+
+    #s5 .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    #s5 .ov {
+      position: absolute;
+      inset: 0;
+      background: rgba(42,89,62,0.82);
+      z-index: 1;
+    }
+
+    #s5 .brand {
+      position: absolute;
+      top: 48px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    #s5 .inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    #s5 .stars {
+      font-size: 52px;
+      color: var(--orange);
+      letter-spacing: 8px;
+    }
+
+    #s5 .deco {
+      width: 56px; height: 2px;
+      background: var(--orange);
+    }
+
+    #s5 h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      max-width: 900px;
+    }
+    #s5 h2 em { font-style: italic; color: var(--orange); }
+
+    #s5 .rating {
+      font-size: 28px;
+      font-weight: 500;
+      color: rgba(250,246,238,0.62);
+    }
+
+    #s5 .handle {
+      position: absolute;
+      bottom: 48px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(250,246,238,0.35);
+      white-space: nowrap;
+      font-size: 22px;
+    }
+
+    /* ════════════════════════════════════════
+       SLIDE 6 — CTA
+    ════════════════════════════════════════ */
+    #s6 {
+      background: var(--dark);
+      justify-content: flex-end;
+    }
+
+    #s6 .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    #s6 .grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 20%, rgba(18,22,19,0.60) 46%, rgba(18,22,19,0.97) 65%);
+    }
+
+    #s6 .brand {
+      position: absolute;
+      top: 48px; right: 60px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250,246,238,0.45);
+      z-index: 3;
+    }
+
+    #s6 .content {
+      position: relative;
+      z-index: 2;
+      padding: 0 80px 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    #s6 .pre {
+      font-size: 32px;
+      font-weight: 300;
+      color: rgba(250,246,238,0.78);
+      line-height: 1.4;
+    }
+
+    #s6 h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--orange);
+    }
+
+    #s6 .btn {
+      background: var(--orange);
+      color: var(--brown);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      padding: 32px 72px;
+      border-radius: 100px;
+      display: inline-block;
+    }
+
+    #s6 .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(250,246,238,0.30);
+    }
+
+    #s6 .handle {
+      color: rgba(250,246,238,0.28);
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ SLIDE 1 — CAPA ═══════════ -->
+  <div class="slide" id="s1">
+    <div class="text-col">
+      <span class="brand">Toka da Tilápia</span>
+      <span class="tag">Nosso diferencial</span>
+      <span class="bar"></span>
+      <h1>Por que nossa tilápia é <em>diferente?</em></h1>
+      <p class="sub">3 segredos que fazem toda a diferença no prato</p>
+      <span class="swipe">Deslize pra ver →</span>
+    </div>
+    <div class="photo-col">
+      <img src="https://images.unsplash.com/photo-1548704087-b11dab0fbec0?crop=entropy&cs=tinysrgb&w=600&h=1350&fit=crop&q=85" alt="Tilápia frita com limão">
+    </div>
+    <span class="handle" style="position:absolute;bottom:48px;left:80px;color:rgba(250,246,238,0.30);">@tokadatilapia</span>
+  </div>
+
+  <!-- ═══════════ SLIDE 2 — SEGREDO 1 ═══════════ -->
+  <div class="slide s-mid" id="s2">
+    <img class="bg" src="https://images.unsplash.com/photo-1645120091968-5f24af8eaff5?crop=entropy&cs=tinysrgb&w=1080&q=80" alt="">
+    <div class="ov"></div>
+    <span class="brand">Toka da Tilápia</span>
+    <span class="page-num">2 / 6</span>
+    <span class="num">1</span>
+    <div class="top">
+      <span class="tag">Segredo 1</span>
+      <span class="bar"></span>
+      <h2>Frita na hora, <em>sempre</em></h2>
+      <p class="body">Aqui nada fica esperando. Quando seu pedido chega, a tilápia vai direto pra fritadeira — sem exceção.</p>
+    </div>
+    <div class="bottom">
+      <span class="handle">@tokadatilapia</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ SLIDE 3 — SEGREDO 2 ═══════════ -->
+  <div class="slide s-mid" id="s3">
+    <img class="bg" src="https://images.unsplash.com/photo-1531721254280-84847a20b72a?crop=entropy&cs=tinysrgb&w=1080&q=80" alt="">
+    <div class="ov"></div>
+    <span class="brand">Toka da Tilápia</span>
+    <span class="page-num">3 / 6</span>
+    <span class="num">2</span>
+    <div class="top">
+      <span class="tag">Segredo 2</span>
+      <span class="bar"></span>
+      <h2>A casquinha que todo mundo <em>elogia</em></h2>
+      <p class="body">Crocante por fora, macia por dentro. O ponto certo de fritura que leva anos pra aprender. 🐟🔥</p>
+    </div>
+    <div class="bottom">
+      <span class="handle">@tokadatilapia</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ SLIDE 4 — SEGREDO 3 ═══════════ -->
+  <div class="slide s-mid" id="s4">
+    <img class="bg" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?crop=entropy&cs=tinysrgb&w=1080&q=80" alt="">
+    <div class="ov"></div>
+    <span class="brand">Toka da Tilápia</span>
+    <span class="page-num">4 / 6</span>
+    <span class="num">3</span>
+    <div class="top">
+      <span class="tag">Segredo 3</span>
+      <span class="bar"></span>
+      <h2>Tempero feito aqui, <em>de verdade</em></h2>
+      <p class="body">Nada de sachê ou mistura pronta. Feito na nossa cozinha com ingredientes frescos, todo dia.</p>
+    </div>
+    <div class="bottom">
+      <span class="handle">@tokadatilapia</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ SLIDE 5 — PONTE ═══════════ -->
+  <div class="slide" id="s5">
+    <img class="bg" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?crop=entropy&cs=tinysrgb&w=1080&q=80" alt="">
+    <div class="ov"></div>
+    <span class="brand">Toka da Tilápia</span>
+    <div class="inner">
+      <div class="stars">★★★★★</div>
+      <div class="deco"></div>
+      <h2>Qualidade que você sente na <em>primeira garfada</em></h2>
+      <p class="rating">4.9 no Google · +114 avaliações</p>
+    </div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+
+  <!-- ═══════════ SLIDE 6 — CTA ═══════════ -->
+  <div class="slide" id="s6">
+    <img class="bg" src="https://images.unsplash.com/photo-1605185202667-c6babf0a0490?crop=entropy&cs=tinysrgb&w=1080&q=80" alt="">
+    <div class="grad"></div>
+    <span class="brand">Toka da Tilápia</span>
+    <div class="content">
+      <p class="pre">Convencido? Então bora! 🐟</p>
+      <h2>Faça seu pedido!</h2>
+      <div class="btn">LINK NA BIO DO INSTAGRAM</div>
+      <p class="tagline">Frito na hora. Todo dia.</p>
+      <span class="handle">@tokadatilapia</span>
+    </div>
+  </div>
+
+</body>
+</html>
