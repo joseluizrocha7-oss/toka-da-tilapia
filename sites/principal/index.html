@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba</title>
+    <title>Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba</title>
     <meta name="description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes. Faça seu pedido online ou visite-nos!">
     
     <!-- Favicon -->
@@ -12,14 +12,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tokadatilapia.com.br/">
-    <meta property="og:title" content="Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba">
+    <meta property="og:title" content="Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba">
     <meta property="og:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
     <meta property="og:image" content="assets/hero_tilapia.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tokadatilapia.com.br/">
-    <meta property="twitter:title" content="Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba">
+    <meta property="twitter:title" content="Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba">
     <meta property="twitter:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
     <meta property="twitter:image" content="assets/hero_tilapia.png">
     
@@ -455,25 +455,18 @@
         /* DIFFERENTIALS SECTION */
         .differentials {
             padding: 100px 0;
-            background-color: var(--bg-light);
-            position: relative;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            border-top: 8px solid var(--accent);
+            border-bottom: 8px solid var(--accent);
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 64px auto;
+        .differentials .section-header h2 {
+            color: var(--text-light);
         }
 
-        .section-header h2 {
-            font-size: 38px;
-            color: var(--primary-dark);
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 16px;
+        .differentials .section-header p {
+            color: rgba(250, 246, 238, 0.7);
         }
 
         .diff-grid {
@@ -483,10 +476,10 @@
         }
 
         .diff-card {
-            background-color: var(--bg-card);
+            background-color: rgba(255, 255, 255, 0.02);
             padding: 40px 32px;
             border-radius: 20px;
-            border: 1px solid #EAE3D5;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
@@ -500,7 +493,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background-color: var(--primary);
+            background-color: var(--accent);
             transform: scaleX(0);
             transform-origin: left;
             transition: var(--transition);
@@ -509,7 +502,8 @@
         .diff-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
-            border-color: transparent;
+            border-color: rgba(242, 143, 15, 0.4);
+            background-color: rgba(255, 255, 255, 0.04);
         }
 
         .diff-card:hover::before {
@@ -519,7 +513,7 @@
         .diff-icon {
             font-size: 40px;
             margin-bottom: 24px;
-            background-color: rgba(42, 89, 62, 0.05);
+            background-color: rgba(255, 255, 255, 0.03);
             width: 72px;
             height: 72px;
             display: flex;
@@ -530,14 +524,14 @@
         }
 
         .diff-card:hover .diff-icon {
-            background-color: var(--primary);
+            background-color: var(--accent);
             transform: rotateY(360deg);
         }
 
         .diff-icon svg {
             width: 36px;
             height: 36px;
-            fill: var(--primary);
+            fill: var(--accent);
             transition: var(--transition);
         }
 
@@ -547,26 +541,28 @@
 
         .diff-card h3 {
             font-size: 20px;
-            color: var(--primary-dark);
+            color: var(--text-light);
             margin-bottom: 12px;
         }
 
         .diff-card p {
-            color: var(--text-muted);
+            color: rgba(250, 246, 238, 0.7);
             font-size: 15px;
         }
 
         /* SPECIALTIES / MENU PREVIEW */
         .specialties {
             padding: 100px 0;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            border-top: 8px solid var(--accent);
-            border-bottom: 8px solid var(--accent);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
 
         .specialties .section-header h2 {
-            color: var(--text-light);
+            color: var(--primary-dark);
+        }
+
+        .specialties .section-header p {
+            color: var(--text-muted);
         }
 
         .menu-grid {
@@ -576,20 +572,21 @@
         }
 
         .menu-card {
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: var(--bg-card);
+            border: 1px solid #EAE3D5;
             border-radius: 24px;
             overflow: hidden;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            box-shadow: var(--shadow);
         }
 
         .menu-card:hover {
             transform: translateY(-8px);
-            background-color: rgba(255, 255, 255, 0.04);
-            border-color: rgba(242, 143, 15, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background-color: var(--bg-card);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-hover);
         }
 
         .menu-img-wrapper {
@@ -644,7 +641,7 @@
 
         .menu-meta h3 {
             font-size: 22px;
-            color: var(--text-light);
+            color: var(--primary-dark);
         }
 
         .menu-price {
@@ -655,7 +652,7 @@
         }
 
         .menu-info p {
-            color: rgba(250, 246, 238, 0.7);
+            color: var(--text-muted);
             font-size: 14px;
             margin-bottom: 24px;
             flex-grow: 1;
@@ -663,8 +660,8 @@
 
         .btn-card {
             background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid rgba(250, 246, 238, 0.15);
+            color: var(--primary);
+            border: 2px solid rgba(42, 89, 62, 0.2);
             text-decoration: none;
             padding: 12px 24px;
             border-radius: 50px;
@@ -681,6 +678,7 @@
         .menu-card:hover .btn-card {
             border-color: var(--accent);
             background-color: var(--accent);
+            color: var(--text-light);
             box-shadow: 0 4px 15px rgba(242, 143, 15, 0.3);
         }
 
@@ -1350,8 +1348,8 @@
                     <span class="logo-text">Toka da <span class="logo-highlight">Tilápia</span></span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
                     <li><a href="#especialidades" class="nav-link">Nosso Menu</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
                     <li><a href="#como-pedir" class="nav-link">Como Pedir</a></li>
                     <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
                     <li><a href="#contato" class="nav-link">Horários e Contato</a></li>
@@ -1367,7 +1365,7 @@
 
             <div class="hero-text">
                 <span class="hero-tag">Especialistas em Tilápia</span>
-                <h1>Peixe Fresco,<br><span>Frito na Hora</span> e com a Melhor Casquinha</h1>
+                <h1>Peixe Fresco,<br><span>Frito na Hora</span> e Super Crocante</h1>
                 <p>Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.</p>
                 <div class="hero-cta">
                     <a href="#como-pedir" class="btn-primary">
@@ -1389,51 +1387,6 @@
         </div>
         <div class="hero-image-side">
             <img src="assets/hero_tilapia.png" alt="Tilápia Frita e Dourada com Limão">
-        </div>
-    </section>
-
-    <!-- OUR DIFFERENTIALS SECTION -->
-    <section id="diferenciais" class="differentials">
-        <div class="container">
-            <div class="section-header">
-                <h2>O Segredo do Nosso Sucesso</h2>
-                <p>O que faz da Toka da Tilápia a número 1 da região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
-            </div>
-            
-            <div class="diff-grid">
-                <!-- Card 1 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
-                        </svg>
-                    </div>
-                    <h3>100% Preparado na Hora</h3>
-                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3>Casquinha Crocante</h3>
-                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                    <h3>Atendimento Humano</h3>
-                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1497,6 +1450,51 @@
         </div>
     </section>
 
+    <!-- OUR DIFFERENTIALS SECTION -->
+    <section id="diferenciais" class="differentials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Segredo do Nosso Sucesso</h2>
+                <p>O que faz a Toka da Tilápia tão querida na região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
+            </div>
+            
+            <div class="diff-grid">
+                <!-- Card 1 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                        </svg>
+                    </div>
+                    <h3>100% Preparado na Hora</h3>
+                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Casquinha Crocante</h3>
+                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3>Atendimento Humano</h3>
+                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ORDER METHODS SECTION -->
     <section id="como-pedir" class="order-methods">
         <div class="container">
@@ -1551,7 +1549,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>O Que Falam de Nós</h2>
-                <p>Temos orgulho de manter uma das melhores avaliações da região de Sorocaba no Google Meu Negócio.</p>
+                <p>Temos orgulho de manter uma nota 4.9 de satisfação nas avaliações do Google Meu Negócio.</p>
             </div>
             
             <div class="reviews-grid">
@@ -1607,7 +1605,7 @@
     <section class="convert-cta">
         <div class="convert-cta-bg"></div>
         <div class="container">
-            <h2>Pronto para pedir o melhor peixe de Sorocaba?</h2>
+            <h2>Pronto para saborear um peixe fresco e frito na hora?</h2>
             <p>Seja para entrega rápida quentinha na sua casa ou para retirar direto na nossa loja, escolha o seu canal preferido e faça seu pedido.</p>
             <div class="hero-cta">
                 <a href="#como-pedir" class="btn-primary">
