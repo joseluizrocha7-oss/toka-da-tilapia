@@ -234,6 +234,11 @@
             text-align: left;
             position: relative;
             z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-text.fade-out {
+            opacity: 0;
         }
 
         @media (min-width: 1200px) {
@@ -348,6 +353,11 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-image-side img.fade-out {
+            opacity: 0;
         }
 
         .hero-image-side::before {
@@ -379,6 +389,12 @@
             height: 3px;
             background-color: rgba(250, 246, 238, 0.15);
             border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hero-slider-indicator span:not(.slider-number):hover {
+            background-color: rgba(250, 246, 238, 0.45);
         }
 
         .hero-slider-indicator span.active-bar {
@@ -1774,7 +1790,103 @@
         });
     </script>
 
+    <!-- HERO SLIDER SCRIPT -->
+    <script>
+        const slidesData = [
+            {
+                tag: "Especialistas em Tilápia",
+                title: "Peixe Fresco,<br><span>Frito na Hora</span> e Super Crocante",
+                p: "Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.",
+                img: "assets/hero_tilapia.png",
+                alt: "Tilápia Frita e Dourada com Limão"
+            },
+            {
+                tag: "Refrescante e Leve",
+                title: "Ceviche de Tilápia,<br><span>Fresco e Limão</span> de Verdade",
+                p: "Cubos perfeitos de tilápia branca fresquíssima marinados no suco puro de limão, cebola roxa fininha, coentro e pimenta dedo-de-moça. Refrescância pura para o seu dia.",
+                img: "assets/ceviche_tilapia.png",
+                alt: "Ceviche de Tilápia Fresco"
+            },
+            {
+                tag: "Quente e Suculento",
+                title: "Tilápia à Parmegiana,<br><span>Gratinada e Arroz</span> Bem Soltinho",
+                p: "Filés de tilápia dourados cobertos com molho de tomate artesanal da casa e queijo mussarela gratinado. Acompanha arroz e batatas fritas crocantes.",
+                img: "assets/parmegiana_tilapia.png",
+                alt: "Tilápia à Parmegiana com Queijo"
+            }
+        ];
 
+        let currentSlide = 0;
+        let slideInterval;
+        const slideDuration = 6000; // 6 segundos por slide
+
+        const heroText = document.querySelector('.hero-text');
+        const heroImg = document.querySelector('.hero-image-side img');
+        const indicatorBars = document.querySelectorAll('.hero-slider-indicator span:not(.slider-number)');
+        const sliderNumber = document.querySelector('.slider-number');
+
+        function showSlide(index) {
+            if (index === currentSlide) return;
+            
+            // Adiciona classe de fade-out
+            heroText.classList.add('fade-out');
+            heroImg.classList.add('fade-out');
+
+            setTimeout(() => {
+                const data = slidesData[index];
+                
+                // Atualiza o conteúdo do texto
+                heroText.querySelector('.hero-tag').textContent = data.tag;
+                heroText.querySelector('h1').innerHTML = data.title;
+                heroText.querySelector('p').textContent = data.p;
+                
+                // Atualiza a imagem
+                heroImg.src = data.img;
+                heroImg.alt = data.alt;
+
+                // Atualiza o número
+                sliderNumber.textContent = `0${index + 1} / 03`;
+
+                // Atualiza os indicadores
+                indicatorBars.forEach((bar, i) => {
+                    if (i === index) {
+                        bar.classList.add('active-bar');
+                    } else {
+                        bar.classList.remove('active-bar');
+                    }
+                });
+
+                currentSlide = index;
+
+                // Remove a classe de fade-out (fade-in)
+                heroText.classList.remove('fade-out');
+                heroImg.classList.remove('fade-out');
+            }, 300);
+        }
+
+        function startSlideShow() {
+            stopSlideShow();
+            slideInterval = setInterval(() => {
+                let nextSlide = (currentSlide + 1) % slidesData.length;
+                showSlide(nextSlide);
+            }, slideDuration);
+        }
+
+        function stopSlideShow() {
+            if (slideInterval) clearInterval(slideInterval);
+        }
+
+        // Eventos de clique nos indicadores
+        indicatorBars.forEach((bar, index) => {
+            bar.addEventListener('click', () => {
+                showSlide(index);
+                startSlideShow(); // reinicia o timer ao clicar
+            });
+        });
+
+        // Inicia o slider
+        startSlideShow();
+    </script>
 
 </body>
 </html>
