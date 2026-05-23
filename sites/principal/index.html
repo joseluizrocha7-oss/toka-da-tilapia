@@ -224,15 +224,7 @@
             background: linear-gradient(135deg, rgba(26, 61, 42, 0.35) 0%, rgba(18, 22, 19, 0.5) 100%);
         }
 
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
+
 
         .hero-text {
             max-width: 580px;
@@ -409,7 +401,7 @@
             .hero-left {
                 justify-content: center;
                 padding-left: 24px !important;
-                background: linear-gradient(135deg, rgba(26, 61, 42, 0.72) 0%, rgba(18, 22, 19, 0.85) 100%);
+                background: linear-gradient(135deg, rgba(26, 61, 42, 0.65) 0%, rgba(18, 22, 19, 0.76) 100%); /* Slightly lighter overlay to reveal image */
                 z-index: 5;
                 position: relative;
             }
@@ -433,7 +425,7 @@
                 width: 100%;
                 height: 100%;
                 z-index: 1;
-                opacity: 0.14; /* transparent hero background image on mobile */
+                opacity: 0.26; /* Increased opacity to make hero background image more apparent */
                 pointer-events: none;
             }
             .hero-image-side img {
@@ -993,7 +985,7 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            border: 8px solid var(--white);
+            border: 8px solid #FFFFFF; /* Fixed invalid var(--white) */
             height: 100%;
             min-height: 400px;
         }
@@ -1003,6 +995,59 @@
             height: 100%;
             border: 0;
             min-height: 400px;
+        }
+
+        /* Route/Direction Buttons styling */
+        .route-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-route {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-family: var(--font-title);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid transparent;
+        }
+
+        .btn-route svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .btn-gmaps {
+            background-color: #FFFFFF;
+            color: #2B2118;
+            border-color: #EAE3D5;
+        }
+
+        .btn-gmaps:hover {
+            background-color: #FAF6EE;
+            border-color: #D4C9B5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-waze {
+            background-color: #33CCFF;
+            color: #121613;
+        }
+
+        .btn-waze:hover {
+            background-color: #29b6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(51, 204, 255, 0.25);
         }
 
         /* FLOATING WHATSAPP BUTTON */
@@ -1221,6 +1266,13 @@
                 width: 28px;
                 height: 28px;
             }
+            .map-container {
+                min-height: 300px;
+                border-width: 4px;
+            }
+            .map-container iframe {
+                min-height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1254,7 +1306,7 @@
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://api.whatsapp.com/send/?phone=5515991452502" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
         <svg viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.731-1.464L0 24zm6.59-4.846c1.6.95 3.198 1.45 4.809 1.454 5.4 0 9.79-4.385 9.793-9.774.001-2.61-1.01-5.064-2.848-6.904C16.56 2.09 14.108.822 11.5.822c-5.402 0-9.792 4.386-9.795 9.775-.001 1.702.454 3.36 1.32 4.823l-.99 3.613 3.702-.972zm10.23-5.388c-.28-.14-1.654-.816-1.91-.908-.256-.092-.443-.138-.63.14-.187.279-.723.908-.887 1.093-.163.185-.327.208-.607.07-.28-.14-1.182-.435-2.251-1.39-1.258-.758-2.107-1.696-2.355-2.115-.248-.419-.026-.645.114-.784.126-.126.28-.326.42-.489.14-.163.187-.279.28-.465.093-.186.047-.349-.023-.489-.07-.14-.63-1.517-.863-2.078-.227-.547-.457-.472-.63-.48-.15-.008-.323-.01-.497-.01-.174 0-.457.065-.697.325-.24.26-1.134 1.109-1.134 2.705 0 1.596 1.163 3.136 1.323 3.35.16.215 2.29 3.497 5.547 4.9.775.333 1.38.532 1.85.682.778.247 1.488.212 2.048.128.624-.093 1.654-.676 1.887-1.33.233-.655.233-1.216.163-1.33-.07-.116-.256-.186-.536-.326z"/>
+            <path d="M12.004 2c-5.51 0-9.993 4.483-9.993 9.993 0 1.763.457 3.49 1.329 5.011L2 22l5.177-1.354c1.477.807 3.137 1.233 4.825 1.233h.002c5.51 0 9.993-4.483 9.993-9.993C22 7.507 17.511 2 12.004 2zm0 1.662c4.594 0 8.331 3.738 8.331 8.331 0 4.593-3.737 8.331-8.331 8.331a8.272 8.272 0 0 1-4.246-1.162l-.304-.18-3.155.825.84-3.073-.197-.313a8.28 8.28 0 0 1-1.258-4.428c0-4.593 3.737-8.331 8.331-8.331zm-3.15 4.568c-.171-.001-.33.013-.482.046-.358.077-.665.295-.826.594-.21.391-.329.897-.329 1.396 0 1.155.513 2.274 1.196 3.012l.142.152a12.08 12.08 0 0 0 4.834 3.743c.48.204.98.307 1.488.307.385 0 .762-.058 1.12-.178.6-.201 1.053-.668 1.218-1.253.08-.282.12-.576.12-.871 0-.171-.03-.338-.088-.492a.59.59 0 0 0-.41-.371l-1.802-.857c-.201-.096-.44-.067-.611.074l-.601.493a.591.591 0 0 1-.689.043 8.384 8.384 0 0 1-2.92-2.528.588.588 0 0 1 .054-.728l.551-.557c.137-.139.186-.347.126-.531l-.813-2.502a.595.595 0 0 0-.401-.397z"/>
         </svg>
     </a>
 
@@ -1283,7 +1335,7 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-left">
-            <canvas id="hero-canvas"></canvas>
+
             <div class="hero-text">
                 <span class="hero-tag">Especialistas em Tilápia</span>
                 <h1>Peixe Fresco,<br><span>Frito na Hora</span> e com a Melhor Casquinha</h1>
@@ -1541,6 +1593,16 @@
                         <div class="info-content">
                             <h3>Nosso Endereço</h3>
                             <p>Rua Genésio Maria, 140<br>Jardim Boa Esperança (região do Éden)<br>Sorocaba - SP, CEP 18103-185</p>
+                            <div class="route-buttons">
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=-23.4665488,-47.3826259" target="_blank" class="btn-route btn-gmaps">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Google Maps
+                                </a>
+                                <a href="https://waze.com/ul?ll=-23.4665488,-47.3826259&navigate=yes" target="_blank" class="btn-route btn-waze">
+                                    <svg viewBox="0 0 24 24"><path d="M19.11 11.89c.11-.53.17-1.07.17-1.63 0-4.01-3.26-7.27-7.27-7.27-4.01 0-7.27 3.26-7.27 7.27 0 .56.06 1.1.17 1.63-.44.29-.73.78-.73 1.34 0 .9.73 1.63 1.63 1.63.17 0 .33-.03.49-.08.97.94 2.29 1.53 3.75 1.57.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13.11.01.22.01.33.01s.22 0 .33-.01c.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13 1.46-.04 2.78-.63 3.75-1.57.16.05.32.08.49.08.9 0 1.63-.73 1.63-1.63 0-.56-.29-1.05-.73-1.34zm-11.84-2.8c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm7.26 0c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm-3.63 4.54c-1.35 0-2.45-1.1-2.45-2.45h4.9c0 1.35-1.1 2.45-2.45 2.45z"/></svg>
+                                    Waze
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
@@ -1651,331 +1713,7 @@
         });
     </script>
 
-    <!-- INTERACTIVE PARTICLES CANVAS (ANTIGRAVITY EFFECT) -->
-    <script>
-        (function() {
-            const canvas = document.getElementById('hero-canvas');
-            const ctx = canvas.getContext('2d');
-            const heroLeft = document.querySelector('.hero-left');
 
-            let width = canvas.width = heroLeft.offsetWidth;
-            let height = canvas.height = heroLeft.offsetHeight;
-
-            let mouse = { x: null, y: null, radius: 180, active: false };
-
-            // Handle Resize
-            window.addEventListener('resize', () => {
-                width = canvas.width = heroLeft.offsetWidth;
-                height = canvas.height = heroLeft.offsetHeight;
-                initGrid();
-            });
-
-            heroLeft.addEventListener('mousemove', (e) => {
-                const rect = heroLeft.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
-                mouse.active = true;
-            });
-
-            heroLeft.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-                mouse.active = false;
-            });
-
-            // Grid Points (Warping Spacetime Grid)
-            let gridPoints = [];
-            const gridSpacing = 45;
-
-            function initGrid() {
-                gridPoints = [];
-                const cols = Math.ceil(width / gridSpacing) + 1;
-                const rows = Math.ceil(height / gridSpacing) + 1;
-
-                for (let c = 0; c < cols; c++) {
-                    for (let r = 0; r < rows; r++) {
-                        gridPoints.push({
-                            x: c * gridSpacing,
-                            y: r * gridSpacing,
-                            ox: c * gridSpacing, // original x
-                            oy: r * gridSpacing  // original y
-                        });
-                    }
-                }
-            }
-
-            // Floating Elements (Plankton/Bubbles/Nodes)
-            const particles = [];
-            const particleCount = 28;
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                    this.y = Math.random() * height; // initial random y
-                }
-
-                reset() {
-                    this.x = Math.random() * width;
-                    this.y = height + 20; // start below screen
-                    this.size = Math.random() * 3.5 + 1.2;
-                    this.speedX = (Math.random() * 0.4) - 0.2;
-                    this.speedY = -(Math.random() * 0.4 + 0.15); // slow float up
-                    this.angle = Math.random() * Math.PI * 2;
-                    this.wobbleSpeed = Math.random() * 0.015 + 0.005;
-                    
-                    // Colors based on identity
-                    const r = Math.random();
-                    if (r < 0.35) {
-                        this.color = 'rgba(242, 143, 15, 0.4)'; // Gold
-                        this.glowColor = 'rgba(242, 143, 15, 0.12)';
-                        this.hasRing = true;
-                    } else if (r < 0.7) {
-                        this.color = 'rgba(61, 122, 88, 0.4)'; // Moss Green
-                        this.glowColor = 'rgba(61, 122, 88, 0.12)';
-                        this.hasRing = false;
-                    } else {
-                        this.color = 'rgba(250, 246, 238, 0.3)'; // Cream
-                        this.glowColor = 'rgba(250, 246, 238, 0.08)';
-                        this.hasRing = Math.random() > 0.6;
-                    }
-
-                    this.vx = 0;
-                    this.vy = 0;
-                }
-
-                update() {
-                    this.angle += this.wobbleSpeed;
-
-                    // Mouse interaction (Repulsion / Antigravity physics)
-                    if (mouse.active) {
-                        const dx = mouse.x - this.x;
-                        const dy = mouse.y - this.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            // Push away
-                            const pushX = (dx / dist) * force * -5;
-                            const pushY = (dy / dist) * force * -5;
-
-                            this.vx += pushX;
-                            this.vy += pushY;
-                        }
-                    }
-
-                    // Damping (Friction) and movement
-                    this.vx *= 0.88;
-                    this.vy *= 0.88;
-
-                    this.x += this.vx + this.speedX + Math.sin(this.angle) * 0.15;
-                    this.y += this.vy + this.speedY;
-
-                    // Wrap top to bottom
-                    if (this.y < -30) {
-                        this.reset();
-                    }
-                    if (this.x < -30) this.x = width + 30;
-                    if (this.x > width + 30) this.x = -30;
-                }
-
-                draw() {
-                    // Draw outer glow aura
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size * 3.5, 0, Math.PI * 2);
-                    ctx.fillStyle = this.glowColor;
-                    ctx.fill();
-
-                    // Draw center dot
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-
-                    // Draw concentric ring if it has one
-                    if (this.hasRing) {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.size * 5 + Math.sin(this.angle) * 3, 0, Math.PI * 2);
-                        ctx.strokeStyle = this.color.replace('0.4', '0.08').replace('0.3', '0.06');
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            // Code/Restaurant-themed floaty scripts (just like Antigravity.google code slices!)
-            const snippets = [
-                "const tilapia = new Fish({ crocante: true });",
-                "import { sabor } from 'toka-da-tilapia';",
-                "toka.cook({ freshness: '100%', frito: 'na hora' });",
-                "git commit -m 'feat: porção sequinha dourada'",
-                "while (hungry) { eat(porção); }",
-                "const molho = 'receita_secreta';",
-                "toka.deploy({ canal: 'whatsapp_direto' });",
-                "await cliente.satisfazer();",
-                "crocancia: 'lendaria'",
-                "sabor: 'inesquecível'",
-                "git push origin sabor",
-                "toka.servir({ destino: 'eden_sorocaba' });",
-                "const ceviche = freshTilapia.marinar('limão');",
-                "if (sabado) { rushAlmoço = true; }"
-            ];
-
-            const textParticles = [];
-            const textCount = 10;
-
-            class TextSnippet {
-                constructor() {
-                    this.reset();
-                    this.y = Math.random() * height; // initial random y
-                }
-
-                reset() {
-                    this.x = Math.random() * (width - 150);
-                    this.y = height + 30;
-                    this.text = snippets[Math.floor(Math.random() * snippets.length)];
-                    this.speedX = (Math.random() * 0.2) - 0.1;
-                    this.speedY = -(Math.random() * 0.25 + 0.1); // float up very slowly
-                    this.angle = Math.random() * Math.PI * 2;
-                    this.wobbleSpeed = Math.random() * 0.01 + 0.003;
-                    
-                    const r = Math.random();
-                    if (r < 0.3) {
-                        this.color = 'rgba(242, 143, 15, 0.25)'; // Gold
-                    } else {
-                        this.color = 'rgba(250, 246, 238, 0.2)'; // Cream
-                    }
-                    this.vx = 0;
-                    this.vy = 0;
-                }
-
-                update() {
-                    this.angle += this.wobbleSpeed;
-
-                    if (mouse.active) {
-                        const dx = mouse.x - this.x;
-                        const dy = mouse.y - this.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            // Push away
-                            const pushX = (dx / dist) * force * -4;
-                            const pushY = (dy / dist) * force * -4;
-
-                            this.vx += pushX;
-                            this.vy += pushY;
-                        }
-                    }
-
-                    this.vx *= 0.9;
-                    this.vy *= 0.9;
-
-                    this.x += this.vx + this.speedX + Math.sin(this.angle) * 0.1;
-                    this.y += this.vy + this.speedY;
-
-                    if (this.y < -30) {
-                        this.reset();
-                    }
-                    if (this.x < -150) this.x = width + 50;
-                    if (this.x > width + 50) this.x = -150;
-                }
-
-                draw() {
-                    ctx.font = '500 10.5px Courier New, monospace';
-                    ctx.fillStyle = this.color;
-                    ctx.fillText(this.text, this.x, this.y);
-                }
-            }
-
-            // Populate arrays
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-            for (let i = 0; i < textCount; i++) {
-                textParticles.push(new TextSnippet());
-            }
-
-            initGrid();
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-                // 1. DRAW WARPING GRID
-                ctx.fillStyle = 'rgba(250, 246, 238, 0.06)';
-                for (let i = 0; i < gridPoints.length; i++) {
-                    const gp = gridPoints[i];
-
-                    let displayX = gp.ox;
-                    let displayY = gp.oy;
-
-                    // Warp based on mouse position
-                    if (mouse.active) {
-                        const dx = mouse.x - gp.ox;
-                        const dy = mouse.y - gp.oy;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            // Push grid points away
-                            displayX = gp.ox - (dx / dist) * force * 18;
-                            displayY = gp.oy - (dy / dist) * force * 18;
-                        }
-                    }
-
-                    ctx.beginPath();
-                    ctx.arc(displayX, displayY, 1, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                // 2. DRAW CONSTELLATION LINES (CONNECTIONS)
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 120) {
-                            ctx.beginPath();
-                            const alpha = 0.1 * (1 - dist / 120);
-                            ctx.strokeStyle = `rgba(250, 246, 238, ${alpha})`;
-                            ctx.lineWidth = 0.6;
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                // 3. UPDATE AND DRAW DOT PARTICLES
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
-                }
-
-                // 4. UPDATE AND DRAW TEXT SNIPPETS ("SCRIPTS")
-                for (let i = 0; i < textParticles.length; i++) {
-                    textParticles[i].update();
-                    textParticles[i].draw();
-                }
-
-                // 5. DRAW MOUSE INTERACTION AURA
-                if (mouse.active) {
-                    ctx.beginPath();
-                    ctx.arc(mouse.x, mouse.y, mouse.radius * 0.45, 0, Math.PI * 2);
-                    let grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius * 0.45);
-                    grad.addColorStop(0, 'rgba(242, 143, 15, 0.04)');
-                    grad.addColorStop(0.7, 'rgba(61, 122, 88, 0.01)');
-                    grad.addColorStop(1, 'rgba(250, 246, 238, 0)');
-                    ctx.fillStyle = grad;
-                    ctx.fill();
-                }
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        })();
-    </script>
 
 </body>
 </html>
