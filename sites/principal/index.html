@@ -398,10 +398,21 @@
                 min-height: auto;
                 position: relative;
             }
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(26, 61, 42, 0.65) 0%, rgba(18, 22, 19, 0.76) 100%);
+                z-index: 2;
+                pointer-events: none;
+            }
             .hero-left {
                 justify-content: center;
                 padding-left: 24px !important;
-                background: linear-gradient(135deg, rgba(26, 61, 42, 0.65) 0%, rgba(18, 22, 19, 0.76) 100%); /* Slightly lighter overlay to reveal image */
+                background: transparent; /* Transparent so the hero::before overlay shows through */
                 z-index: 5;
                 position: relative;
             }
