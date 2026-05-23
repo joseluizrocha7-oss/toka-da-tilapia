@@ -7,35 +7,40 @@
 
 ## Deploy e hospedagem
 
-- **Site/LPs:** *(ex: Cloudflare Pages — sites/principal/)*
-- **Backend/Workers:** *(ex: Cloudflare Workers)*
-- **Domínio:** *(ex: registrado na Registro.br)*
+- **Site/LPs:** A ser criado em `sites/principal/` e hospedado via Cloudflare Pages.
+- **Backend/Workers:** Cloudflare Workers (se necessário para a automação de respostas do GMN).
+- **Domínio:** A registrar/definir (ex: `tokadatilapia.com.br` ou similar).
 
 ## Pagamentos e checkout
 
-- *(ex: Asaas, Stripe, Mercado Pago)*
+- **Cardápio Digital / Venda Direta:** Brendi (plataforma de e-commerce e delivery para restaurante).
+- **Marketplace:** iFood.
+- **Formas de pagamento:** Dinheiro, PIX, Cartão de Crédito/Débito no ato da entrega/retirada (gerenciado pela maquininha e Brendi).
 
 ## Email e comunicação
 
-- *(ex: Resend, SendGrid, Gmail SMTP)*
+- **Email do restaurante:** `tokatilapia@gmail.com`
 
 ## CRM e leads
 
-- *(ex: Google Sheets + Apps Script, RD Station)*
+- **Gestão de clientes:** Painel administrativo da Brendi (carteira de clientes com histórico de compras).
 
 ## Anúncios pagos
 
-- **Google Ads:** *(sim/não — conta: ...)*
-- **Meta Ads:** *(sim/não — conta: ...)*
+- **Google Ads:** Não ativo (Suspenso para evitar sobrecarga na cozinha nos picos).
+- **Meta Ads:** Não ativo (Suspenso para evitar sobrecarga na cozinha nos picos).
 
 ## Analytics e monitoramento
 
-- *(ex: Google Analytics 4, Search Console, Clarity)*
+- **Google Search Console:** A configurar para o novo site.
+- **Google Analytics 4:** A configurar para o novo site.
+- **Google Meu Negócio:** Perfil ativo e otimizado pelo Bruno (nota 4.9, 114+ avaliações).
 
 ## IA e automação
 
-- *(ex: Gemini API, Claude API, n8n)*
+- **Integração Google Meu Negócio:** A configurar via API oficial do Google My Business para automação de respostas com IA.
+- **Agendamento de Posts (Meta):** A configurar via API Graph da Meta para publicação programada no Instagram (`toka_da_tilapia`).
 
 ## Outras integrações
 
-- *(ex: Meta Graph API para publicação, WhatsApp Business API)*
+- **WhatsApp Business:** Integrado com a Brendi para automação de conversação via Web API (atualmente buscando caminhos de estabilidade na API Oficial da Meta para contornar banimentos).
