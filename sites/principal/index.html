@@ -746,6 +746,13 @@
             border-radius: 50%;
         }
 
+        .method-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--accent);
+            transition: var(--transition);
+        }
+
         .method-card.preferred .method-icon {
             background-color: rgba(242, 143, 15, 0.1);
         }
@@ -800,7 +807,18 @@
         /* REVIEWS SECTION */
         .reviews {
             padding: 100px 0;
-            background-color: var(--bg-light);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            border-top: 8px solid var(--accent);
+            border-bottom: 8px solid var(--accent);
+        }
+
+        .reviews .section-header h2 {
+            color: var(--text-light);
+        }
+
+        .reviews .section-header p {
+            color: rgba(250, 246, 238, 0.7);
         }
 
         .reviews-grid {
@@ -810,10 +828,10 @@
         }
 
         .review-card {
-            background-color: var(--bg-card);
+            background-color: rgba(255, 255, 255, 0.02);
             padding: 36px;
             border-radius: 20px;
-            border: 1px solid #EAE3D5;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: var(--shadow);
             position: relative;
         }
@@ -826,7 +844,7 @@
 
         .review-text {
             font-size: 15px;
-            color: var(--text-dark);
+            color: var(--text-light);
             margin-bottom: 24px;
             font-style: italic;
             position: relative;
@@ -864,12 +882,12 @@
 
         .review-user-info h4 {
             font-size: 15px;
-            color: var(--primary-dark);
+            color: var(--text-light);
         }
 
         .review-user-info p {
             font-size: 12px;
-            color: var(--text-muted);
+            color: rgba(250, 246, 238, 0.6);
         }
 
         .review-gmn-footer {
@@ -878,7 +896,7 @@
         }
 
         .review-gmn-link {
-            color: var(--primary);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 700;
             font-size: 15px;
@@ -1374,6 +1392,51 @@
         </div>
     </section>
 
+    <!-- OUR DIFFERENTIALS SECTION -->
+    <section id="diferenciais" class="differentials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Segredo do Nosso Sucesso</h2>
+                <p>O que faz da Toka da Tilápia a número 1 da região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
+            </div>
+            
+            <div class="diff-grid">
+                <!-- Card 1 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                        </svg>
+                    </div>
+                    <h3>100% Preparado na Hora</h3>
+                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Casquinha Crocante</h3>
+                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3>Atendimento Humano</h3>
+                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SPECIALTIES SECTION -->
     <section id="especialidades" class="specialties">
         <div class="container">
@@ -1434,51 +1497,6 @@
         </div>
     </section>
 
-    <!-- OUR DIFFERENTIALS SECTION -->
-    <section id="diferenciais" class="differentials">
-        <div class="container">
-            <div class="section-header">
-                <h2>O Segredo do Nosso Sucesso</h2>
-                <p>O que faz da Toka da Tilápia a número 1 da região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
-            </div>
-            
-            <div class="diff-grid">
-                <!-- Card 1 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M13,17h-2v-6h2V17z M13,9h-2V7h2V9z"/>
-                        </svg>
-                    </div>
-                    <h3>100% Preparado na Hora</h3>
-                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
-                        </svg>
-                    </div>
-                    <h3>Casquinha Crocante</h3>
-                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="diff-card">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                        </svg>
-                    </div>
-                    <h3>Atendimento Humano</h3>
-                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ORDER METHODS SECTION -->
     <section id="como-pedir" class="order-methods">
         <div class="container">
@@ -1491,7 +1509,11 @@
                 <!-- Method 1: Brendi (Recomendado) -->
                 <div class="method-card preferred">
                     <span class="method-tag">Recomendado</span>
-                    <div class="method-icon">🛍️</div>
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
+                        </svg>
+                    </div>
                     <h3>Cardápio Brendi</h3>
                     <p>Nosso canal oficial de delivery. Sem intermediários, com os menores preços do cardápio e cupons exclusivos.</p>
                     <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-method btn-primary-method">Pedir no Brendi</a>
@@ -1499,7 +1521,11 @@
                 
                 <!-- Method 2: iFood -->
                 <div class="method-card">
-                    <div class="method-icon">🍔</div>
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm10-7H18c-3 0-5 2.24-5 5v5h2v10h3V12h2V2z"/>
+                        </svg>
+                    </div>
                     <h3>iFood Delivery</h3>
                     <p>Faça seu pedido diretamente pelo aplicativo de entregas mais popular do país, com praticidade e rapidez.</p>
                     <a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd" target="_blank" class="btn-method btn-outline-method">Pedir no iFood</a>
@@ -1507,7 +1533,11 @@
                 
                 <!-- Method 3: WhatsApp -->
                 <div class="method-card">
-                    <div class="method-icon">💬</div>
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+                        </svg>
+                    </div>
                     <h3>WhatsApp Direct</h3>
                     <p>Prefere pedir de forma clássica ou tirar alguma dúvida? Envie uma mensagem e fale com a nossa equipe no chat.</p>
                     <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-method btn-outline-method">Falar no WhatsApp</a>
