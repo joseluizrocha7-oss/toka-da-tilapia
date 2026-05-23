@@ -3,335 +3,1249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toka da Tilápia - Especialistas em Tilápia e Frutos do Mar em Sorocaba</title>
-    <meta name="description" content="A melhor tilápia da região de Sorocaba (Éden). Peixe fresco, frito na hora com a casquinha crocante irresistível e tempero caseiro. Faça seu pedido online!">
+    <title>Toka da Tilápia | Peixe Fresco e a Melhor Casquinha Crocante de Sorocaba</title>
+    <meta name="description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes. Faça seu pedido online ou visite-nos!">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
+        /* CSS RESET & VARIABLES */
         :root {
-            --bg-color: #FAF6EE;
-            --primary-color: #2A593E; /* Verde Musgo */
-            --accent-color: #F28F0F; /* Laranja Dourado */
+            --primary: #2A593E;        /* Verde Musgo Premium */
+            --primary-light: #3D7A58;
+            --primary-dark: #1A3D2A;
+            --accent: #F28F0F;         /* Laranja Crocante */
             --accent-hover: #D45D00;
-            --text-color: #2B2118;
-            --text-light: #605244;
-            --white: #FFFFFF;
-            --font-title: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --bg-light: #FAF6EE;       /* Creme Acolhedor */
+            --bg-dark: #121613;        /* Slate / Chalkboard */
+            --bg-card: #FFFFFF;
+            --text-dark: #2B2118;      /* Marrom Escuro Rústico */
+            --text-light: #FAF6EE;
+            --text-muted: #7A6C5E;
+            
+            --font-title: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 10px 30px rgba(43, 33, 24, 0.05);
+            --shadow-hover: 0 20px 40px rgba(43, 33, 24, 0.12);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* TYPOGRAPHY UTILITIES */
+        h1, h2, h3, h4 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        span.highlight {
+            color: var(--accent);
+        }
+
+        /* HEADER & NAVIGATION */
         header {
-            background-color: var(--white);
-            box-shadow: 0 4px 20px rgba(43, 33, 24, 0.05);
-            position: sticky;
+            position: absolute;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.sticky {
+            position: fixed;
+            background-color: rgba(26, 61, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
         }
 
-        .logo-text {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
             font-family: var(--font-title);
             font-weight: 800;
             font-size: 24px;
-            color: var(--primary-color);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .logo svg {
+            fill: var(--accent);
+            width: 32px;
+            height: 32px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: rgba(250, 246, 238, 0.85);
             text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            padding: 8px 0;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-light);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-header {
+            background-color: var(--accent);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(242, 143, 15, 0.25);
+            border: 2px solid transparent;
+        }
+
+        .btn-header:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(242, 143, 15, 0.4);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 61, 42, 0.96) 0%, rgba(18, 22, 19, 0.98) 100%), url('assets/hero_tilapia.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 120px;
+            color: var(--text-light);
+            border-bottom: 8px solid var(--accent);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg-light), transparent);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            background-color: rgba(242, 143, 15, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(242, 143, 15, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-tag::before {
+            content: '★';
+            font-size: 11px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-family: var(--font-title);
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(250, 246, 238, 0.8);
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 540px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(242, 143, 15, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(242, 143, 15, 0.45);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid rgba(250, 246, 238, 0.3);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(250, 246, 238, 0.05);
+            border-color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img-bg {
+            position: absolute;
+            width: 105%;
+            height: 105%;
+            background: radial-gradient(circle, rgba(42, 89, 62, 0.25) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 6px solid rgba(255, 255, 255, 0.05);
+            z-index: 2;
+            transform: rotate(-1deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* DIFFERENTIALS SECTION */
+        .differentials {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px auto;
+        }
+
+        .section-header h2 {
+            font-size: 38px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .diff-card {
+            background-color: var(--bg-card);
+            padding: 40px 32px;
+            border-radius: 20px;
+            border: 1px solid #EAE3D5;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diff-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .diff-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+
+        .diff-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .diff-icon {
+            font-size: 40px;
+            margin-bottom: 24px;
+            background-color: rgba(42, 89, 62, 0.05);
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .diff-card:hover .diff-icon {
+            background-color: var(--primary);
+            transform: rotateY(360deg);
+        }
+
+        .diff-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--primary);
+            transition: var(--transition);
+        }
+
+        .diff-card:hover .diff-icon svg {
+            fill: var(--text-light);
+        }
+
+        .diff-card h3 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .diff-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* SPECIALTIES / MENU PREVIEW */
+        .specialties {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            border-top: 8px solid var(--accent);
+            border-bottom: 8px solid var(--accent);
+        }
+
+        .specialties .section-header h2 {
+            color: var(--text-light);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: rgba(242, 143, 15, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .menu-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover .menu-img {
+            transform: scale(1.08);
+        }
+
+        .menu-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .menu-info {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .menu-meta h3 {
+            font-size: 22px;
+            color: var(--text-light);
+        }
+
+        .menu-price {
+            font-family: var(--font-title);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .menu-info p {
+            color: rgba(250, 246, 238, 0.7);
+            font-size: 14px;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .btn-card {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(250, 246, 238, 0.15);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .menu-card:hover .btn-card {
+            border-color: var(--accent);
+            background-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(242, 143, 15, 0.3);
+        }
+
+        /* REVIEWS SECTION */
+        .reviews {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .review-card {
+            background-color: var(--bg-card);
+            padding: 36px;
+            border-radius: 20px;
+            border: 1px solid #EAE3D5;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .review-text {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .review-text::before {
+            content: '“';
+            font-family: var(--font-serif);
+            font-size: 48px;
+            position: absolute;
+            top: -24px;
+            left: -15px;
+            color: rgba(242, 143, 15, 0.15);
+        }
+
+        .review-user {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: var(--font-title);
+        }
+
+        .review-user-info h4 {
+            font-size: 15px;
+            color: var(--primary-dark);
+        }
+
+        .review-user-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .review-gmn-footer {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .review-gmn-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .review-gmn-link:hover {
+            color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        /* CONVERT CTA SECTION */
+        .convert-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #11281C 100%);
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .convert-cta-bg {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(242, 143, 15, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .convert-cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .convert-cta p {
+            color: rgba(250, 246, 238, 0.8);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 16px;
+        }
+
+        /* CONTACT, MAP & SCHEDULE */
+        .info-section {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 992px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-details h2 {
+            font-size: 36px;
+            color: var(--primary-dark);
+            margin-bottom: 32px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(42, 89, 62, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary);
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .info-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+            white-space: pre-line;
+        }
+
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 8px solid var(--white);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: 400px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 80px 0 40px 0;
+            border-top: 8px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-brand h2 {
+            font-size: 26px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .logo-text span {
-            color: var(--accent-color);
+        .footer-brand h2 svg {
+            fill: var(--accent);
+            width: 32px;
+            height: 32px;
         }
 
-        .btn-order-nav {
-            background-color: var(--accent-color);
-            color: var(--white);
+        .footer-brand p {
+            color: rgba(250, 246, 238, 0.7);
+            font-size: 14px;
+            margin-bottom: 24px;
+            max-width: 320px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
             text-decoration: none;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(242, 143, 15, 0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .btn-order-nav:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
+        .social-btn:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-light);
+            transform: translateY(-3px);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(180deg, var(--white) 0%, var(--bg-color) 100%);
+        .social-btn svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: rgba(42, 89, 62, 0.1);
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-title);
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-        }
-
-        .hero p {
+        .footer-links-col h3 {
             font-size: 18px;
             color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: var(--white);
-            text-decoration: none;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(242, 143, 15, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(42, 89, 62, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background-color: #1e3f2c;
-            transform: translateY(-2px);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--font-title);
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 48px;
-        }
-
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(43, 33, 24, 0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #E2DACB;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-icon {
-            font-size: 36px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .card h3 {
-            font-family: var(--font-title);
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 15px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        footer h2 {
-            font-family: var(--font-title);
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 24px;
+            position: relative;
+            padding-bottom: 8px;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+        .footer-links-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
         }
 
-        .footer-link {
-            color: var(--accent-color);
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links-list a {
+            color: rgba(250, 246, 238, 0.7);
             text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-link:hover {
-            color: var(--white);
-        }
-
-        .copyright {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
+            transition: var(--transition);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--accent);
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(250, 246, 238, 0.5);
+        }
+
+        /* RESPONSIVE LAYOUTS GENERAL */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                margin: 0 auto 32px auto;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none; /* simple toggle can be added, but for now we hide list items on tablet/mobile */
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- NAVIGATION HEADER -->
+    <header id="main-header">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="logo-text">🐟 Toka da <span>Tilápia</span></a>
-                <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-order-nav">Fazer Pedido</a>
+                <a href="#" class="logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z"/>
+                    </svg>
+                    Toka da <span>Tilápia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#especialidades" class="nav-link">Nosso Menu</a></li>
+                    <li><a href="#avaliacoes" class="nav-link">Opinião de Clientes</a></li>
+                    <li><a href="#contato" class="nav-link">Horários e Contato</a></li>
+                </ul>
+                <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-header">Pedir Agora</a>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <span class="badge">A melhor tilápia da região</span>
-                <h1>Peixe Fresco, Frito na Hora e com a <br><span>Casquinha Mais Crocante</span></h1>
-                <p>Nossos pratos são preparados sob demanda para garantir a máxima suculência e crocância. Sabor que vicia direto na sua mesa!</p>
-                <div class="cta-group">
-                    <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-primary">Pedir no Brendi Cardápio</a>
-                    <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-secondary">Pedir pelo WhatsApp</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">O Segredo do Nosso Sabor</h2>
-                <div class="grid-features">
-                    <div class="card">
-                        <div class="card-icon">🐟</div>
-                        <h3>100% Feito na Hora</h3>
-                        <p>Não trabalhamos com pescados pré-fritos. Todo prato entra no fogo quando você pede para garantir qualidade absoluta.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">✨</div>
-                        <h3>Casquinha Crocante</h3>
-                        <p>O empanamento especial mantém o peixe sequinho por fora e incrivelmente macio e suculento por dentro.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🔥</div>
-                        <h3>Tempero de Família</h3>
-                        <p>Tempero caseiro tradicional, feito com ingredientes frescos que realçam o sabor natural dos frutos do mar.</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <span class="hero-tag">Especialistas em Tilápia</span>
+                    <h1>Peixe Fresco,<br><span>Frito na Hora</span> e com a Melhor Casquinha</h1>
+                    <p>Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.</p>
+                    <div class="hero-cta">
+                        <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-primary">
+                            Pedir no Menu Brendi
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-outline">
+                            Pedir pelo WhatsApp
+                        </a>
                     </div>
                 </div>
+                <div class="hero-image-container">
+                    <div class="hero-img-bg"></div>
+                    <img src="assets/hero_tilapia.png" alt="Tilápia Frita e Dourada com Limão" class="hero-image">
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- OUR DIFFERENTIALS SECTION -->
+    <section id="diferenciais" class="differentials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Segredo do Nosso Sucesso</h2>
+                <p>O que faz da Toka da Tilápia a número 1 da região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
+            </div>
+            
+            <div class="diff-grid">
+                <!-- Card 1 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M13,17h-2v-6h2V17z M13,9h-2V7h2V9z"/>
+                        </svg>
+                    </div>
+                    <h3>100% Preparado na Hora</h3>
+                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+                        </svg>
+                    </div>
+                    <h3>Casquinha Crocante</h3>
+                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Atendimento Humano</h3>
+                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALTIES SECTION -->
+    <section id="especialidades" class="specialties">
+        <div class="container">
+            <div class="section-header">
+                <h2>As Nossas Especialidades</h2>
+                <p>Os favoritos da nossa cozinha. Escolha a sua porção favorita e saboreie o verdadeiro frescor dos frutos do mar.</p>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Card 1 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <span class="menu-badge">Mais Pedido</span>
+                        <img src="assets/hero_tilapia.png" alt="Porção de Tilápia Crocante" class="menu-img">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-meta">
+                            <h3>Porção de Tilápia</h3>
+                            <span class="menu-price">R$ 38,90</span>
+                        </div>
+                        <p>Nossos filés de tilápia cortados em iscas generosas, empanados na nossa receita secreta e fritos na hora. Acompanha limão fresco.</p>
+                        <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-card">Pedir Agora</a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <span class="menu-badge">Refrescante</span>
+                        <img src="assets/ceviche_tilapia.png" alt="Ceviche de Tilápia" class="menu-img">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-meta">
+                            <h3>Ceviche de Tilápia</h3>
+                            <span class="menu-price">R$ 29,90</span>
+                        </div>
+                        <p>Cubos perfeitos de tilápia branca fresquíssima marinados no suco puro de limão, cebola roxa fininha, coentro e pimenta dedo-de-moça.</p>
+                        <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-card">Pedir Agora</a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <span class="menu-badge">Quente e Suculento</span>
+                        <img src="assets/parmegiana_tilapia.png" alt="Parmegiana de Tilápia" class="menu-img">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-meta">
+                            <h3>Tilápia Parmegiana</h3>
+                            <span class="menu-price">R$ 44,90</span>
+                        </div>
+                        <p>Filés de tilápia dourados cobertos com molho de tomate artesanal da casa e queijo mussarela gratinado. Acompanha arroz e fritas.</p>
+                        <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-card">Pedir Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="avaliacoes" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Que Falam de Nós</h2>
+                <p>Temos orgulho de manter uma das melhores avaliações da região de Sorocaba no Google Meu Negócio.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Testimonial 1 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Comida fresca, tempero delicioso, quantidade e preço Excelente.</p>
+                    <div class="review-user">
+                        <div class="review-avatar">SS</div>
+                        <div class="review-user-info">
+                            <h4>Simone Silva</h4>
+                            <p>Cliente Google Local</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">A casquinha crocante é um destaque à parte, muito saborosa e no ponto certo.</p>
+                    <div class="review-user">
+                        <div class="review-avatar">MS</div>
+                        <div class="review-user-info">
+                            <h4>Monique Barros Silva</h4>
+                            <p>Cliente Google Local</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Ótimo atendimento e produtos de Alta qualidade.</p>
+                    <div class="review-user">
+                        <div class="review-avatar">AS</div>
+                        <div class="review-user-info">
+                            <h4>Agrimaldo Souza</h4>
+                            <p>Cliente Google Local</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-gmn-footer">
+                <a href="https://www.google.com/search?q=Toka+da+Til%C3%A1pia+Sorocaba" target="_blank" class="review-gmn-link">
+                    ★ 4.9 estrelas no Google (114+ avaliações) — Ver Perfil Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONVERT CTA SECTION -->
+    <section class="convert-cta">
+        <div class="convert-cta-bg"></div>
+        <div class="container">
+            <h2>Pronto para pedir o melhor peixe de Sorocaba?</h2>
+            <p>Seja para entrega rápida quentinha na sua casa ou para retirar direto na nossa loja, clique no botão e garanta a sua porção agora mesmo.</p>
+            <div class="hero-cta">
+                <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-primary">
+                    Pedir pelo Cardápio Brendi
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-outline">
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT, SCHEDULE & MAP SECTION -->
+    <section id="contato" class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-details">
+                    <h2>Horários e Onde Estamos</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Nosso Endereço</h3>
+                            <p>Rua Genésio Maria, 140<br>Jardim Boa Esperança (região do Éden)<br>Sorocaba - SP, CEP 18103-185</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Horários de Funcionamento</h3>
+                            <p><strong>Terça a Sexta-Feira:</strong><br>Almoço: 11:00 às 16:00<br>Jantar: 19:00 às 22:30<br><br><strong>Sábado e Domingo:</strong><br>Aberto das 10:00 às 22:30 (correria no almoço até as 15:00!)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Telefone e WhatsApp</h3>
+                            <p>Pedidos e Dúvidas: (15) 99145-2502<br>Administrativo: (15) 98828-4758</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3659.8329665809756!2d-47.38262592534575!3d-23.466548778864756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f59fa7e4a815%3A0xe2128a38753b0f55!2sR.%20Gen%C3%A9sio%20Maria%2C%20140%20-%20Boa%20Esperan%C3%A7a%2C%20Sorocaba%20-%20SP%2C%2018103-185!5e0!3m2!1spt-BR!2sbr!4v1716480000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <h2>Toka da Tilápia</h2>
-            <p>Rua Genésio Maria, 140 - Jardim Boa Esperança, Sorocaba - SP</p>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/toka_da_tilapia" target="_blank" class="footer-link">Instagram</a>
-                <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="footer-link">Cardápio Digital</a>
-                <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="footer-link">WhatsApp</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z"/>
+                        </svg>
+                        Toka da Tilápia
+                    </h2>
+                    <p>Qualidade, peixe fresco preparado na hora e atendimento familiar que vicia você a cada mordida.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/toka_da_tilapia" target="_blank" class="social-btn" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+                        <li><a href="#especialidades">Nosso Menu</a></li>
+                        <li><a href="#avaliacoes">Opiniões</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h3>Canais de Venda</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank">Cardápio Digital (Brendi)</a></li>
+                        <li><a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd" target="_blank">iFood Delivery</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank">WhatsApp Direct</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Toka da Tilápia. Todos os direitos reservados. CNPJ: 52.904.941/0001-53
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Toka da Tilápia. Todos os direitos reservados.<br>Razão Social: Aline Lourdes da Silva | CNPJ: 52.904.941/0001-53 | Jardim Boa Esperança - Sorocaba/SP</p>
             </div>
         </div>
     </footer>
+
+    <!-- STICKY HEADER SCRIPT -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    </script>
 
 </body>
 </html>
