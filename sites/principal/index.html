@@ -178,67 +178,39 @@
         /* HERO SECTION */
         .hero {
             position: relative;
-            min-height: 95vh;
-            display: flex;
-            align-items: center;
-            padding-top: 120px;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: stretch;
+            padding-top: 80px;
             color: var(--text-light);
             border-bottom: 8px solid var(--accent);
+            background-color: #121613;
             overflow: hidden;
-            background: linear-gradient(135deg, #1A3D2A 0%, #121613 100%);
         }
 
-        .hero-bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/hero_tilapia.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.38; /* Foto muito mais aparente, valorizando o prato */
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(26, 61, 42, 0.45) 0%, rgba(18, 22, 19, 0.85) 100%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, var(--bg-light), transparent);
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 4;
-            width: 100%;
-        }
-
-        .hero-content {
+        .hero-left {
             display: flex;
-            flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
+            z-index: 5;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 61, 42, 0.35) 0%, rgba(18, 22, 19, 0.5) 100%);
+        }
+
+        .hero-text {
+            max-width: 580px;
+            width: 100%;
+            padding: 80px 24px;
+            margin-right: 48px;
+            text-align: left;
+        }
+
+        @media (min-width: 1200px) {
+            .hero-left {
+                padding-left: calc((100vw - 1200px) / 2 + 24px);
+            }
         }
 
         .hero-tag {
@@ -278,18 +250,17 @@
         }
 
         .hero p {
-            font-size: 18px;
-            color: rgba(250, 246, 238, 0.85);
-            margin: 0 auto 40px auto;
+            font-size: 16px;
+            color: rgba(250, 246, 238, 0.8);
+            margin-bottom: 40px;
             font-weight: 400;
-            max-width: 650px;
+            max-width: 520px;
         }
 
         .hero-cta {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .btn-primary {
@@ -332,6 +303,101 @@
             background-color: rgba(250, 246, 238, 0.05);
             border-color: var(--text-light);
             transform: translateY(-3px);
+        }
+
+        /* RIGHT IMAGE SIDE (FULL-BLEED) */
+        .hero-image-side {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            z-index: 1;
+        }
+
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-image-side::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 100%;
+            background: linear-gradient(to right, #121613, transparent);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* SLIDER INDICATOR (DECORATIVE ACCENT) */
+        .hero-slider-indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 48px;
+            font-family: var(--font-title);
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(250, 246, 238, 0.4);
+        }
+
+        .hero-slider-indicator span:not(.slider-number) {
+            width: 24px;
+            height: 3px;
+            background-color: rgba(250, 246, 238, 0.15);
+            border-radius: 2px;
+        }
+
+        .hero-slider-indicator span.active-bar {
+            background-color: var(--accent);
+            width: 36px;
+        }
+
+        .hero-slider-indicator .slider-number {
+            margin-left: 8px;
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE HERO */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero-left {
+                justify-content: center;
+                padding-left: 24px !important;
+                background: linear-gradient(135deg, rgba(26, 61, 42, 0.5) 0%, rgba(18, 22, 19, 0.75) 100%);
+            }
+            .hero-text {
+                max-width: 600px;
+                margin-right: 0;
+                padding: 60px 24px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .hero-image-side {
+                height: 400px;
+            }
+            .hero-image-side::before {
+                width: 100%;
+                height: 150px;
+                background: linear-gradient(to bottom, #121613, transparent);
+                top: 0;
+                left: 0;
+            }
+            .hero-slider-indicator {
+                justify-content: center;
+            }
         }
 
         /* DIFFERENTIALS SECTION */
@@ -1102,10 +1168,8 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-bg-image"></div>
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
+        <div class="hero-left">
+            <div class="hero-text">
                 <span class="hero-tag">Especialistas em Tilápia</span>
                 <h1>Peixe Fresco,<br><span>Frito na Hora</span> e com a Melhor Casquinha</h1>
                 <p>Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.</p>
@@ -1118,7 +1182,17 @@
                         Pedir pelo WhatsApp
                     </a>
                 </div>
+                <!-- SLIDER INDICATOR (DECORATIVE ACCENT) -->
+                <div class="hero-slider-indicator">
+                    <span class="active-bar"></span>
+                    <span></span>
+                    <span></span>
+                    <span class="slider-number">01 / 03</span>
+                </div>
             </div>
+        </div>
+        <div class="hero-image-side">
+            <img src="assets/hero_tilapia.png" alt="Tilápia Frita e Dourada com Limão">
         </div>
     </section>
 
