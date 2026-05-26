@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Instagram — Toka da Tilápia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:   #2A593E;
+      --green-d: #1A3D2A;
+      --orange:  #F28F0F;
+      --cream:   #FAF6EE;
+      --dark:    #1C1C1C;
+      --muted:   #6B6B6B;
+      --border:  #E8E1D6;
+      --white:   #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F4F0E8;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+    }
+
+    /* ── CAPA ── */
+    .capa {
+      background: var(--green-d);
+      padding: 80px 64px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capa::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(242,143,15,0.08);
+    }
+
+    .agency-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 56px;
+    }
+
+    .capa-tag {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+
+    .capa h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .capa h1 span { color: var(--orange); }
+
+    .capa-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 56px;
+    }
+
+    .capa-meta { display: flex; gap: 40px; }
+
+    .capa-meta-item label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+
+    .capa-meta-item span {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── SEÇÕES ── */
+    .section {
+      padding: 56px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── OPORTUNIDADE ── */
+    .oport-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .oport-item {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--orange);
+    }
+
+    .oport-item .icon { font-size: 22px; margin-bottom: 10px; }
+
+    .oport-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .oport-item span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── PACOTE ── */
+    .pacote {
+      background: var(--green-d);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-top: 32px;
+    }
+
+    .pacote-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .pacote h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .pacote-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .entregaveis { list-style: none; margin-bottom: 28px; }
+
+    .entregaveis li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .entregaveis li:last-child { border-bottom: none; }
+
+    .entregaveis li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .preco-bloco {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .preco-principal {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 20px;
+    }
+
+    .preco-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2px;
+    }
+
+    .preco-valor {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--orange);
+    }
+
+    .preco-detalhe {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+
+    /* ── COMPARATIVO ── */
+    .comparativo {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .comp-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .comp-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .comp-valor {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .comp-valor.riscado {
+      color: #ccc;
+      text-decoration: line-through;
+      font-size: 22px;
+    }
+
+    .comp-valor.destaque { color: var(--green); }
+
+    .comp-sep {
+      font-size: 28px;
+      color: var(--orange);
+      font-weight: 300;
+    }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; margin-top: 28px; }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .step-content span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── PAGAMENTO ── */
+    .pagamento-bloco {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 32px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--green-d);
+      padding: 64px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .cta-section h2 span { color: var(--orange); }
+
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border-radius: 100px;
+    }
+
+    .cta-contato {
+      margin-top: 28px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .cta-contato strong { color: rgba(255,255,255,0.7); }
+
+    .rodape {
+      background: #111;
+      padding: 24px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rodape span { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media print {
+      body { background: white; }
+      .page { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CAPA -->
+  <div class="capa">
+    <div class="agency-label">Rocha Digital Studio</div>
+    <div class="capa-tag">Proposta Comercial — Instagram</div>
+    <h1>Toka da <span>Tilápia</span></h1>
+    <p class="capa-sub">Feed profissional, automatizado, sem tomar o seu tempo</p>
+    <div class="capa-meta">
+      <div class="capa-meta-item">
+        <label>Apresentado para</label>
+        <span>Bruno — Toka da Tilápia</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Data</label>
+        <span>27 de maio de 2026</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Válida até</label>
+        <span>10 de junho de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPORTUNIDADE -->
+  <div class="section">
+    <div class="section-tag">Contexto</div>
+    <h2>O Instagram que vende enquanto você cozinha</h2>
+    <p>A Toka já tem o produto e a reputação. O que falta é uma presença consistente no Instagram — não para aparecer, mas para lembrar quem já conhece e conquistar quem ainda não experimentou.</p>
+    <p>Com publicação automatizada e conteúdo profissional, o feed trabalha por você todos os dias, sem precisar de tempo nem de criatividade da sua parte.</p>
+
+    <div class="oport-grid">
+      <div class="oport-item">
+        <div class="icon">📅</div>
+        <strong>Frequência que gera alcance</strong>
+        <span>2 publicações por semana mantêm o algoritmo ativo e ampliam o alcance orgânico sem custo com anúncios.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">🎨</div>
+        <strong>Visual que desperta fome</strong>
+        <span>Carrosséis com design profissional, na identidade da Toka, que fazem o seguidor querer pedir na mesma hora.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">✍️</div>
+        <strong>Copy que converte</strong>
+        <span>Textos no tom da Toka — familiar, apetitoso e local — com hashtags pensadas pra Sorocaba e região do Éden.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">⚙️</div>
+        <strong>Automação total</strong>
+        <span>Os posts são programados e publicados automaticamente. Sem precisar lembrar, postar ou criar nada no dia a dia.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACOTE -->
+  <div class="section">
+    <div class="section-tag">Nossa Proposta</div>
+    <h2>Instagram gerenciado do início ao fim</h2>
+    <p>Você aprova o conteúdo uma vez por mês. A gente cuida de tudo o mais.</p>
+
+    <div class="pacote">
+      <div class="pacote-badge">Gestão de Instagram</div>
+      <h3>8 Carrosséis por Mês + Publicação Automatizada</h3>
+      <p class="pacote-desc">Conteúdo profissional, programado e publicado — sem você precisar fazer nada.</p>
+      <ul class="entregaveis">
+        <li>8 carrosséis mensais com design na identidade visual da Toka da Tilápia</li>
+        <li>Publicação automatizada — 2 posts por semana, nos melhores horários</li>
+        <li>Copy (texto) de cada post: chamada, legenda e call to action</li>
+        <li>Hashtags otimizadas para alcance em Sorocaba e região do Éden</li>
+        <li>Temas variados: pratos do dia, diferenciais, depoimentos, promoções</li>
+        <li>Aprovação prévia — você vê tudo antes de ir ao ar</li>
+        <li>Relatório mensal de alcance e engajamento</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal">
+          <div class="preco-label">Mensalidade</div>
+          <div class="preco-valor">R$ 497<span style="font-size:16px;font-weight:400">/mês</span></div>
+        </div>
+        <div class="preco-detalhe">Contrato mensal, sem fidelidade mínima.<br>Início imediato após o fechamento.</div>
+      </div>
+    </div>
+
+    <div class="comparativo">
+      <div class="comp-item">
+        <div class="comp-label">Valor normal de mercado</div>
+        <div class="comp-valor riscado">R$ 597/mês</div>
+      </div>
+      <div class="comp-sep">→</div>
+      <div class="comp-item">
+        <div class="comp-label">Sua condição especial</div>
+        <div class="comp-valor destaque">R$ 497/mês</div>
+      </div>
+      <div class="comp-sep">=</div>
+      <div class="comp-item">
+        <div class="comp-label">Economia mensal</div>
+        <div class="comp-valor" style="color: var(--orange);">R$ 100</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div class="section">
+    <div class="section-tag">Processo</div>
+    <h2>Como funciona na prática</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Fechamento e briefing inicial</strong>
+          <span>Uma conversa rápida pra alinhar os temas do mês — pratos, promoções, datas especiais que você queira destacar.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Produção dos 8 carrosséis</strong>
+          <span>Criamos todos os posts do mês: design, texto, hashtags e legenda. Tudo na identidade visual da Toka.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Você aprova em uma única rodada</strong>
+          <span>Enviamos tudo pra revisão. Você aprova, pede ajuste ou muda alguma coisa. Depois disso, nada mais pra fazer.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>Publicação automática durante o mês</strong>
+          <span>Os posts são programados e publicados nos melhores horários. Sem precisar lembrar, abrir o app ou fazer nada.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>Relatório e planejamento do próximo mês</strong>
+          <span>No final do mês você recebe os resultados de alcance e engajamento, e planejamos o conteúdo do mês seguinte.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVESTIMENTO -->
+  <div class="section">
+    <div class="section-tag">Investimento</div>
+    <h2>Resumo financeiro</h2>
+    <p>Valores claros, sem surpresas.</p>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:28px;">
+      <thead>
+        <tr style="background:var(--green);">
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Item</th>
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Descrição</th>
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:14px 20px;font-size:14px;">8 carrosséis/mês</td>
+          <td style="padding:14px 20px;font-size:14px;color:var(--muted);">Design + copy + hashtags</td>
+          <td style="padding:14px 20px;font-size:14px;"><strong>incluso</strong></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+          <td style="padding:14px 20px;font-size:14px;">Publicação automatizada</td>
+          <td style="padding:14px 20px;font-size:14px;color:var(--muted);">2× por semana, horário otimizado</td>
+          <td style="padding:14px 20px;font-size:14px;"><strong>incluso</strong></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:14px 20px;font-size:14px;">Relatório mensal</td>
+          <td style="padding:14px 20px;font-size:14px;color:var(--muted);">Alcance, engajamento e estratégia</td>
+          <td style="padding:14px 20px;font-size:14px;"><strong>incluso</strong></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="background:var(--green-d);">
+          <td colspan="2" style="padding:16px 20px;font-family:'Montserrat';font-size:16px;font-weight:800;color:white;">Mensalidade total</td>
+          <td style="padding:16px 20px;font-family:'Montserrat';font-size:16px;font-weight:800;color:var(--orange);">R$ 497,00/mês</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Pagamento -->
+    <div class="pagamento-bloco">
+      <div class="section-tag" style="margin-bottom:14px;">Pagamento</div>
+      <div style="background:var(--white);border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;">
+        <div style="width:44px;height:44px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4l7.07 7.07M20 4l-7.07 7.07M12 12l-7.07 7.07M12 12l7.07 7.07" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;">Pagamento via PIX — todo dia 1º do mês</div>
+          <div style="font-size:13px;color:var(--muted);">Chave CNPJ: <strong style="color:var(--dark);">63.772.893/0001-03</strong> — Rocha Digital Studio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Feed profissional todo mês,<br><span>sem você fazer nada.</span></h2>
+    <p>Você cozinha. A gente cuida do Instagram.</p>
+    <a href="https://wa.me/5515991452502?text=Ol%C3%A1%2C+quero+fechar+o+Instagram!" class="cta-btn">Fechar pelo WhatsApp</a>
+    <p class="cta-contato">
+      Ou fale diretamente:<br>
+      <strong>José Luiz Rocha</strong> · contato@rochadigitalstudio.com.br
+    </p>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="rodape">
+    <span>Rocha Digital Studio · Proposta Instagram — Toka da Tilápia · 2026</span>
+    <span>Válida até 10/06/2026</span>
+  </div>
+
+</div>
+</body>
+</html>
