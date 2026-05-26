@@ -19,6 +19,6 @@ Fase 1: Onboarding, Organização e Automação de Presença Digital (Sem sobrec
 - **Mudanças estruturais no cardápio ou novos canais de venda:** O foco é otimizar o Brendi e o WhatsApp que já estão funcionando.
 
 ## Contexto com prazo
-- **23/05/2026 (Hoje às 15:00):** Reunião presencial na Toka da Tilápia para apresentar o escopo do projeto, mostrar demonstração de automações e alinhar fechamento.
+- **27/05/2026 (Terça-feira às 12:00):** Reunião presencial na Toka da Tilápia para apresentar o escopo do projeto, mostrar demonstração de automações e alinhar fechamento. *(Remarcada de 23/05 às 15h para 27/05 às 12h pelo Bruno.)*
 - **1 semana pós-fechamento:** Configuração da automação do Google Meu Negócio e primeiro lote de posts do Instagram para aprovação.
 - **2 a 3 semanas pós-fechamento:** Entrega da primeira versão da Landing Page institucional.

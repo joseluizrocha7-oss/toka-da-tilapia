@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba</title>
-    <meta name="description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes. Faça seu pedido online ou visite-nos!">
-    
+    <meta name="description"
+        content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes. Faça seu pedido online ou visite-nos!">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tokadatilapia.com.br/">
     <meta property="og:title" content="Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba">
-    <meta property="og:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
+    <meta property="og:description"
+        content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
     <meta property="og:image" content="assets/hero_tilapia.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tokadatilapia.com.br/">
     <meta property="twitter:title" content="Toka da Tilápia | Peixe Fresco e Casquinha Super Crocante em Sorocaba">
-    <meta property="twitter:description" content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
+    <meta property="twitter:description"
+        content="Especialistas em Tilápia e Frutos do Mar em Sorocaba (região do Éden). Pratos preparados na hora, quentinhos e crocantes.">
     <meta property="twitter:image" content="assets/hero_tilapia.png">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <style>
         /* CSS RESET & VARIABLES */
         :root {
-            --primary: #2A593E;        /* Verde Musgo Premium */
+            --primary: #2A593E;
+            /* Verde Musgo Premium */
             --primary-light: #3D7A58;
             --primary-dark: #1A3D2A;
-            --accent: #F28F0F;         /* Laranja Crocante */
+            --accent: #F28F0F;
+            /* Laranja Crocante */
             --accent-hover: #D45D00;
-            --bg-light: #FAF6EE;       /* Creme Acolhedor */
-            --bg-dark: #121613;        /* Slate / Chalkboard */
+            --bg-light: #FAF6EE;
+            /* Creme Acolhedor */
+            --bg-dark: #121613;
+            /* Slate / Chalkboard */
             --bg-card: #FFFFFF;
-            --text-dark: #2B2118;      /* Marrom Escuro Rústico */
+            --text-dark: #2B2118;
+            /* Marrom Escuro Rústico */
             --text-light: #FAF6EE;
             --text-muted: #7A6C5E;
-            
+
             --font-title: 'Outfit', sans-serif;
             --font-serif: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
-            
+
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --shadow: 0 10px 30px rgba(43, 33, 24, 0.05);
             --shadow-hover: 0 20px 40px rgba(43, 33, 24, 0.12);
@@ -68,7 +79,10 @@
         }
 
         /* TYPOGRAPHY UTILITIES */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-title);
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -414,6 +428,7 @@
                 min-height: auto;
                 position: relative;
             }
+
             .hero::before {
                 content: '';
                 position: absolute;
@@ -425,13 +440,16 @@
                 z-index: 2;
                 pointer-events: none;
             }
+
             .hero-left {
                 justify-content: center;
                 padding-left: 24px !important;
-                background: transparent; /* Transparent so the hero::before overlay shows through */
+                background: transparent;
+                /* Transparent so the hero::before overlay shows through */
                 z-index: 5;
                 position: relative;
             }
+
             .hero-text {
                 max-width: 600px;
                 margin-right: 0;
@@ -442,9 +460,11 @@
                 align-items: center;
                 z-index: 6;
             }
+
             .hero-cta {
                 justify-content: center;
             }
+
             .hero-image-side {
                 position: absolute;
                 top: 0;
@@ -452,17 +472,21 @@
                 width: 100%;
                 height: 100%;
                 z-index: 1;
-                opacity: 0.26; /* Increased opacity to make hero background image more apparent */
+                opacity: 0.26;
+                /* Increased opacity to make hero background image more apparent */
                 pointer-events: none;
             }
+
             .hero-image-side img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             .hero-image-side::before {
                 display: none;
             }
+
             .hero-slider-indicator {
                 justify-content: center;
             }
@@ -626,7 +650,8 @@
         .menu-img-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 75%; /* 4:3 Aspect Ratio */
+            padding-top: 75%;
+            /* 4:3 Aspect Ratio */
             overflow: hidden;
         }
 
@@ -1050,7 +1075,8 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            border: 8px solid #FFFFFF; /* Fixed invalid var(--white) */
+            border: 8px solid #FFFFFF;
+            /* Fixed invalid var(--white) */
             height: 100%;
             min-height: 400px;
         }
@@ -1289,7 +1315,8 @@
             }
 
             .nav-menu {
-                display: none; /* hide list items on tablet/mobile */
+                display: none;
+                /* hide list items on tablet/mobile */
             }
         }
 
@@ -1297,44 +1324,54 @@
             header {
                 padding: 10px 0;
             }
+
             .logo {
                 font-size: 19px;
                 gap: 8px;
             }
+
             .logo svg {
                 width: 24px;
                 height: 24px;
             }
+
             .btn-header {
                 padding: 8px 18px;
                 font-size: 13px;
             }
+
             .hero h1 {
                 font-size: 30px;
             }
+
             .hero p {
                 font-size: 14px;
                 margin-bottom: 28px;
             }
+
             .section-header h2,
             .info-details h2,
             .convert-cta h2 {
                 font-size: 28px;
             }
+
             .whatsapp-float {
                 width: 52px;
                 height: 52px;
                 bottom: 20px;
                 right: 20px;
             }
+
             .whatsapp-float svg {
                 width: 28px;
                 height: 28px;
             }
+
             .map-container {
                 min-height: 300px;
                 border-width: 4px;
             }
+
             .map-container iframe {
                 min-height: 300px;
             }
@@ -1344,18 +1381,22 @@
             .logo {
                 font-size: 17px;
             }
+
             .btn-header {
                 padding: 6px 14px;
                 font-size: 12px;
             }
+
             .hero h1 {
                 font-size: 25px;
             }
+
             .hero-cta {
                 flex-direction: column;
                 width: 100%;
                 gap: 12px;
             }
+
             .hero-cta .btn-primary,
             .hero-cta .btn-outline {
                 width: 100%;
@@ -1366,12 +1407,15 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://api.whatsapp.com/send/?phone=5515991452502" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+    <a href="https://api.whatsapp.com/send/?phone=5515991452502" class="whatsapp-float" target="_blank"
+        aria-label="Falar no WhatsApp">
         <svg viewBox="0 0 24 24">
-            <path d="M12.004 2c-5.51 0-9.993 4.483-9.993 9.993 0 1.763.457 3.49 1.329 5.011L2 22l5.177-1.354c1.477.807 3.137 1.233 4.825 1.233h.002c5.51 0 9.993-4.483 9.993-9.993C22 7.507 17.511 2 12.004 2zm0 1.662c4.594 0 8.331 3.738 8.331 8.331 0 4.593-3.737 8.331-8.331 8.331a8.272 8.272 0 0 1-4.246-1.162l-.304-.18-3.155.825.84-3.073-.197-.313a8.28 8.28 0 0 1-1.258-4.428c0-4.593 3.737-8.331 8.331-8.331zm-3.15 4.568c-.171-.001-.33.013-.482.046-.358.077-.665.295-.826.594-.21.391-.329.897-.329 1.396 0 1.155.513 2.274 1.196 3.012l.142.152a12.08 12.08 0 0 0 4.834 3.743c.48.204.98.307 1.488.307.385 0 .762-.058 1.12-.178.6-.201 1.053-.668 1.218-1.253.08-.282.12-.576.12-.871 0-.171-.03-.338-.088-.492a.59.59 0 0 0-.41-.371l-1.802-.857c-.201-.096-.44-.067-.611.074l-.601.493a.591.591 0 0 1-.689.043 8.384 8.384 0 0 1-2.92-2.528.588.588 0 0 1 .054-.728l.551-.557c.137-.139.186-.347.126-.531l-.813-2.502a.595.595 0 0 0-.401-.397z"/>
+            <path
+                d="M12.004 2c-5.51 0-9.993 4.483-9.993 9.993 0 1.763.457 3.49 1.329 5.011L2 22l5.177-1.354c1.477.807 3.137 1.233 4.825 1.233h.002c5.51 0 9.993-4.483 9.993-9.993C22 7.507 17.511 2 12.004 2zm0 1.662c4.594 0 8.331 3.738 8.331 8.331 0 4.593-3.737 8.331-8.331 8.331a8.272 8.272 0 0 1-4.246-1.162l-.304-.18-3.155.825.84-3.073-.197-.313a8.28 8.28 0 0 1-1.258-4.428c0-4.593 3.737-8.331 8.331-8.331zm-3.15 4.568c-.171-.001-.33.013-.482.046-.358.077-.665.295-.826.594-.21.391-.329.897-.329 1.396 0 1.155.513 2.274 1.196 3.012l.142.152a12.08 12.08 0 0 0 4.834 3.743c.48.204.98.307 1.488.307.385 0 .762-.058 1.12-.178.6-.201 1.053-.668 1.218-1.253.08-.282.12-.576.12-.871 0-.171-.03-.338-.088-.492a.59.59 0 0 0-.41-.371l-1.802-.857c-.201-.096-.44-.067-.611.074l-.601.493a.591.591 0 0 1-.689.043 8.384 8.384 0 0 1-2.92-2.528.588.588 0 0 1 .054-.728l.551-.557c.137-.139.186-.347.126-.531l-.813-2.502a.595.595 0 0 0-.401-.397z" />
         </svg>
     </a>
 
@@ -1381,7 +1425,8 @@
             <div class="nav-wrapper">
                 <a href="#" class="logo">
                     <svg viewBox="0 0 24 24">
-                        <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z"/>
+                        <path
+                            d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z" />
                     </svg>
                     <span class="logo-text">Toka da <span class="logo-highlight">Tilápia</span></span>
                 </a>
@@ -1404,11 +1449,16 @@
             <div class="hero-text">
                 <span class="hero-tag">Especialistas em Tilápia</span>
                 <h1>Peixe Fresco,<br><span>Frito na Hora</span> e Super Crocante</h1>
-                <p>Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.</p>
+                <p>Aqui não tem peixe requentado. Nossos pratos de tilápia e frutos do mar são preparados sob demanda no
+                    momento em que você pede, garantindo o máximo frescor, calor e aquela crocância lendária.</p>
                 <div class="hero-cta">
                     <a href="#como-pedir" class="btn-primary">
                         Escolher Onde Pedir
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </a>
                     <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-outline">
                         Pedir pelo WhatsApp
@@ -1433,9 +1483,10 @@
         <div class="container">
             <div class="section-header">
                 <h2>As Nossas Especialidades</h2>
-                <p>Os favoritos da nossa cozinha. Escolha a sua porção favorita e saboreie o verdadeiro frescor dos frutos do mar.</p>
+                <p>Os favoritos da nossa cozinha. Escolha a sua porção favorita e saboreie o verdadeiro frescor dos
+                    frutos do mar.</p>
             </div>
-            
+
             <div class="menu-grid">
                 <!-- Card 1 -->
                 <div class="menu-card">
@@ -1448,11 +1499,12 @@
                             <h3>Porção de Tilápia</h3>
                             <span class="menu-price">R$ 38,90</span>
                         </div>
-                        <p>Nossos filés de tilápia cortados em iscas generosas, empanados na nossa receita secreta e fritos na hora. Acompanha limão fresco.</p>
+                        <p>Nossos filés de tilápia cortados em iscas generosas, empanados na nossa receita secreta e
+                            fritos na hora. Acompanha limão fresco.</p>
                         <a href="#como-pedir" class="btn-card">Pedir Agora</a>
                     </div>
                 </div>
-                
+
                 <!-- Card 2 -->
                 <div class="menu-card">
                     <div class="menu-img-wrapper">
@@ -1464,11 +1516,12 @@
                             <h3>Ceviche de Tilápia</h3>
                             <span class="menu-price">R$ 29,90</span>
                         </div>
-                        <p>Cubos perfeitos de tilápia branca fresquíssima marinados no suco puro de limão, cebola roxa fininha, coentro e pimenta dedo-de-moça.</p>
+                        <p>Cubos perfeitos de tilápia branca fresquíssima marinados no suco puro de limão, cebola roxa
+                            fininha, coentro e pimenta dedo-de-moça.</p>
                         <a href="#como-pedir" class="btn-card">Pedir Agora</a>
                     </div>
                 </div>
-                
+
                 <!-- Card 3 -->
                 <div class="menu-card">
                     <div class="menu-img-wrapper">
@@ -1480,7 +1533,8 @@
                             <h3>Tilápia Parmegiana</h3>
                             <span class="menu-price">R$ 44,90</span>
                         </div>
-                        <p>Filés de tilápia dourados cobertos com molho de tomate artesanal da casa e queijo mussarela gratinado. Acompanha arroz e fritas.</p>
+                        <p>Filés de tilápia dourados cobertos com molho de tomate artesanal da casa e queijo mussarela
+                            gratinado. Acompanha arroz e fritas.</p>
                         <a href="#como-pedir" class="btn-card">Pedir Agora</a>
                     </div>
                 </div>
@@ -1493,41 +1547,48 @@
         <div class="container">
             <div class="section-header">
                 <h2>O Segredo do Nosso Sucesso</h2>
-                <p>O que faz a Toka da Tilápia tão querida na região? Cuidado em cada detalhe operacional e ingredientes selecionados.</p>
+                <p>O que faz a Toka da Tilápia tão querida na região? Cuidado em cada detalhe operacional e ingredientes
+                    selecionados.</p>
             </div>
-            
+
             <div class="diff-grid">
                 <!-- Card 1 -->
                 <div class="diff-card">
                     <div class="diff-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
                         </svg>
                     </div>
                     <h3>100% Preparado na Hora</h3>
-                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso sistema. Peixe sempre quentinho e crocante.</p>
+                    <p>Qualidade é inegociável. Frigideira e fritadeira só ligam quando o seu pedido cai no nosso
+                        sistema. Peixe sempre quentinho e crocante.</p>
                 </div>
-                
+
                 <!-- Card 2 -->
                 <div class="diff-card">
                     <div class="diff-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
                     </div>
                     <h3>Casquinha Crocante</h3>
-                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma camada dourada sequinha por fora.</p>
+                    <p>Nosso processo de empanamento mantém a suculência interna do peixe intacta enquanto cria uma
+                        camada dourada sequinha por fora.</p>
                 </div>
-                
+
                 <!-- Card 3 -->
                 <div class="diff-card">
                     <div class="diff-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                     </div>
                     <h3>Atendimento Humano</h3>
-                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria mesa, seja no balcão ou no WhatsApp.</p>
+                    <p>Somos um negócio familiar e atendemos com o mesmo carinho e atenção que servimos nossa própria
+                        mesa, seja no balcão ou no WhatsApp.</p>
                 </div>
             </div>
         </div>
@@ -1538,45 +1599,55 @@
         <div class="container">
             <div class="section-header">
                 <h2>Como você prefere pedir?</h2>
-                <p>Escolha a plataforma de sua preferência para realizar o seu pedido. Preparamos tudo com muito carinho para entregar quentinho na sua casa!</p>
+                <p>Escolha a plataforma de sua preferência para realizar o seu pedido. Preparamos tudo com muito carinho
+                    para entregar quentinho na sua casa!</p>
             </div>
-            
+
             <div class="methods-grid">
                 <!-- Method 1: Brendi (Recomendado) -->
                 <div class="method-card preferred">
                     <span class="method-tag">Recomendado</span>
                     <div class="method-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
+                            <path
+                                d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z" />
                         </svg>
                     </div>
                     <h3>Cardápio Brendi</h3>
-                    <p>Nosso canal oficial de delivery. Sem intermediários, com os menores preços do cardápio e cupons exclusivos.</p>
-                    <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank" class="btn-method btn-primary-method">Pedir no Brendi</a>
+                    <p>Nosso canal oficial de delivery. Sem intermediários, com os menores preços do cardápio e cupons
+                        exclusivos.</p>
+                    <a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank"
+                        class="btn-method btn-primary-method">Pedir no Brendi</a>
                 </div>
-                
+
                 <!-- Method 2: iFood -->
                 <div class="method-card">
                     <div class="method-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm10-7H18c-3 0-5 2.24-5 5v5h2v10h3V12h2V2z"/>
+                            <path
+                                d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm10-7H18c-3 0-5 2.24-5 5v5h2v10h3V12h2V2z" />
                         </svg>
                     </div>
                     <h3>iFood Delivery</h3>
-                    <p>Faça seu pedido diretamente pelo aplicativo de entregas mais popular do país, com praticidade e rapidez.</p>
-                    <a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd" target="_blank" class="btn-method btn-outline-method">Pedir no iFood</a>
+                    <p>Faça seu pedido diretamente pelo aplicativo de entregas mais popular do país, com praticidade e
+                        rapidez.</p>
+                    <a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd"
+                        target="_blank" class="btn-method btn-outline-method">Pedir no iFood</a>
                 </div>
-                
+
                 <!-- Method 3: WhatsApp -->
                 <div class="method-card">
                     <div class="method-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+                            <path
+                                d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
                         </svg>
                     </div>
                     <h3>WhatsApp Direct</h3>
-                    <p>Prefere pedir de forma clássica ou tirar alguma dúvida? Envie uma mensagem e fale com a nossa equipe no chat.</p>
-                    <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank" class="btn-method btn-outline-method">Falar no WhatsApp</a>
+                    <p>Prefere pedir de forma clássica ou tirar alguma dúvida? Envie uma mensagem e fale com a nossa
+                        equipe no chat.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank"
+                        class="btn-method btn-outline-method">Falar no WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -1589,7 +1660,7 @@
                 <h2>O Que Falam de Nós</h2>
                 <p>Temos orgulho de manter uma nota 4.9 de satisfação nas avaliações do Google Meu Negócio.</p>
             </div>
-            
+
             <div class="reviews-grid">
                 <!-- Testimonial 1 -->
                 <div class="review-card">
@@ -1603,11 +1674,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 2 -->
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">A casquinha crocante é um destaque à parte, muito saborosa e no ponto certo.</p>
+                    <p class="review-text">A casquinha crocante é um destaque à parte, muito saborosa e no ponto certo.
+                    </p>
                     <div class="review-user">
                         <div class="review-avatar">MS</div>
                         <div class="review-user-info">
@@ -1616,7 +1688,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 3 -->
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
@@ -1630,9 +1702,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="review-gmn-footer">
-                <a href="https://www.google.com/search?q=Toka+da+Til%C3%A1pia+Sorocaba" target="_blank" class="review-gmn-link">
+                <a href="https://www.google.com/search?q=Toka+da+Til%C3%A1pia+Sorocaba" target="_blank"
+                    class="review-gmn-link">
                     ★ 4.9 estrelas no Google (114+ avaliações) — Ver Perfil Completo
                 </a>
             </div>
@@ -1644,7 +1717,8 @@
         <div class="convert-cta-bg"></div>
         <div class="container">
             <h2>Pronto para saborear um peixe fresco e frito na hora?</h2>
-            <p>Seja para entrega rápida quentinha na sua casa ou para retirar direto na nossa loja, escolha o seu canal preferido e faça seu pedido.</p>
+            <p>Seja para entrega rápida quentinha na sua casa ou para retirar direto na nossa loja, escolha o seu canal
+                preferido e faça seu pedido.</p>
             <div class="hero-cta">
                 <a href="#como-pedir" class="btn-primary">
                     Escolher Onde Pedir
@@ -1662,40 +1736,60 @@
             <div class="info-grid">
                 <div class="info-details">
                     <h2>Horários e Onde Estamos</h2>
-                    
+
                     <div class="info-item">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
                         </div>
                         <div class="info-content">
                             <h3>Nosso Endereço</h3>
-                            <p>Rua Genésio Maria, 140<br>Jardim Boa Esperança (região do Éden)<br>Sorocaba - SP, CEP 18103-185</p>
+                            <p>Rua Genésio Maria, 140<br>Jardim Boa Esperança (região do Éden)<br>Sorocaba - SP, CEP
+                                18103-185</p>
                             <div class="route-buttons">
-                                <a href="https://www.google.com/maps/dir/?api=1&destination=-23.4665488,-47.3826259" target="_blank" class="btn-route btn-gmaps">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=-23.4665488,-47.3826259"
+                                    target="_blank" class="btn-route btn-gmaps">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                    </svg>
                                     Google Maps
                                 </a>
-                                <a href="https://waze.com/ul?ll=-23.4665488,-47.3826259&navigate=yes" target="_blank" class="btn-route btn-waze">
-                                    <svg viewBox="0 0 24 24"><path d="M19.11 11.89c.11-.53.17-1.07.17-1.63 0-4.01-3.26-7.27-7.27-7.27-4.01 0-7.27 3.26-7.27 7.27 0 .56.06 1.1.17 1.63-.44.29-.73.78-.73 1.34 0 .9.73 1.63 1.63 1.63.17 0 .33-.03.49-.08.97.94 2.29 1.53 3.75 1.57.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13.11.01.22.01.33.01s.22 0 .33-.01c.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13 1.46-.04 2.78-.63 3.75-1.57.16.05.32.08.49.08.9 0 1.63-.73 1.63-1.63 0-.56-.29-1.05-.73-1.34zm-11.84-2.8c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm7.26 0c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm-3.63 4.54c-1.35 0-2.45-1.1-2.45-2.45h4.9c0 1.35-1.1 2.45-2.45 2.45z"/></svg>
+                                <a href="https://waze.com/ul?ll=-23.4665488,-47.3826259&navigate=yes" target="_blank"
+                                    class="btn-route btn-waze">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M19.11 11.89c.11-.53.17-1.07.17-1.63 0-4.01-3.26-7.27-7.27-7.27-4.01 0-7.27 3.26-7.27 7.27 0 .56.06 1.1.17 1.63-.44.29-.73.78-.73 1.34 0 .9.73 1.63 1.63 1.63.17 0 .33-.03.49-.08.97.94 2.29 1.53 3.75 1.57.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13.11.01.22.01.33.01s.22 0 .33-.01c.17.65.77 1.13 1.48 1.13.71 0 1.31-.48 1.48-1.13 1.46-.04 2.78-.63 3.75-1.57.16.05.32.08.49.08.9 0 1.63-.73 1.63-1.63 0-.56-.29-1.05-.73-1.34zm-11.84-2.8c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm7.26 0c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12-.5 1.12-1.12 1.12-1.12-.5-1.12-1.12zm-3.63 4.54c-1.35 0-2.45-1.1-2.45-2.45h4.9c0 1.35-1.1 2.45-2.45 2.45z" />
+                                    </svg>
                                     Waze
                                 </a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="info-item">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+                            </svg>
                         </div>
                         <div class="info-content">
                             <h3>Horários de Funcionamento</h3>
-                            <p><strong>Terça a Sexta-Feira:</strong><br>Almoço: 11:00 às 16:00<br>Jantar: 19:00 às 22:30<br><br><strong>Sábado e Domingo:</strong><br>Aberto das 10:00 às 22:30 (correria no almoço até as 15:00!)</p>
+                            <p><strong>Terça a Sexta-Feira:</strong><br>Almoço: 11:00 às 16:00<br>Jantar: 19:00 às
+                                22:30<br><br><strong>Sábado e Domingo:</strong><br>Aberto das 10:00 às 22:30 (correria
+                                no almoço até as 15:00!)</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-item">
                         <div class="info-icon">
-                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
                         </div>
                         <div class="info-content">
                             <h3>Telefone e WhatsApp</h3>
@@ -1703,9 +1797,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="map-container">
-                    <iframe src="https://maps.google.com/maps?q=Rua%20Gen%C3%A9sio%20Maria,%20140%20-%20Jardim%20Boa%20Esperan%C3%A7a,%20Sorocaba%20-%20SP,%2018103-185&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Rua%20Gen%C3%A9sio%20Maria,%20140%20-%20Jardim%20Boa%20Esperan%C3%A7a,%20Sorocaba%20-%20SP,%2018103-185&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -1718,18 +1814,24 @@
                 <div class="footer-brand">
                     <h2>
                         <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z"/>
+                            <path
+                                d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12.8,17.4c-0.2,0.2-0.5,0.2-0.7,0l-3.3-3.3 c-0.2-0.2-0.2-0.5,0-0.7l3.3-3.3c0.2-0.2,0.5-0.2,0.7,0s0.2,0.5,0,0.7L10.2,13.3l2.6,2.6C13,16.9,13,17.2,12.8,17.4z M17,14h-3 c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1v2C18,13.6,17.6,14,17,14z" />
                         </svg>
                         Toka da Tilápia
                     </h2>
-                    <p>Qualidade, peixe fresco preparado na hora e atendimento familiar que vicia você a cada mordida.</p>
+                    <p>Qualidade, peixe fresco preparado na hora e atendimento familiar que vicia você a cada mordida.
+                    </p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/toka_da_tilapia" target="_blank" class="social-btn" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        <a href="https://www.instagram.com/toka_da_tilapia" target="_blank" class="social-btn"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links-col">
                     <h3>Navegação</h3>
                     <ul class="footer-links-list">
@@ -1741,19 +1843,23 @@
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links-col">
                     <h3>Canais de Venda</h3>
                     <ul class="footer-links-list">
-                        <li><a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank">Cardápio Digital (Brendi)</a></li>
-                        <li><a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd" target="_blank">iFood Delivery</a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank">WhatsApp Direct</a></li>
+                        <li><a href="https://pedido.brendi.com.br/toka-da-tilapia-eden/" target="_blank">Cardápio
+                                Digital (Brendi)</a></li>
+                        <li><a href="https://www.ifood.com.br/delivery/sorocaba-sp/toka-da-tilapia-jardim-boa-esperanca/8edb1ed3-2ddb-48db-8d38-d76d2d9d5cfd"
+                                target="_blank">iFood Delivery</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=5515991452502" target="_blank">WhatsApp
+                                Direct</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Toka da Tilápia. Todos os direitos reservados.<br>Razão Social: Aline Lourdes da Silva | CNPJ: 52.904.941/0001-53 | Jardim Boa Esperança - Sorocaba/SP</p>
+                <p>&copy; 2026 Toka da Tilápia. Todos os direitos reservados.<br>Razão Social: Aline Lourdes da Silva |
+                    CNPJ: 52.904.941/0001-53 | Jardim Boa Esperança - Sorocaba/SP</p>
             </div>
         </div>
     </footer>
@@ -1764,9 +1870,9 @@
         const header = document.getElementById('main-header');
         const delta = 5; // Margem de scroll
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             let st = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             // Adiciona classe sticky quando passa de 50px de scroll
             if (st > 50) {
                 header.classList.add('sticky');
@@ -1827,19 +1933,19 @@
 
         function showSlide(index) {
             if (index === currentSlide) return;
-            
+
             // Adiciona classe de fade-out
             heroText.classList.add('fade-out');
             heroImg.classList.add('fade-out');
 
             setTimeout(() => {
                 const data = slidesData[index];
-                
+
                 // Atualiza o conteúdo do texto
                 heroText.querySelector('.hero-tag').textContent = data.tag;
                 heroText.querySelector('h1').innerHTML = data.title;
                 heroText.querySelector('p').textContent = data.p;
-                
+
                 // Atualiza a imagem
                 heroImg.src = data.img;
                 heroImg.alt = data.alt;
@@ -1889,4 +1995,5 @@
     </script>
 
 </body>
+
 </html>
