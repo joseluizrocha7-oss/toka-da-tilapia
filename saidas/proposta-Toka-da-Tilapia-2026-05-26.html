@@ -500,9 +500,28 @@
       color: rgba(255,255,255,0.3);
     }
 
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
     @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       body { background: white; }
-      .page { max-width: 100%; }
+      .page { max-width: 100%; width: 210mm; margin: 0 auto; }
+      .capa { padding: 40px 48px 36px; }
+      .section { padding: 32px 48px; }
+      .cta-section { padding: 40px 48px; }
+      .rodape { padding: 16px 48px; }
+      .capa h1 { font-size: 38px; }
+      .section h2 { font-size: 22px; }
+      .pacote { padding: 24px 28px; }
+      .diag-grid, .oport-grid { gap: 10px; }
+      .diag-item, .oport-item { padding: 14px 16px; }
+      .steps .step { padding: 12px 0; }
+      .capa { page-break-after: avoid; }
+      .section { page-break-inside: avoid; }
+      .cta-section { page-break-inside: avoid; }
     }
   </style>
 </head>
