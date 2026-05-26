@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Comercial — Toka da Tilápia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:   #2A593E;
+      --green-d: #1A3D2A;
+      --orange:  #F28F0F;
+      --cream:   #FAF6EE;
+      --dark:    #1C1C1C;
+      --muted:   #6B6B6B;
+      --border:  #E8E1D6;
+      --white:   #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F4F0E8;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+    }
+
+    /* ── CAPA ── */
+    .capa {
+      background: var(--green-d);
+      padding: 80px 64px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capa::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(242,143,15,0.08);
+    }
+
+    .capa::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .agency-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 56px;
+    }
+
+    .capa-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+
+    .capa h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .capa h1 span {
+      color: var(--orange);
+    }
+
+    .capa-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 56px;
+    }
+
+    .capa-meta {
+      display: flex;
+      gap: 40px;
+    }
+
+    .capa-meta-item label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+
+    .capa-meta-item span {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── SEÇÕES ── */
+    .section {
+      padding: 56px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── DIAGNÓSTICO ── */
+    .diag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .diag-item {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--orange);
+    }
+
+    .diag-item .icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .diag-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .diag-item span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── PACOTES ── */
+    .pacote {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pacote:last-child {
+      margin-bottom: 0;
+    }
+
+    .pacote.destaque {
+      background: var(--green-d);
+    }
+
+    .pacote-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .pacote h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .pacote.destaque h3 {
+      color: var(--white);
+    }
+
+    .pacote-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .pacote.destaque .pacote-desc {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .entregaveis {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .entregaveis li {
+      font-size: 14px;
+      color: #333;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .entregaveis li:last-child {
+      border-bottom: none;
+    }
+
+    .pacote.destaque .entregaveis li {
+      color: rgba(255,255,255,0.8);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+
+    .entregaveis li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .preco-bloco {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .preco-principal {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 14px 20px;
+    }
+
+    .pacote.destaque .preco-principal {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .preco-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .pacote.destaque .preco-label {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .preco-valor {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .pacote.destaque .preco-valor {
+      color: var(--orange);
+    }
+
+    .preco-detalhe {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 220px;
+    }
+
+    .pacote.destaque .preco-detalhe {
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── RESUMO FINANCEIRO ── */
+    .tabela-investimento {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+    }
+
+    .tabela-investimento thead tr {
+      background: var(--green);
+    }
+
+    .tabela-investimento thead th {
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      text-align: left;
+    }
+
+    .tabela-investimento tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tabela-investimento tbody tr:nth-child(even) {
+      background: var(--cream);
+    }
+
+    .tabela-investimento tbody td {
+      padding: 14px 20px;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    .tabela-investimento tfoot tr {
+      background: var(--green-d);
+    }
+
+    .tabela-investimento tfoot td {
+      padding: 16px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .tabela-investimento tfoot td span {
+      color: var(--orange);
+    }
+
+    /* ── COMO FUNCIONA ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .step-content span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--green-d);
+      padding: 64px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .cta-section h2 span {
+      color: var(--orange);
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border-radius: 100px;
+    }
+
+    .cta-contato {
+      margin-top: 28px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .cta-contato strong {
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── RODAPÉ ── */
+    .rodape {
+      background: #111;
+      padding: 24px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rodape span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .rodape-validade {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    @media print {
+      body { background: white; }
+      .page { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CAPA -->
+  <div class="capa">
+    <div class="agency-label">Rocha Digital Studio</div>
+    <div class="capa-tag">Proposta Comercial</div>
+    <h1>Toka da <span>Tilápia</span></h1>
+    <p class="capa-sub">Presença digital que gera pedidos reais</p>
+    <div class="capa-meta">
+      <div class="capa-meta-item">
+        <label>Apresentado para</label>
+        <span>Bruno — Toka da Tilápia</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Data</label>
+        <span>27 de maio de 2026</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Válida até</label>
+        <span>10 de junho de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="section">
+    <div class="section-tag">Contexto</div>
+    <h2>Uma base sólida com muito espaço pra crescer</h2>
+    <p>A Toka da Tilápia já tem o que a maioria dos negócios leva anos pra construir: produto de qualidade, clientes satisfeitos e reputação consolidada — nota 4.9 no Google com mais de 114 avaliações espontâneas.</p>
+    <p>Agora é o momento de fazer essa reputação trabalhar mais. Com a presença digital certa, cada pessoa que busca por peixe em Sorocaba pode se tornar um cliente novo — sem depender só da indicação boca a boca.</p>
+
+    <div class="diag-grid">
+      <div class="diag-item">
+        <div class="icon">📍</div>
+        <strong>Oportunidade no Google</strong>
+        <span>Quem pesquisa "tilápia frita Sorocaba" ou "almoço no Éden" pode encontrar a Toka antes de qualquer concorrente.</span>
+      </div>
+      <div class="diag-item">
+        <div class="icon">📱</div>
+        <strong>Instagram com frequência</strong>
+        <span>Publicar 2x por semana mantém o algoritmo ativo, amplia o alcance e transforma seguidores em clientes recorrentes.</span>
+      </div>
+      <div class="diag-item">
+        <div class="icon">🌐</div>
+        <strong>Site como vitrine digital</strong>
+        <span>Um único endereço online com menu, horários e botões de pedido — disponível 24h pra quem ainda não conhece a Toka.</span>
+      </div>
+      <div class="diag-item">
+        <div class="icon">⭐</div>
+        <strong>Reputação como diferencial</strong>
+        <span>4.9 no Google é prova social fortíssima. Exibir isso no site e nos posts acelera a decisão de quem ainda não conhece.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSTA -->
+  <div class="section">
+    <div class="section-tag">Nossa Proposta</div>
+    <h2>Dois serviços. Um objetivo: mais pedidos.</h2>
+    <p>Abaixo estão os dois pacotes desenhados especificamente para a realidade da Toka da Tilápia — sem overhead, sem contrato complicado, com entregáveis claros.</p>
+
+    <!-- Pacote 1 -->
+    <div class="pacote" style="margin-top: 32px;">
+      <div class="pacote-badge">Pacote 1</div>
+      <h3>Visibilidade no Google + Landing Page</h3>
+      <p class="pacote-desc">Site profissional otimizado pra aparecer nas buscas locais de Sorocaba e região do Éden.</p>
+      <ul class="entregaveis">
+        <li>Landing Page institucional completa (menu, diferenciais, avaliações, contato)</li>
+        <li>Otimização para SEO local — buscas como "tilápia frita Sorocaba" e "peixe frito Éden"</li>
+        <li>Hospedagem incluída no primeiro ano (Cloudflare Pages)</li>
+        <li>Botões de conversão diretos: Brendi, iFood e WhatsApp</li>
+        <li>Integração com Google Meu Negócio</li>
+        <li>Versão mobile otimizada</li>
+        <li>Manutenção mensal: atualizações de conteúdo, horários e promoções</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal">
+          <div class="preco-label">Criação (único)</div>
+          <div class="preco-valor">R$ 497</div>
+        </div>
+        <div class="preco-principal">
+          <div class="preco-label">Manutenção mensal</div>
+          <div class="preco-valor">R$ 50</div>
+        </div>
+        <div class="preco-detalhe">Manutenção a R$ 50/mês durante o 1º ano.<br>A partir do 2º ano: R$ 69,90/mês.</div>
+      </div>
+    </div>
+
+    <!-- Pacote 2 -->
+    <div class="pacote destaque">
+      <div class="pacote-badge">Pacote 2</div>
+      <h3>Instagram com Carrosséis Automatizados</h3>
+      <p class="pacote-desc">8 carrosséis por mês, publicados automaticamente 2× por semana, mantendo o feed ativo e profissional.</p>
+      <ul class="entregaveis">
+        <li>8 carrosséis mensais com design profissional na identidade da Toka</li>
+        <li>Publicação automatizada — 2 posts por semana, no melhor horário</li>
+        <li>Copywriting de cada post com tom de voz da Toka (familiar, apetitoso, local)</li>
+        <li>Temas variados: pratos do dia, diferenciais, depoimentos, promoções</li>
+        <li>Hashtags otimizadas para alcance em Sorocaba</li>
+        <li>Relatório mensal de desempenho</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal">
+          <div class="preco-label">Mensalidade</div>
+          <div class="preco-valor">R$ 597</div>
+        </div>
+        <div class="preco-detalhe">Contrato mensal, sem fidelidade mínima.<br>Início imediato após o fechamento.</div>
+      </div>
+    </div>
+
+    <!-- Bônus -->
+    <div class="pacote" style="margin-top: 24px; border: 2px solid var(--orange); background: #FFFBF3;">
+      <div class="pacote-badge" style="background: var(--green);">Incluso no fechamento</div>
+      <h3>Google Meu Negócio — Ativação e Respostas</h3>
+      <p class="pacote-desc">Serviço incluído sem custo adicional para quem fechar os dois pacotes acima.</p>
+      <ul class="entregaveis">
+        <li>Revisão completa do perfil: fotos, categorias, horários, descrição e atributos</li>
+        <li>Respostas humanizadas a todas as avaliações existentes (e às novas, mensalmente)</li>
+        <li>Respostas personalizadas — citando o prato ou detalhe que o cliente elogiou</li>
+        <li>Sinaliza atividade ao algoritmo do Google, melhorando o posicionamento orgânico</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal" style="background: var(--cream);">
+          <div class="preco-label">Valor</div>
+          <div class="preco-valor" style="color: var(--green);">Grátis</div>
+        </div>
+        <div class="preco-detalhe">Incluído para quem fechar os Pacotes 1 e 2 juntos. Sem custo adicional.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABELA DE INVESTIMENTO -->
+  <div class="section">
+    <div class="section-tag">Investimento</div>
+    <h2>Resumo financeiro</h2>
+    <p>Valores claros, sem surpresas. O que você paga é exatamente o que está na tabela.</p>
+
+    <table class="tabela-investimento">
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Tipo</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Criação da Landing Page</td>
+          <td>Pagamento único</td>
+          <td><strong>R$ 497,00</strong></td>
+        </tr>
+        <tr>
+          <td>Manutenção da Landing Page</td>
+          <td>Mensal (1º ano)</td>
+          <td><strong>R$ 50,00/mês</strong></td>
+        </tr>
+        <tr>
+          <td>Instagram — Carrosséis Automatizados</td>
+          <td>Mensal</td>
+          <td><strong>R$ 597,00/mês</strong></td>
+        </tr>
+        <tr style="background: #FFFBF3;">
+          <td>Google Meu Negócio — Ativação + Respostas</td>
+          <td>Incluso no fechamento</td>
+          <td><strong style="color: var(--green);">Grátis</strong></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total mensal no 1º ano (após criação da LP)</td>
+          <td><span>R$ 647,00/mês</span></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p style="margin-top: 16px; font-size: 13px; color: var(--muted);">
+      * A partir do 2º ano, a manutenção da Landing Page passa para R$ 69,90/mês. Total: R$ 666,90/mês.
+    </p>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div class="section">
+    <div class="section-tag">Processo</div>
+    <h2>Como funciona na prática</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Fechamento e alinhamento</strong>
+          <span>Assim que a proposta for aceita, fazemos uma conversa rápida pra alinhar fotos do cardápio, horários e preferências de conteúdo.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Landing Page no ar em até 48h</strong>
+          <span>O site já está 90% pronto. Finalizamos os detalhes e publicamos no domínio definitivo em até 2 dias após o fechamento.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Primeiro lote de carrosséis para aprovação</strong>
+          <span>Entregamos os 4 primeiros carrosséis do mês para aprovação antes de publicar. Você vê tudo antes de ir ao ar.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>Publicação automatizada — você não precisa fazer nada</strong>
+          <span>Após aprovação, os posts são publicados automaticamente nos horários de maior engajamento. Sem precisar do seu tempo diário.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>Relatório mensal e ajustes</strong>
+          <span>Todo mês você recebe um resumo do que funcionou: alcance, engajamento e evolução do site no Google. Ajustamos a estratégia conforme os resultados.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Pronto pra começar, <span>Bruno?</span></h2>
+    <p>A Landing Page já está criada. Os dois primeiros carrosséis já estão prontos.<br>É só fechar e a Toka começa a aparecer onde os clientes estão buscando.</p>
+    <a href="https://wa.me/5515991452502?text=Ol%C3%A1%2C+quero+fechar+a+proposta!" class="cta-btn">Fechar pelo WhatsApp</a>
+    <p class="cta-contato">
+      Ou fale diretamente:<br>
+      <strong>José Luiz Rocha</strong> · contato@rochadigitalstudio.com.br
+    </p>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="rodape">
+    <span>Rocha Digital Studio · Proposta para Toka da Tilápia · 2026</span>
+    <span class="rodape-validade">Válida até 10/06/2026</span>
+  </div>
+
+</div>
+</body>
+</html>
