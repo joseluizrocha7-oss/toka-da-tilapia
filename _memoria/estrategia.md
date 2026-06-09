@@ -9,14 +9,20 @@ Fase 2: Execução — contratos ativos, entrega dos serviços fechados.
 
 ## Contratos ativos (fechados em 27/05/2026)
 - **Landing Page:** R$ 497,00 (criação) + R$ 50,00/mês manutenção no 1º ano. Domínio tokadatilapia.com.br incluso.
-- **Instagram — Carrosséis:** R$ 400,00/mês × 3 meses = R$ 1.200,00 total. 8 carrosséis/mês, 2 publicações/semana, automatizado.
+- **Instagram — Carrosséis:** R$ 400,00/mês × 3 meses = R$ 1.200,00 total. 8 carrosséis/mês, 2 publicações/semana, automatizado. Pagamento: R$ 200,00 a cada 15 dias. 1ª parcela paga em 08/06/2026.
+
+## Escopo em negociação (08/06/2026)
+- **Google Meu Negócio:** Bruno pediu orçamento. Escopo: responder avaliações, validar horários/endereço, adicionar fotos e publicações periódicas, linkar redes sociais.
+- **Facebook:** Não mantido ativamente. José Luiz vai ativar e linkar automaticamente com o Instagram (tudo que postar no IG sai no FB também).
 
 ## Prioridade principal
-1. **Landing Page — domínio e ajustes finais:** Apontar domínio `tokadatilapia.com.br` e revisar conteúdo após reunião.
-2. **Instagram Mês 1 — 8 carrosséis:** Produzir, enviar para aprovação do Bruno e programar publicações. Prazo: antes do fim de junho/2026.
-3. **Acesso ao Instagram:** Obter login ou convite de gestor para configurar publicação automatizada.
-4. **Automação Google Meu Negócio:** Resposta humanizada às avaliações — incluso no pacote da LP.
-5. **Estabilização da API do WhatsApp:** Investigar migração para API oficial da Meta via Brendi.
+1. **Orçamento Google Meu Negócio:** Bruno pediu em 08/06 — enviar o quanto antes.
+2. **Instagram Mês 1 — 8 carrosséis:** Produzir usando fotos reais do Bruno (galeria do Instagram + fotos tiradas em 08/06). Apresentar para aprovação antes de publicar. Prazo: junho/2026.
+3. **Acesso ao Instagram:** Bruno vai mandar login/senha da conta profissional.
+4. **Marca d'água:** Bruno quer logo aplicada nas fotos como proteção — incluir nos carrosséis do Mês 1.
+5. **Facebook:** Ativar conta existente e linkar com Instagram para publicação simultânea.
+6. **Landing Page — domínio:** Apontar `tokadatilapia.com.br`.
+7. **Estabilização da API do WhatsApp:** Investigar migração para API oficial da Meta via Brendi.
 
 ## O que pode esperar
 - **Tráfego Pago Agressivo (Google/Meta Ads):** Suspenso. Cozinha congestiona acima de 35 pedidos/hora — tráfego pago só faz sentido em dias de menor movimento (ter–qui) ou fortalecimento de marca.
