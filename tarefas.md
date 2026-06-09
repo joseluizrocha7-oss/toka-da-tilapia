@@ -9,7 +9,8 @@
 
 | Entrega | Responsável | Prazo | Status |
 |---------|-------------|-------|--------|
-| Preparação da proposta comercial e apresentação presencial | José Luiz | 23/05/2026 | Em andamento |
+| Landing Page — finalizar domínio tokadatilapia.com.br e ajustes pós-fechamento | José Luiz | — | Em andamento |
+| Instagram — Mês 1: produzir 8 carrosséis para aprovação | José Luiz | — | Em andamento |
 
 ---
 
@@ -27,7 +28,7 @@
 
 | Item | O que precisa | Desde |
 |------|---------------|-------|
-| Reunião de fechamento comercial (sábado às 15:00) | Alinhamento e aprovação da proposta | 23/05/2026 |
+| Acesso ao Instagram | Login ou convite de gestor para programar publicações | 27/05/2026 |
 
 ---
 
@@ -36,4 +37,8 @@
 | Entrega | Concluída em |
 |---------|-------------|
 | Setup inicial de segurança (Hooks) e Onboarding (Memórias do BaseOS) | 23/05/2026 |
-| Desenvolvimento da Landing Page Institucional V1 (Efeito Antigravity e Vitrine Gastronômica) | 23/05/2026 |
+| Desenvolvimento da Landing Page Institucional V1 | 23/05/2026 |
+| Carrosséis de Instagram 01 e 02 (apresentação e diferenciais) | 23/05/2026 |
+| Proposta comercial — Landing Page (R$ 497 + R$ 50/mês) | 27/05/2026 |
+| Proposta comercial — Instagram (R$ 400/mês × 3 meses) | 27/05/2026 |
+| Reunião presencial e fechamento com Bruno | 27/05/2026 |
