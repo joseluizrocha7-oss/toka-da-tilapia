@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Google Meu Negócio — Toka da Tilápia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:   #2A593E;
+      --green-d: #1A3D2A;
+      --orange:  #F28F0F;
+      --cream:   #FAF6EE;
+      --dark:    #1C1C1C;
+      --muted:   #6B6B6B;
+      --border:  #E8E1D6;
+      --white:   #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F4F0E8;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+    }
+
+    /* ── CAPA ── */
+    .capa {
+      background: var(--green-d);
+      padding: 80px 64px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capa::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(242,143,15,0.08);
+    }
+
+    .agency-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 56px;
+    }
+
+    .capa-tag {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+
+    .capa h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .capa h1 span { color: var(--orange); }
+
+    .capa-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 56px;
+    }
+
+    .capa-meta { display: flex; gap: 40px; }
+
+    .capa-meta-item label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+
+    .capa-meta-item span {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── SEÇÕES ── */
+    .section {
+      padding: 56px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── DESTAQUE DE DADOS ── */
+    .dados-destaque {
+      background: var(--green-d);
+      border-radius: 14px;
+      padding: 28px 36px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .dado-item { text-align: center; }
+
+    .dado-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .dado-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+    }
+
+    .dado-sep {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── OPORTUNIDADE ── */
+    .oport-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .oport-item {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--orange);
+    }
+
+    .oport-item .icon { font-size: 22px; margin-bottom: 10px; }
+
+    .oport-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .oport-item span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── PACOTE ── */
+    .pacote {
+      background: var(--green-d);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .pacote-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .pacote h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .pacote-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .entregaveis { list-style: none; margin-bottom: 28px; }
+
+    .entregaveis li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .entregaveis li:last-child { border-bottom: none; }
+
+    .entregaveis li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .preco-bloco {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .preco-principal {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 20px;
+    }
+
+    .preco-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2px;
+    }
+
+    .preco-valor {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--orange);
+    }
+
+    .preco-detalhe {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; margin-top: 28px; }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .step-content span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── PAGAMENTO ── */
+    .pagamento-bloco {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 32px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--green-d);
+      padding: 64px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .cta-section h2 span { color: var(--orange); }
+
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border-radius: 100px;
+    }
+
+    .cta-contato {
+      margin-top: 28px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .cta-contato strong { color: rgba(255,255,255,0.7); }
+
+    .rodape {
+      background: #111;
+      padding: 24px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rodape span { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: white; }
+      .page { max-width: 100%; width: 210mm; margin: 0 auto; }
+      .capa { padding: 40px 48px 36px; }
+      .section { padding: 32px 48px; }
+      .cta-section { padding: 40px 48px; }
+      .rodape { padding: 16px 48px; }
+      .capa h1 { font-size: 38px; }
+      .section h2 { font-size: 22px; }
+      .pacote { padding: 24px 28px; }
+      .oport-grid { gap: 10px; }
+      .oport-item { padding: 14px 16px; }
+      .steps .step { padding: 12px 0; }
+      .dados-destaque { padding: 20px 28px; gap: 32px; }
+      .dado-num { font-size: 34px; }
+      .capa { page-break-after: avoid; }
+      .section { page-break-inside: avoid; }
+      .cta-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CAPA -->
+  <div class="capa">
+    <div class="agency-label">Rocha Digital Studio</div>
+    <div class="capa-tag">Proposta Comercial — Google Meu Negócio</div>
+    <h1>Toka da <span>Tilápia</span></h1>
+    <p class="capa-sub">Transformar 119 avaliações em vitrine de vendas no Google</p>
+    <div class="capa-meta">
+      <div class="capa-meta-item">
+        <label>Apresentado para</label>
+        <span>Bruno — Toka da Tilápia</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Data</label>
+        <span>08 de junho de 2026</span>
+      </div>
+      <div class="capa-meta-item">
+        <label>Válida até</label>
+        <span>22 de junho de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEXTO -->
+  <div class="section">
+    <div class="section-tag">Contexto</div>
+    <h2>A Toka tem uma das melhores notas de Sorocaba</h2>
+    <p>4,9 estrelas com 119 avaliações é um ativo de marketing enorme. A maioria dos concorrentes não chega nem perto desse nível de reputação no Google.</p>
+    <p>O próximo passo é ativar esse ativo: responder cada avaliação, otimizar o perfil e manter o perfil vivo com publicações mensais. Um perfil bem gerenciado converte mais — ainda antes do cliente abrir o cardápio ou ligar.</p>
+
+    <div class="dados-destaque">
+      <div class="dado-item">
+        <div class="dado-num">4,9</div>
+        <div class="dado-label">Nota no Google</div>
+      </div>
+      <div class="dado-sep"></div>
+      <div class="dado-item">
+        <div class="dado-num">119</div>
+        <div class="dado-label">Avaliações recebidas</div>
+      </div>
+      <div class="dado-sep"></div>
+      <div class="dado-item">
+        <div class="dado-num">~0</div>
+        <div class="dado-label">Avaliações respondidas</div>
+      </div>
+    </div>
+
+    <div class="oport-grid" style="margin-top:24px;">
+      <div class="oport-item">
+        <div class="icon">🔍</div>
+        <strong>Aparecer primeiro no Google</strong>
+        <span>Perfis ativos com respostas e posts frequentes sobem no ranqueamento local do Google Maps.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">💬</div>
+        <strong>Cada resposta é marketing</strong>
+        <span>Responder avaliações mostra cuidado com o cliente — quem pesquisa lê as respostas antes de pedir.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">📋</div>
+        <strong>Dados corretos convertem mais</strong>
+        <span>Horário certo, endereço preciso, fotos atualizadas e cardápio visível eliminam dúvidas e reduzem abandono.</span>
+      </div>
+      <div class="oport-item">
+        <div class="icon">📣</div>
+        <strong>Posts que aparecem na busca</strong>
+        <span>Publicações no GMN aparecem quando alguém pesquisa a Toka — promoções, pratos e novidades direto no Google.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSTA -->
+  <div class="section">
+    <div class="section-tag">Nossa Proposta</div>
+    <h2>Setup completo + gestão mensal ativa</h2>
+    <p>Dois momentos distintos: uma limpeza e otimização completa do perfil, seguida de gestão contínua para manter tudo respondido e publicado.</p>
+
+    <!-- Pacote 1: Setup -->
+    <div class="pacote">
+      <div class="pacote-badge">Etapa 1 — Pagamento único</div>
+      <h3>Setup e Otimização Completa</h3>
+      <p class="pacote-desc">Feito uma vez. Entregue em até 5 dias úteis após o fechamento.</p>
+      <ul class="entregaveis">
+        <li>Auditoria e correção completa do perfil: nome, endereço, telefone, horários, categorias e atributos</li>
+        <li>Descrição otimizada da empresa — texto pensado pra aparecer nas buscas certas</li>
+        <li>Upload e organização de fotos profissionais dos pratos e do ambiente</li>
+        <li>Resposta individual às 119 avaliações acumuladas — no tom da Toka, sem resposta genérica</li>
+        <li>Configuração da seção de perguntas e respostas (Q&A)</li>
+        <li>Verificação e correção do link para site, cardápio e redes sociais</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal">
+          <div class="preco-label">Investimento único</div>
+          <div class="preco-valor">R$ 597</div>
+        </div>
+        <div class="preco-detalhe">Pago uma vez · Sem recorrência<br>Resultado entregue em 5 dias úteis.</div>
+      </div>
+    </div>
+
+    <!-- Pacote 2: Gestão Mensal -->
+    <div class="pacote">
+      <div class="pacote-badge">Etapa 2 — Gestão mensal</div>
+      <h3>Gestão Contínua do Perfil</h3>
+      <p class="pacote-desc">Após o setup, o perfil se mantém ativo, respondido e relevante todos os meses.</p>
+      <ul class="entregaveis">
+        <li>Resposta a todas as novas avaliações recebidas no mês — em até 48 horas</li>
+        <li>4 publicações mensais no Google Meu Negócio (pratos, promoções, datas especiais)</li>
+        <li>Monitoramento de dados do perfil — horários, endereço e informações sempre corretos</li>
+        <li>Relatório mensal com métricas de visualizações, buscas e cliques no perfil</li>
+      </ul>
+      <div class="preco-bloco">
+        <div class="preco-principal">
+          <div class="preco-label">Mensalidade</div>
+          <div class="preco-valor">R$ 150<span style="font-size:16px;font-weight:400">/mês</span></div>
+        </div>
+        <div class="preco-detalhe">Sem contrato mínimo · Cancela quando quiser<br>Início no mês seguinte ao setup.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div class="section">
+    <div class="section-tag">Processo</div>
+    <h2>Como funciona na prática</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Fechamento e acesso ao perfil</strong>
+          <span>Você nos adiciona como gerente do perfil no Google. Sem precisar passar senha — é um acesso específico e revogável a qualquer momento.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Setup em 5 dias úteis</strong>
+          <span>Otimizamos tudo e respondemos as 119 avaliações acumuladas. Você recebe um relatório com o antes e depois do perfil.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Gestão mensal no automático</strong>
+          <span>Todo mês: novas avaliações respondidas em até 48h e 4 publicações no perfil para manter o ranqueamento ativo.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>Relatório mensal</strong>
+          <span>Você recebe as métricas do Google: quantas pessoas viram o perfil, buscaram, clicaram em rotas e ligaram naquele mês.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVESTIMENTO -->
+  <div class="section">
+    <div class="section-tag">Investimento</div>
+    <h2>Resumo financeiro</h2>
+    <p>Valores claros, sem surpresas.</p>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:28px;">
+      <thead>
+        <tr style="background:var(--green);">
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Serviço</th>
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Descrição</th>
+          <th style="color:white;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:14px 20px;text-align:left;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:14px 20px;font-size:14px;font-weight:600;">Setup e otimização</td>
+          <td style="padding:14px 20px;font-size:14px;color:var(--muted);">Perfil completo + 119 respostas acumuladas</td>
+          <td style="padding:14px 20px;font-size:15px;font-weight:800;color:var(--dark);">R$ 597,00</td>
+        </tr>
+        <tr style="background:var(--cream);">
+          <td style="padding:14px 20px;font-size:14px;font-weight:600;">Gestão mensal</td>
+          <td style="padding:14px 20px;font-size:14px;color:var(--muted);">Respostas + 4 posts/mês + relatório</td>
+          <td style="padding:14px 20px;font-size:15px;font-weight:800;color:var(--dark);">R$ 150,00/mês</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagamento -->
+    <div class="pagamento-bloco">
+      <div class="section-tag" style="margin-bottom:14px;">Pagamento</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:var(--white);border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4l7.07 7.07M20 4l-7.07 7.07M12 12l-7.07 7.07M12 12l7.07 7.07" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;">Setup — pagamento único via PIX no fechamento</div>
+            <div style="font-size:13px;color:var(--muted);">Chave CNPJ: <strong style="color:var(--dark);">63.772.893/0001-03</strong> — Rocha Digital Studio</div>
+          </div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/><path d="M12 8v4l3 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;">Gestão mensal — PIX todo dia 1º do mês</div>
+            <div style="font-size:13px;color:var(--muted);">Sem fidelidade mínima — cancela com 30 dias de antecedência.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>119 avaliações esperando<br><span>uma resposta sua.</span></h2>
+    <p>A gente responde todas. Você colhe os resultados.</p>
+    <a href="https://wa.me/5515991452502?text=Ol%C3%A1%2C+quero+fechar+o+Google+Meu+Neg%C3%B3cio!" class="cta-btn">Fechar pelo WhatsApp</a>
+    <p class="cta-contato">
+      Ou fale diretamente:<br>
+      <strong>José Luiz Rocha</strong> · contato@rochadigitalstudio.com.br
+    </p>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="rodape">
+    <span>Rocha Digital Studio · Proposta Google Meu Negócio — Toka da Tilápia · 2026</span>
+    <span>Válida até 22/06/2026</span>
+  </div>
+
+</div>
+</body>
+</html>
