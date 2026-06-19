@@ -1,0 +1,12 @@
+{
+  "name": "carrossel-bastidores-2026-06-10",
+  "version": "1.0.0",
+  "description": "Carrossel de bastidores e comida feita na hora",
+  "main": "render.js",
+  "scripts": {
+    "render": "node render.js"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

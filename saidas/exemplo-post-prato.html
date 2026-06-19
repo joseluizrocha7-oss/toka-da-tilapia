@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F28F0F;
+    --green:  #2A593E;
+    --cream:  #FAF6EE;
+    --dark:   #2B2118;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .wm {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    width: 88px;
+    opacity: 0.85;
+    z-index: 20;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  }
+
+  /* ══════════════════════════
+     OPÇÃO A — FULL FRAME
+  ══════════════════════════ */
+  #opcao-a .foto {
+    position: absolute;
+    inset: 0;
+  }
+  #opcao-a .foto img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  #opcao-a .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+      transparent 30%,
+      rgba(20,12,6,0.55) 60%,
+      rgba(20,12,6,0.88) 100%
+    );
+  }
+  #opcao-a .content {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    padding: 0 72px 80px;
+    z-index: 10;
+  }
+  #opcao-a .preco-pill {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 10px 32px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  #opcao-a h1 {
+    font-size: 84px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 20px;
+  }
+  #opcao-a h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+  }
+  #opcao-a .desc {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
+  }
+  #opcao-a .handle {
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ══════════════════════════
+     OPÇÃO B — SPLIT CARD
+  ══════════════════════════ */
+  #opcao-b {
+    display: flex;
+    flex-direction: column;
+    background: var(--dark);
+  }
+  #opcao-b .foto-top {
+    width: 100%;
+    height: 62%;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  #opcao-b .foto-top img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  #opcao-b .badge {
+    position: absolute;
+    bottom: -24px;
+    left: 72px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 14px 36px;
+    border-radius: 100px;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(242,143,15,0.4);
+  }
+  #opcao-b .painel {
+    flex: 1;
+    background: var(--dark);
+    padding: 56px 72px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  #opcao-b .bar {
+    width: 52px; height: 3px;
+    background: var(--orange);
+    margin-bottom: 28px;
+  }
+  #opcao-b h1 {
+    font-size: 72px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 22px;
+  }
+  #opcao-b h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+  }
+  #opcao-b .desc {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.55;
+    margin-bottom: 36px;
+  }
+  #opcao-b .rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #opcao-b .handle {
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.10em;
+    color: rgba(255,255,255,0.38);
+  }
+</style>
+</head>
+<body>
+
+<!-- OPÇÃO A — FULL FRAME -->
+<div class="slide" id="opcao-a">
+  <div class="foto">
+    <img src="../dados/Fotos Toka/tilapia-a-parmegiana.jpg" alt="Tilápia à Parmegiana">
+  </div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 35</div>
+    <h1>Tilápia à<br><em>Parmegiana</em></h1>
+    <p class="desc">Filé empanado, molho de tomate caseiro<br>e queijo gratinado. Com arroz e batata frita.</p>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../identidade/logo.jpeg" alt="Toka da Tilápia">
+</div>
+
+<!-- OPÇÃO B — SPLIT CARD -->
+<div class="slide" id="opcao-b">
+  <div class="foto-top">
+    <img src="../dados/Fotos Toka/tilapia-a-parmegiana.jpg" alt="Tilápia à Parmegiana">
+    <div class="badge">A partir de R$ 35</div>
+  </div>
+  <div class="painel">
+    <div class="bar"></div>
+    <h1>Tilápia à<br><em>Parmegiana</em></h1>
+    <p class="desc">Filé empanado banhado em molho de tomate caseiro e gratinado com queijo mussarela. Acompanha arroz e batata frita.</p>
+    <div class="rodape">
+      <span class="handle">@tokadatilapia</span>
+    </div>
+  </div>
+  <img class="wm" src="../identidade/logo.jpeg" alt="Toka da Tilápia">
+</div>
+
+</body>
+</html>

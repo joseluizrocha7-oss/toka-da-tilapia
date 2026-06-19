@@ -20,7 +20,6 @@
 
 | Entrega | Prioridade | Prazo |
 |---------|------------|-------|
-| Orçamento Google Meu Negócio (Bruno pediu em 08/06) | Alta | Urgente |
 | Editar fotos de pratos reais enviadas pelo Bruno | Média | Antes do Mês 1 |
 | Adicionar marca d'água (logo) nos carrosséis | Média | Mês 1 |
 | Investigação de migração para API oficial da Meta (WhatsApp) | Baixa | — |
@@ -54,6 +53,7 @@
 
 | Entrega | Concluída em |
 |---------|-------------|
+| Proposta comercial — Google Meu Negócio (Setup R$ 597 + R$ 99/mês) | 09/06/2026 |
 | Setup inicial de segurança (Hooks) e Onboarding (Memórias do BaseOS) | 23/05/2026 |
 | Desenvolvimento da Landing Page Institucional V1 | 23/05/2026 |
 | Carrosséis de Instagram 01 e 02 (apresentação e diferenciais) | 23/05/2026 |

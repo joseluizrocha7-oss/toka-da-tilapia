@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F28F0F;
+    --green:  #2A593E;
+    --cream:  #FAF6EE;
+    --dark:   #2B2118;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #111;
+  }
+
+  .foto {
+    position: absolute;
+    inset: 0;
+  }
+  .foto img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+      transparent 20%,
+      rgba(20,12,6,0.55) 52%,
+      rgba(20,12,6,0.93) 100%
+    );
+  }
+  .content {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    padding: 0 72px 72px;
+    z-index: 10;
+  }
+  .preco-pill {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 10px 34px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 84px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 18px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+  }
+  .desc {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.70);
+    line-height: 1.5;
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding: 26px 60px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .handle {
+    display: block;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.38);
+  }
+  .wm {
+    position: absolute;
+    bottom: 26px;
+    right: 32px;
+    width: 86px;
+    opacity: 0.85;
+    z-index: 20;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 — ESPETO DE TILÁPIA COM QUEIJO -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/espeto-de-tilapia-com-queijo.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 30</div>
+    <h1>Espeto de Tilápia<br><em>com Queijo</em></h1>
+    <p class="desc">Tilápia empanada no espeto, recheada com queijo cremoso e acompanhada de molho de alho aromático.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 02 — CEVICHE DE TILÁPIA (taça) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/ceviche-de-tilapia.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">R$ 40</div>
+    <h1>Ceviche de<br><em>Tilápia</em></h1>
+    <p class="desc">Tilápia marinada em limão cítrico com cebola roxa, pimenta dedo-de-moça e milho torrado.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 03 — CEVICHE DE TILÁPIA (real) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/ceviche-de-tilapia-2.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">R$ 40</div>
+    <h1>Ceviche de<br><em>Tilápia</em></h1>
+    <p class="desc">Tilápia marinada em limão cítrico com cebola roxa, pimenta dedo-de-moça e milho torrado.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 04 — MARMITEX ISCA DE TILÁPIA -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/marmitex-isca-file-tilapia.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 20</div>
+    <h1>Marmitex Isca<br><em>de Tilápia</em></h1>
+    <p class="desc">Iscas de tilápia empanadas com arroz, feijão temperado e acompanhamento. Serve 1 pessoa.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 05 — MARMITEX CAMARÃO À MILANESA -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/marmitex-camarao-milanesa.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Marmitex Camarão<br><em>à Milanesa</em></h1>
+    <p class="desc">Camarão empanado com batata frita, arroz à grega e feijão temperado. Serve 1 pessoa.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 06 — TILÁPIA À PARMEGIANA -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-a-parmegiana.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 35</div>
+    <h1>Tilápia à<br><em>Parmegiana</em></h1>
+    <p class="desc">Filé empanado com molho de tomate caseiro e queijo gratinado. Acompanha arroz e batata frita.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 07 — TILÁPIA À GREGA -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-a-grega.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 35</div>
+    <h1>Tilápia<br><em>à Grega</em></h1>
+    <p class="desc">Filé empanado com arroz à grega, batata frita crocante e molho tártaro caseiro.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 08 — TILÁPIA AO MOLHO MEDITERRÂNEO -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-ao-molho-mediterraneo.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Tilápia ao Molho<br><em>Mediterrâneo</em></h1>
+    <p class="desc">Filé grelhado com molho artesanal de tomate, camarão, alcaparras e champignon.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 09 — TILÁPIA COM FAROFA DE BANANA (v1) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-com-farofa-de-banana.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 35</div>
+    <h1>Tilápia com<br><em>Farofa de Banana</em></h1>
+    <p class="desc">Filé grelhado com farofa de banana adocicada, arroz branco e batata frita crocante.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 10 — TILÁPIA COM FAROFA DE BANANA (v2) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-com-farofa-de-banana-2.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 35</div>
+    <h1>Tilápia com<br><em>Farofa de Banana</em></h1>
+    <p class="desc">Filé grelhado com farofa de banana adocicada, arroz branco e batata frita crocante.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 11 — TILÁPIA GRATINADA (v1) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-gratinada.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Tilápia<br><em>Gratinada</em></h1>
+    <p class="desc">Filé empanado em molho branco com camarões, champignons e queijo gratinado.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 12 — TILÁPIA GRATINADA (v2) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/tilapia-gratinada-2.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Tilápia<br><em>Gratinada</em></h1>
+    <p class="desc">Filé empanado em molho branco com camarões, champignons e queijo gratinado.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 13 — PORÇÃO FILÉ DE TILÁPIA EMPANADO -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/porcao-file-empanado.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Porção Filé<br><em>de Tilápia</em></h1>
+    <p class="desc">Filé de tilápia empanado, crocante e dourado, com molho de alho da casa.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 14 — PORÇÃO DE CAMARÃO EMPANADO -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/porcao-camarao-empanado.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 60</div>
+    <h1>Porção de<br><em>Camarão Empanado</em></h1>
+    <p class="desc">Camarões empanados, dourados e crocantes, com molho de alho e limão.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 15 — PORÇÃO MISTA (v1) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/porcao-mista-file-camarao.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Porção Filé<br><em>e Camarão</em></h1>
+    <p class="desc">Filé de tilápia e camarão empanados, crocantes, com molhos da casa e limão.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 16 — PORÇÃO MISTA (v2 bandeja) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/porcao-file-camarao-bandeja.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Porção Filé<br><em>e Camarão</em></h1>
+    <p class="desc">Filé de tilápia e camarão empanados, crocantes, com molhos da casa e limão.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+<!-- 17 — PORÇÃO MISTA (v3 elegante) -->
+<div class="slide">
+  <div class="foto"><img src="../../dados/Fotos Toka/porcao-file-camarao-elegante.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="preco-pill">A partir de R$ 40</div>
+    <h1>Porção Filé<br><em>e Camarão</em></h1>
+    <p class="desc">Filé de tilápia e camarão empanados, crocantes, com molhos da casa e limão.</p>
+    <div class="cta">MENU NA BIO DO INSTAGRAM</div>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+</div>
+
+</body>
+</html>

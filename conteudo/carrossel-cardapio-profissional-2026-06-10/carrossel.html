@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F28F0F;
+    --green:  #2A593E;
+    --cream:  #FAF6EE;
+    --dark:   #2B2118;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: var(--dark);
+  }
+
+  /* ── WATERMARK ── */
+  .wm {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    width: 90px;
+    opacity: 0.82;
+    z-index: 20;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  }
+
+  /* ── DOTS ── */
+  .dots {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.30);
+  }
+  .dot.active {
+    width: 28px;
+    border-radius: 5px;
+    background: var(--orange);
+  }
+
+  /* ── HANDLE ── */
+  .handle {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.10em;
+    color: rgba(255,255,255,0.42);
+  }
+
+  /* ════════════════════════════════
+     SLIDE 1 — CAPA FULL BLEED
+  ════════════════════════════════ */
+  #s1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 80px 120px;
+  }
+  #s1 .bg {
+    position: absolute;
+    inset: 0;
+  }
+  #s1 .bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  #s1 .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(43,33,24,0.08) 0%,
+      transparent 25%,
+      rgba(43,33,24,0.60) 58%,
+      rgba(43,33,24,0.94) 100%
+    );
+  }
+  #s1 .content {
+    position: relative;
+    z-index: 5;
+  }
+  #s1 .tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+  #s1 .bar {
+    width: 52px; height: 2px;
+    background: var(--orange);
+    margin-bottom: 28px;
+  }
+  #s1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 28px;
+  }
+  #s1 h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+  }
+  #s1 .sub {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.5;
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
+    margin-bottom: 48px;
+  }
+  #s1 .swipe {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ════════════════════════════════
+     SLIDES 2–4 — PHOTO-TOP / PANEL
+  ════════════════════════════════ */
+  .s-split {
+    display: flex;
+    flex-direction: column;
+  }
+  .s-split .photo-top {
+    width: 100%;
+    height: 58%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .s-split .photo-top img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .s-split .text-btm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 72px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s-split .num {
+    position: absolute;
+    top: -16px; right: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 210px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.07;
+    color: #fff;
+    z-index: 0;
+  }
+  .s-split .tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .s-split .bar {
+    width: 52px; height: 2px;
+    background: var(--orange);
+    margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+  .s-split h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    position: relative; z-index: 1;
+  }
+  .s-split h2 em {
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 400;
+  }
+  .s-split .body {
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.80);
+    line-height: 1.6;
+    border-left: 3px solid var(--orange);
+    padding-left: 24px;
+    position: relative; z-index: 1;
+  }
+  .s-split .handle {
+    position: absolute;
+    bottom: 22px; right: 72px;
+    z-index: 1;
+  }
+
+  /* painéis */
+  #s2 .text-btm { background: var(--cream); }
+  #s2 .num      { color: var(--dark); }
+  #s2 h2        { color: var(--dark); }
+  #s2 h2 em     { color: var(--orange); }
+  #s2 .body     { color: rgba(43,33,24,0.68); }
+  #s2 .handle   { color: rgba(43,33,24,0.35); }
+
+  #s3 .text-btm { background: var(--dark); }
+
+  #s4 .text-btm { background: var(--green); }
+
+  /* ════════════════════════════════
+     SLIDE 5 — PONTE (full bleed)
+  ════════════════════════════════ */
+  #s5 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 80px 128px;
+  }
+  #s5 .bg {
+    position: absolute; inset: 0;
+  }
+  #s5 .bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  #s5 .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 22%, rgba(43,33,24,0.86) 68%);
+  }
+  #s5 .content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+  }
+  #s5 h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 78px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+  #s5 h2 em {
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 400;
+  }
+  #s5 .body {
+    font-size: 34px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto 36px;
+  }
+  #s5 .handle { color: rgba(255,255,255,0.38); }
+
+  /* ════════════════════════════════
+     SLIDE 6 — CTA (full bleed)
+  ════════════════════════════════ */
+  #s6 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 80px 116px;
+  }
+  #s6 .bg {
+    position: absolute; inset: 0;
+  }
+  #s6 .bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  #s6 .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 18%, rgba(43,33,24,0.92) 82%);
+  }
+  #s6 .content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+  }
+  #s6 h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 82px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 44px;
+  }
+  #s6 h2 em {
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 400;
+  }
+  #s6 .btn {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding: 32px 72px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+  }
+  #s6 .tagline {
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.48);
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ SLIDE 1 — CAPA ═══════════ -->
+<div class="slide" id="s1">
+  <div class="bg"><img src="../../dados/Fotos Toka/espeto-de-tilapia-com-queijo.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="tag">Cardápio</div>
+    <div class="bar"></div>
+    <h1>Tem pra<br>todo gosto.<br><em>E toda fome.</em></h1>
+    <p class="sub">Arrasta e conheça os pratos que fazem da Toka o favorito de Sorocaba.</p>
+    <span class="swipe">Arrasta pra ver →</span>
+  </div>
+  <span class="handle" style="position:absolute;bottom:52px;left:80px;z-index:10;">@tokadatilapia</span>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 2 — CEVICHE (painel cream) ═══════════ -->
+<div class="slide s-split" id="s2">
+  <div class="photo-top">
+    <img src="../../dados/Fotos Toka/ceviche-de-tilapia.jpg" alt="" style="object-position: center top;">
+  </div>
+  <div class="text-btm">
+    <div class="num">1</div>
+    <div class="tag">Entrada</div>
+    <div class="bar"></div>
+    <h2>Ceviche de<br><em>Tilápia</em></h2>
+    <p class="body">Tilápia marinada em limão cítrico, cebola roxa, pimenta dedo-de-moça e milho torrado. Uma entrada vibrante.</p>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 3 — PARMEGIANA (painel dark) ═══════════ -->
+<div class="slide s-split" id="s3">
+  <div class="photo-top">
+    <img src="../../dados/Fotos Toka/tilapia-a-parmegiana.jpg" alt="">
+  </div>
+  <div class="text-btm">
+    <div class="num">2</div>
+    <div class="tag">À la carte</div>
+    <div class="bar"></div>
+    <h2>Tilápia à<br><em>Parmegiana</em></h2>
+    <p class="body">Filé empanado com molho de tomate caseiro e queijo gratinado. Acompanha arroz e batata frita.</p>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 4 — MEDITERRÂNEO (painel green) ═══════════ -->
+<div class="slide s-split" id="s4">
+  <div class="photo-top">
+    <img src="../../dados/Fotos Toka/tilapia-ao-molho-mediterraneo.jpg" alt="">
+  </div>
+  <div class="text-btm">
+    <div class="num">3</div>
+    <div class="tag">Para quem gosta de molho</div>
+    <div class="bar"></div>
+    <h2>Tilápia ao Molho<br><em>Mediterrâneo</em></h2>
+    <p class="body">Filé grelhado com molho artesanal de tomate, camarão, alcaparras e champignon.</p>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 5 — PONTE (camarão full bleed) ═══════════ -->
+<div class="slide" id="s5">
+  <div class="bg"><img src="../../dados/Fotos Toka/porcao-camarao-empanado.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>Porção de camarão<br>pra <em>impressionar.</em></h2>
+    <p class="body">Camarões empanados, dourados e crocantes, com molho de alho e limão. A porção que vira papo na mesa.</p>
+    <span class="handle">@tokadatilapia</span>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 6 — CTA ═══════════ -->
+<div class="slide" id="s6">
+  <div class="bg"><img src="../../dados/Fotos Toka/tilapia-com-farofa-de-banana-2.jpg" alt=""></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>Qual vai ser<br><em>o seu?</em></h2>
+    <div class="btn">LINK NA BIO DO INSTAGRAM</div>
+    <p class="tagline">📍 Jardim Boa Esperança · Sorocaba/SP</p>
+  </div>
+  <img class="wm" src="../../dados/Fotos Toka/logo-toka.png" alt="">
+  <div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+  </div>
+</div>
+
+</body>
+</html>
